@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="file:/apps/dev/HELIO/WS/HECService/../VOTable-1.1.xsd" uri="src/conf/xml-resources/jaxb/votable/VOTable-1.1.xsd"/>
-    <system systemId="http://localhost:8080/HECService/HECService?wsdl" uri="wsdl/localhost_8080/HECService/HECService.wsdl"/>
-    <system systemId="http://localhost:8080/HECService/HECService?xsd=1" uri="wsdl/localhost_8080/HECService/HECService.xsd_1.xsd"/>
-</catalog>
-
-

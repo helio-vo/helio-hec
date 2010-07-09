@@ -1,4 +1,0 @@
-jdbc.Driver=com.mysql.jdbc.Driver
-jdbc.UserName=root
-jdbc.Passwd=Jamimaan
-jdbc.Connection=jdbc:mysql://localhost:3306/HEC
