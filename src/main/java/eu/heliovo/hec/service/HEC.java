@@ -5,9 +5,6 @@
 
 package eu.heliovo.hec.service;
 
-
-
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -43,7 +40,6 @@ public class HEC {
        Connection conn = null;
        Statement stmt = null;
         ResultSet rset = null;
-
         //PostgreSQL
         private static String dbconn        = "jdbc:mysql://localhost:3306/HEC";
         private static String username      = "root";
@@ -59,7 +55,7 @@ public class HEC {
     public String sql(String sqlstr) {
 
         StringBuffer str = new StringBuffer();
-	StringWriter sw = new StringWriter();
+        StringWriter sw = new StringWriter();
         JAXBContext jaxbCon = null;
         Marshaller  mar = null;
         VOTABLE vot = new VOTABLE();
@@ -135,6 +131,8 @@ public class HEC {
 
       return rset;
     }
+    
+    
 private VOTABLE resultset2votable(ResultSet rs,String sql) {
 
 
