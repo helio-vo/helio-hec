@@ -45,7 +45,7 @@ public class HECts {
         //PostgreSQL
         private static String dbconn        = "jdbc:mysql://localhost:3306/HEC";
         private static String username      = "root";
-        private static String passwd        = "Jamimaan";
+        private static String passwd        = "";
         private static String select        = " select * from goes_xray_flare ";
         private static String callsForName  = "org.postgresql.Driver";
 
