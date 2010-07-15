@@ -10,6 +10,14 @@
     service="{http://service.hec/}HECService"
     port="{http://service.hec/}HECPort"
     url-pattern="/HECService"/>
+    
+     <endpoint 
+    name="HECProvider"                    
+    implementation="eu.heliovo.hec.service.HECSoapDispatcher" 
+    wsdl="WEB-INF/wsdl/HECProvider.wsdl"
+    service="{http://service.hec/}HECProviderService"
+    port="{http://service.hec/}HECProviderPort"
+    url-pattern="/HECProvider"/>
 
 </endpoints>
 

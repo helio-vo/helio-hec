@@ -23,4 +23,9 @@
     <url-pattern>/HECService</url-pattern>
   </servlet-mapping>
   
+  <servlet-mapping>
+    <servlet-name>jaxws-servlet</servlet-name>
+    <url-pattern>/HECProvider</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
