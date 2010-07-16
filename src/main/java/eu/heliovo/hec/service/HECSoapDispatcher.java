@@ -71,7 +71,7 @@ public class HECSoapDispatcher implements Provider<Source> {
         //PostgreSQL
         private static String dbconn        = "jdbc:mysql://msslxt.mssl.ucl.ac.uk:3306/helio_ics";
         private static String username      = "helio_admin";
-        private static String passwd        = "majorca";
+        private static String passwd        = "";
         //private static String select        = " select * from goes_xray_flare ";
         //private static String callsForName  = "org.postgresql.Driver";
 
