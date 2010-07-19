@@ -33,7 +33,7 @@ public class QueryThreadAnalizer extends Thread{
 			out.write( "<RESOURCE>\n" );
  	        out.write( "<DESCRIPTION>"+""+"</DESCRIPTION>\n" );
  	        out.write( "<INFO name='QUERY_STATUS' value='SUCCESS'/>\n");
- 	       
+ 	        //writing the result set***sart table to output  
             VOSerializer.makeSerializer( DataFormat.TABLEDATA,startTable).writeInlineTableElement( out );
             out.write( "</RESOURCE>\n" );
             out.write( "</VOTABLE>\n" );
