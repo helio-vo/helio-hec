@@ -25,6 +25,7 @@ public class StandardTypeTable extends WrapperStarTable {
 
     private final ValueHandler[] valHandlers_;
 
+    
     /**
      * Constructor.
      *
@@ -164,7 +165,11 @@ public class StandardTypeTable extends WrapperStarTable {
         }
     }
     
-    
+    /**
+     * 
+     * @param inDate
+     * @return
+     */
     private static boolean  isValidDate(String inDate)  {
 
         if (inDate == null)
