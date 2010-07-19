@@ -68,6 +68,7 @@ public class QueryWebServiceHecClient {
 	           //I believe it should not be that important but if my memory serves me correct
 	           //Axis seemed to throw a NullPointerException if these two methods were not set.
 	           sbeRequest.setName(name);
+	           //Setting target name space.
 	           sbeRequest.setNamespaceURI("http://service.hec/");	           
 	           //call the web service, on axis-message style it
 	           //comes back as a vector of soabodyelements.
@@ -100,8 +101,8 @@ public class QueryWebServiceHecClient {
 	      Service service = new Service();
 	      _call = (Call)service.createCall();
 	      
-	      //this is finally your endpoint to do
-	      //"http://localhost:8080/HelioQuery/services/HelioService"
+	
+	      //Setting end point(  Note***** Antonio you have to give ur url as http://hostname:hostport/context_path/HECProvider)
 	      _call.setTargetEndpointAddress("http://localhost:8080/helio-hec/HECProvider");
 	      _call.setSOAPActionURI("");
 	      //_call.setOperationStyle(org.apache.axis.enum.Style.MESSAGE);
