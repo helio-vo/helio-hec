@@ -37,7 +37,7 @@ public class QueryWebServiceHecClient {
 		//This configuration for TIME.		  	
 		Element xqueryElemStartTime = doc.createElementNS("http://service.hec/","helio:sql");			
 		//xquery should be 'time' so 2009-10-09T00:00:00/2009-10-09T01:00:00
-		xqueryElemStartTime.appendChild(doc.createTextNode("select * from instruments"));	
+		xqueryElemStartTime.appendChild(doc.createTextNode("select * from goes_xray_flare limit 200"));	
 		
 		root.appendChild(xqueryElemStartTime); // ID To Element.
 		doc.appendChild(root);
