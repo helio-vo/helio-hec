@@ -28,8 +28,8 @@ public class QueryThreadAnalizer extends Thread{
 	}
 	public void run(){
 		try {
-			 out.write("<helio:sqlResponse xmlns:helio=\"http://service.hec/\">");
-			 out.write( "<VOTABLE version='1.1' xmlns=\"http://www.ivoa.net/xml/VOTable/v1.1\">\n" );
+			out.write("<helio:sqlResponse xmlns:helio=\"http://service.hec/\">");
+			out.write( "<VOTABLE version='1.1' xmlns=\"http://www.ivoa.net/xml/VOTable/v1.1\">\n" );
 			out.write( "<RESOURCE>\n" );
  	        out.write( "<DESCRIPTION>"+""+"</DESCRIPTION>\n" );
  	        out.write( "<INFO name='QUERY_STATUS' value='SUCCESS'/>\n");
