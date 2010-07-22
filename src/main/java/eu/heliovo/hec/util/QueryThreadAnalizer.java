@@ -15,13 +15,8 @@ import uk.ac.starlink.votable.VOSerializer;
 
 
 public class QueryThreadAnalizer extends Thread{
-	 private String jaxbInstance  = "hec.votable";
-	 JAXBContext jaxbCon = null;
-     Marshaller  mar = null;
-     PipedWriter pw=null;
-     BufferedWriter out=null;
-     ResultSet rs=null;
-     StarTable startTable=null;
+     private BufferedWriter out=null;
+     private StarTable startTable=null;
 	public QueryThreadAnalizer(StarTable startTable,PipedWriter pw){
 		this.startTable = startTable;
 		this.out=new BufferedWriter(pw);
@@ -33,7 +28,7 @@ public class QueryThreadAnalizer extends Thread{
 			out.write( "<RESOURCE>\n" );
  	        out.write( "<DESCRIPTION>"+""+"</DESCRIPTION>\n" );
  	        out.write( "<INFO name='QUERY_STATUS' value='SUCCESS'/>\n");
- 	        //writing the result set***sart table to output  
+ 	        //writing the result set***start table to output  
             VOSerializer.makeSerializer( DataFormat.TABLEDATA,startTable).writeInlineTableElement( out );
             out.write( "</RESOURCE>\n" );
             out.write( "</VOTABLE>\n" );
