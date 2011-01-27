@@ -1,0 +1,463 @@
+ 
+jdbc.driver=org.postgresql.Driver
+jdbc.url=jdbc:postgresql://localhost/hec
+jdbc.user=postgres
+jdbc.password=postgres
+
+
+sql.query.time.constraint.goes_xray_flare=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.goes_xray_flare=
+sql.query.coordinates.constraint.goes_xray_flare= 
+sql.query.orderby.constraint.goes_xray_flare=
+sql.query.maxrecord.constraint.goes_xray_flare=2000
+sql.columnnames.goes_xray_flare=ntime_start::time_start::time_peak::time_end::ntime_end::nar::latitude::longitude::long_carr::xray_class::optical_class
+sql.columndesc.goes_xray_flare=selection start time::event start time::event peak time::event end time::selection end time::active region number::heliographic latitude::heliographic longitude::Carrington longitude::x-ray importance class::optical importance class
+sql.columnucd.goes_xray_flare= :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.goes_xray_flare=
+
+
+
+sql.query.time.constraint.halpha_flares_event=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.halpha_flares_event=
+sql.query.coordinates.constraint.halpha_flares_event= 
+sql.query.orderby.constraint.halpha_flares_event=
+sql.query.maxrecord.constraint.halpha_flares_event=2000
+sql.columnnames.halpha_flares_event=time_start::time_peak::time_end::nar::latitude::longitude::long_carr::xray_class::optical_class
+sql.columndesc.halpha_flares_event=event start time::event peak time::event end time::active region number::heliographic latitude::heliographic longitude::Carrington longitude::x-ray importance class::optical importance class
+sql.columnucd.halpha_flares_event= :: :: :: :: :: :: :: :: 
+sql.columnutypes.halpha_flares_event=
+
+
+
+sql.query.time.constraint.sgas_event=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.sgas_event=
+sql.query.coordinates.constraint.sgas_event= 
+sql.query.orderby.constraint.sgas_event=
+sql.query.maxrecord.constraint.sgas_event=2000
+sql.columnnames.sgas_event=ntime_start::time_start::time_peak::time_end::ntime_end::nar::latitude::longitude::long_carr::xray_class::optical_class::radio_245mhz::radio_10cm::radio_sweep_ii::radio_sweep_iv::swf
+sql.columndesc.sgas_event=selection start time::event start time::event peak time::event end time::selection end time::active region number::heliographic latitude::heliographic longitude::Carrington longitude::x-ray importance class::optical importance class::radio emission at 245 MHz::radio emission at 10 cm::radio sweep type II::radio sweep type IV::short wave fade
+sql.columnucd.sgas_event= :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.sgas_event=
+
+
+
+sql.query.time.constraint.yohkoh_flare_list=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.yohkoh_flare_list=
+sql.query.coordinates.constraint.yohkoh_flare_list= 
+sql.query.orderby.constraint.yohkoh_flare_list=
+sql.query.maxrecord.constraint.yohkoh_flare_list=2000
+sql.columnnames.yohkoh_flare_list=time_start::time_peak::time_end::nar::latitude::longitude::xray_class::optical_class::hxt_lo::hxt_m1::hxt_m2::hxt_hi::rem::yoh_event
+sql.columndesc.yohkoh_flare_list=event start time::event peak time::event end time::active region number::heliographic latitude::heliographic longitude::x-ray importance class::optical importance class::HXT lo::HXT m1::HXT m2::HXT hi::Remarks::Yohkoh event
+sql.columnucd.yohkoh_flare_list= :: :: :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.yohkoh_flare_list=
+
+
+
+sql.query.time.constraint.hessi_flare=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.hessi_flare=
+sql.query.coordinates.constraint.hessi_flare= 
+sql.query.orderby.constraint.hessi_flare=
+sql.query.maxrecord.constraint.hessi_flare=2000
+sql.columnnames.hessi_flare=time_start::time_peak::time_end::nar::x_arcsec::y_arcsec::radial_arcsec::duration::count_sec_peak::total_count::energy_kev::flare_number
+sql.columndesc.hessi_flare=event start time::event peak time::event end time::active region number::x position [arcsec]::y position [arcsec]::sun radius [arcsec]::duration [s]::peak of counts per sec [s-1]::total counts::energy [keV]::flare id number
+sql.columnucd.hessi_flare= :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.hessi_flare=
+
+
+
+sql.query.time.constraint.kso_flare=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.kso_flare=
+sql.query.coordinates.constraint.kso_flare= 
+sql.query.orderby.constraint.kso_flare=
+sql.query.maxrecord.constraint.kso_flare=2000
+sql.columnnames.kso_flare=time_start::time_start_m::time_peak::time_peak_m::time_end::time_end_m::latitude::longitude::long_carr::optical_class
+sql.columndesc.kso_flare=event start time::event start time modifier::event peak time::event peak modifier::event end time::event end time modifier::heliographic latitude::heliographic longitude::Carrington longitude::optical importance class
+sql.columnucd.kso_flare= :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.kso_flare=
+
+
+
+sql.query.time.constraint.eit_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.eit_list=
+sql.query.coordinates.constraint.eit_list= 
+sql.query.orderby.constraint.eit_list=
+sql.query.maxrecord.constraint.eit_list=2000
+sql.columnnames.eit_list=time_start::previmg_time::img_time::quality::latitude::longitude::speed_planeofsky::speed_proj::pa_central::description
+sql.columndesc.eit_list=event start time::Previous Image Time::Image Time::Quality Rating::heliographic latitude::heliographic longitude::Plane-of-Sky Speed::Projected Speed::polar angle [deg]::event description
+sql.columnucd.eit_list= :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.eit_list=
+
+
+
+sql.query.time.constraint.yohkoh_sxt_trace_list=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.yohkoh_sxt_trace_list=
+sql.query.coordinates.constraint.yohkoh_sxt_trace_list= 
+sql.query.orderby.constraint.yohkoh_sxt_trace_list=
+sql.query.maxrecord.constraint.yohkoh_sxt_trace_list=2000
+sql.columnnames.yohkoh_sxt_trace_list=link::time_start_sxt::time_end_sxt::xray_class::n_img::x_arcsec_sxt::y_arcsec_sxt::time_start::time_end::time_sxt_trace::wl_dom::x_arcsec::y_arcsec::n171::n195::n284::n1600::n1216::nwl
+sql.columndesc.yohkoh_sxt_trace_list=The location of the SXT PFI file at ISAS::Times of the first flare mode SXT images::Times of the last flare mode SXT images::x-ray importance class::Number of flare mode SXT images::Coord. X (arcsec from disk center) of the center of the 6th SXT flare mode image::Coord. Y (arcsec from disk center) of the center of the 6th SXT flare mode image::event start time::event end time::Time of the TRACE image closest to time_start_sxt::Wavelength at which the greatest number of images is taken::x position [arcsec]::y position [arcsec]::Number of TRACE images at 171 A::Number of TRACE images at 195 A::Number of TRACE images at 284 A::Number of TRACE images at 1600 A::Number of TRACE images at 1216 A::Number of TRACE images at WL
+sql.columnucd.yohkoh_sxt_trace_list= :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.yohkoh_sxt_trace_list=
+
+
+
+sql.query.time.constraint.noaa_proton_event=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.noaa_proton_event=
+sql.query.coordinates.constraint.noaa_proton_event= 
+sql.query.orderby.constraint.noaa_proton_event=
+sql.query.maxrecord.constraint.noaa_proton_event=2000
+sql.columnnames.noaa_proton_event=time_start::time_peak::nar::latitude::longitude::proton_flux::assoc_cme::assoc_flare_pk::xray_class::optical_class
+sql.columndesc.noaa_proton_event=event start time::event peak time::active region number::heliographic latitude::heliographic longitude::proton flux units::associated CME::peak time for associated flare::xray importance class::optical importance class
+sql.columnucd.noaa_proton_event= :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.noaa_proton_event=
+
+
+
+sql.query.time.constraint.lasco_cme_cat=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.lasco_cme_cat=
+sql.query.coordinates.constraint.lasco_cme_cat= 
+sql.query.orderby.constraint.lasco_cme_cat=
+sql.query.maxrecord.constraint.lasco_cme_cat=2000
+sql.columnnames.lasco_cme_cat=time_start::pa_central::pa_measure::pa_width::linear_speed::speed2_init::speed2_final::speed2_20r::acceleration
+sql.columndesc.lasco_cme_cat=event start time::polar angle [deg]::polar angle measure [deg]::polar angle width [deg]::linear speed [km/sec]::2nd order initial speed [km/sec]::2nd order final speed [km/sec]::2nd order speed at 20 R [km/sec]::acceleration [km/sec^2]
+sql.columnucd.lasco_cme_cat= :: :: :: :: :: :: :: :: 
+sql.columnutypes.lasco_cme_cat=
+
+
+
+sql.query.time.constraint.lasco_cme_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.lasco_cme_list=
+sql.query.coordinates.constraint.lasco_cme_list= 
+sql.query.orderby.constraint.lasco_cme_list=
+sql.query.maxrecord.constraint.lasco_cme_list=2000
+sql.columnnames.lasco_cme_list=time_start::pa_central::description
+sql.columndesc.lasco_cme_list=event start time::polar angle [deg]::event description
+sql.columnucd.lasco_cme_list= :: :: 
+sql.columnutypes.lasco_cme_list=
+
+
+
+sql.query.time.constraint.bas_magnetic_storms=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.bas_magnetic_storms=
+sql.query.coordinates.constraint.bas_magnetic_storms= 
+sql.query.orderby.constraint.bas_magnetic_storms=
+sql.query.maxrecord.constraint.bas_magnetic_storms=2000
+sql.columnnames.bas_magnetic_storms=time_start::time_peak::time_end::dst::hduration
+sql.columndesc.bas_magnetic_storms=event start time::event peak time::event end time::magnetic field [nT]::duration [h]
+sql.columnucd.bas_magnetic_storms= :: :: :: :: 
+sql.columnutypes.bas_magnetic_storms=
+
+
+
+sql.query.time.constraint.srs_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.srs_list=
+sql.query.coordinates.constraint.srs_list= 
+sql.query.orderby.constraint.srs_list=
+sql.query.maxrecord.constraint.srs_list=2000
+sql.columnnames.srs_list=time_start::nar::latitude::longitude::long_carr::area::zurich_class::p_value::c_value::long_extent::n_spots::mag_class::region_type
+sql.columndesc.srs_list=event start time::active region number::heliographic latitude::heliographic longitude::Carrington longitude::area::Zurich classification::p value::c value::longitudinal extension::number of sunspots::mag class::active region type
+sql.columnucd.srs_list= :: :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.srs_list=
+
+
+
+sql.query.time.constraint.soho_camp=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.soho_camp=
+sql.query.coordinates.constraint.soho_camp= 
+sql.query.orderby.constraint.soho_camp=
+sql.query.maxrecord.constraint.soho_camp=2000
+sql.columnnames.soho_camp=time_start::time_end::sohoc_num::sohoc_name::sohoc_type::sohoc_obj::sohoc_coord::sohoc_part::sohoc_comm
+sql.columndesc.soho_camp=event start time::event end time::SoHO Campaign number::SoHO Campaign name::SoHO Campaign type::SoHO Campaign objective::SoHO Campaign coordinators::SoHO Campaign participants::SoHO Campaign comments
+sql.columnucd.soho_camp= :: :: :: :: :: :: :: :: 
+sql.columnutypes.soho_camp=
+
+
+
+sql.query.time.constraint.dsd_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.dsd_list=
+sql.query.coordinates.constraint.dsd_list= 
+sql.query.orderby.constraint.dsd_list=
+sql.query.maxrecord.constraint.dsd_list=2000
+sql.columnnames.dsd_list=time_start::radio_10cm::sesc_ssn::ss_area::new_regions::stan_smf::xray_bkg::c_flares::m_flares::x_flares::opts_flares::opt1_flares::opt2_flares::opt3_flares
+sql.columndesc.dsd_list=event start time::radio emission at 10 cm::sesc sunspot number::sunspot area::new regions::stan smf::x-ray bkg::class C flares::class M flares::class X flares::opts flares::opt1 flares::opt2 flares::opt3 flares
+sql.columnucd.dsd_list= :: :: :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.dsd_list=
+
+
+
+sql.query.time.constraint.sidc_sunspot_number=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.sidc_sunspot_number=
+sql.query.coordinates.constraint.sidc_sunspot_number= 
+sql.query.orderby.constraint.sidc_sunspot_number=
+sql.query.maxrecord.constraint.sidc_sunspot_number=2000
+sql.columnnames.sidc_sunspot_number=time_start::time_end::ssn
+sql.columndesc.sidc_sunspot_number=event start time::event end time::sunspot number
+sql.columnucd.sidc_sunspot_number= :: :: 
+sql.columnutypes.sidc_sunspot_number=
+
+
+
+sql.query.time.constraint.drao_10cm_flux=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.drao_10cm_flux=
+sql.query.coordinates.constraint.drao_10cm_flux= 
+sql.query.orderby.constraint.drao_10cm_flux=
+sql.query.maxrecord.constraint.drao_10cm_flux=2000
+sql.columnnames.drao_10cm_flux=time_start::time_end::sfu_observed::sfu_adjusted::sfu_series_d
+sql.columndesc.drao_10cm_flux=event start time::event end time::observed solar flux units::adjusted solar flux units::series d solar flux units
+sql.columnucd.drao_10cm_flux= :: :: :: :: 
+sql.columnutypes.drao_10cm_flux=
+
+
+
+sql.query.time.constraint.gle_list=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.gle_list=
+sql.query.coordinates.constraint.gle_list= 
+sql.query.orderby.constraint.gle_list=
+sql.query.maxrecord.constraint.gle_list=2000
+sql.columnnames.gle_list=time_start::time_end::rem
+sql.columndesc.gle_list=event start time::event end time::Remarks
+sql.columnucd.gle_list= :: :: 
+sql.columnutypes.gle_list=
+
+
+
+sql.query.time.constraint.aastar_list=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.aastar_list=
+sql.query.coordinates.constraint.aastar_list= 
+sql.query.orderby.constraint.aastar_list=
+sql.query.maxrecord.constraint.aastar_list=2000
+sql.columnnames.aastar_list=time_start::time_peak::time_end::hduration::aastar_max::aastar_ave::aastar_sum
+sql.columndesc.aastar_list=event start time::event peak time::event end time::duration [h]::max AA* magnetic index::ave AA* magnetic index::sum AA* magnetic index
+sql.columnucd.aastar_list= :: :: :: :: :: :: 
+sql.columnutypes.aastar_list=
+
+
+
+sql.query.time.constraint.apstar_list=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.apstar_list=
+sql.query.coordinates.constraint.apstar_list= 
+sql.query.orderby.constraint.apstar_list=
+sql.query.maxrecord.constraint.apstar_list=2000
+sql.columnnames.apstar_list=time_start::time_peak::time_end::hduration::apstar_max::apstar_ave::apstar_sum
+sql.columndesc.apstar_list=event start time::event peak time::event end time::duration [h]::max Ap* magnetic index::ave Ap* magnetic index::sum Ap* magnetic index
+sql.columnucd.apstar_list= :: :: :: :: :: :: 
+sql.columnutypes.apstar_list=
+
+
+
+sql.query.time.constraint.ssc_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.ssc_list=
+sql.query.coordinates.constraint.ssc_list= 
+sql.query.orderby.constraint.ssc_list=
+sql.query.maxrecord.constraint.ssc_list=2000
+sql.columnnames.ssc_list=time_start::nstn_A::nstn_B::nstn_C::nsi
+sql.columndesc.ssc_list=event start time::Number stations reporting an A event::Number stations reporting an B event::Number stations reporting an C event::Number of stations reporting an "si" event
+sql.columnucd.ssc_list= :: :: :: :: 
+sql.columnutypes.ssc_list=
+
+
+
+sql.query.time.constraint.forbush_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.forbush_list=
+sql.query.coordinates.constraint.forbush_list= 
+sql.query.orderby.constraint.forbush_list=
+sql.query.maxrecord.constraint.forbush_list=2000
+sql.columnnames.forbush_list=time_start::sc::fe_magn::kpmax::dstmin::bimf_m::vsw_max::axy_min::az_r::tmin::dmin::tdmn::aftob::tilt
+sql.columndesc.forbush_list=event start time::forbush sc::forbush fe_magn::forbush kpmax::forbush dstmin::forbush bimf_m::forbush vsw_max::forbush axy_min::forbush az_r::forbush tmin::forbush dmin::forbush tdmn::forbush aftob::forbush tilt
+sql.columnucd.forbush_list= :: :: :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.forbush_list=
+
+
+
+sql.query.time.constraint.solar_wind_event=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.solar_wind_event=
+sql.query.coordinates.constraint.solar_wind_event= 
+sql.query.orderby.constraint.solar_wind_event=
+sql.query.maxrecord.constraint.solar_wind_event=2000
+sql.columnnames.solar_wind_event=time_start::time_end::sw_list::bzn::bzs::eyc::hss::imc::ir::is_::lss::pc::sbc ::misc::w::i8::ace::rem
+sql.columndesc.solar_wind_event=event start time::event end time::solar wind list index::Interplanetary magnetic B-field North (GSM coordinate system)::Interplanetary magnetic B-field South (GSM coordinate system)::Change of the "y" component of the Interplanetary Electric Field::High Speed Stream::Interplanetary Magnetic Cloud::Interaction Region::Interplanetary Fast Shock::Low Speed Stream::Pressure Change::Sector Boundaries Crossing, also heliospheric current sheet crossing::Miscellaneous Events::WIND::IMP-8::ACE::Remarks
+sql.columnucd.solar_wind_event= :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.solar_wind_event=
+
+
+sql.query.time.constraint.hi_cme_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.hi_cme_list=
+sql.query.coordinates.constraint.hi_cme_list= 
+sql.query.orderby.constraint.hi_cme_list=
+sql.query.maxrecord.constraint.hi_cme_list=2000
+sql.columnnames.hi_cme_list=time_start::instrument::time_end::data_gap::cme_type::brightness::pa_central::pa_width::time_onset::not_in_list::linear_speed::longitude::longitude_err::time_1au::description
+sql.columndesc.hi_cme_list=time_start::instrument::time_end::data_gap::cme_type::brightness::pa_central::pa_width::time_onset::not_in_list::linear_speed::longitude::longitude_err::time_1au::description
+sql.columnucd.hi_cme_list= :: :: :: :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.hi_cme_list=
+
+
+sql.query.time.constraint.hi_event=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.hi_event=
+sql.query.coordinates.constraint.hi_event= 
+sql.query.orderby.constraint.hi_event=
+sql.query.maxrecord.constraint.hi_event=2000
+sql.columnnames.hi_event=time_start::date::instrument::speed::speed_err::longitude::longitude_err::time_1au
+sql.columndesc.hi_event=time_start::date::instrument::speed::speed_err::longitude::longitude_err::time_1au
+sql.columnucd.hi_event= :: :: :: :: :: :: :: 
+sql.columnutypes.hi_event=
+
+sql.query.time.constraint.wind_imf_mag_cloud=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.wind_imf_mag_cloud=
+sql.query.coordinates.constraint.wind_imf_mag_cloud=
+sql.query.orderby.constraint.wind_imf_mag_cloud=
+sql.query.maxrecord.constraint.wind_imf_mag_cloud=2000
+sql.columnnames.wind_imf_mag_cloud=time_start::doy_start::time_end::doy_end::code::quality
+sql.columndesc.wind_imf_mag_cloud=time_start::doy_start::time_end::doy_end::code::quality
+sql.columnucd.wind_imf_mag_cloud= :: :: :: :: :: 
+sql.columnutypes.wind_imf_mag_cloud=
+
+
+sql.query.time.constraint.wind_imf_bow_shock=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.wind_imf_bow_shock=
+sql.query.coordinates.constraint.wind_imf_bow_shock=
+sql.query.orderby.constraint.wind_imf_bow_shock=
+sql.query.maxrecord.constraint.wind_imf_bow_shock=2000
+sql.columnnames.wind_imf_bow_shock=last_bs_crossing::last_bs_flag::first_hr_kept::first_hr_flag::last_hr_kept::last_hr_flag::first_bs_crossing::first_bs_flag::time_start::time_end
+sql.columndesc.wind_imf_bow_shock=last_bs_crossing::last_bs_flag::first_hr_kept::first_hr_flag::last_hr_kept::last_hr_flag::first_bs_crossing::first_bs_flag::time_start::time_end
+sql.columnucd.wind_imf_bow_shock= :: :: :: :: :: :: :: :: ::  
+sql.columnutypes.wind_imf_bow_shock=
+
+
+sql.query.time.constraint.istp_solar_wind_cat=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.istp_solar_wind_cat=
+sql.query.coordinates.constraint.istp_solar_wind_cat=
+sql.query.orderby.constraint.istp_solar_wind_cat=
+sql.query.maxrecord.constraint.istp_solar_wind_cat=2000
+sql.columnnames.istp_solar_wind_cat=time_start::time_end::category::spacecraft::rem
+sql.columndesc.istp_solar_wind_cat=time_start::time_end::category::spacecraft::rem
+sql.columnucd.istp_solar_wind_cat= :: :: :: :: 
+sql.columnutypes.istp_solar_wind_cat=
+
+sql.query.time.constraint.soho_pm_ips=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.soho_pm_ips=
+sql.query.coordinates.constraint.soho_pm_ips=
+sql.query.orderby.constraint.soho_pm_ips=
+sql.query.maxrecord.constraint.soho_pm_ips=2000
+sql.columnnames.soho_pm_ips=time_start::doy_start::zone::rem
+sql.columndesc.soho_pm_ips=time_start::doy_start::zone::rem
+sql.columnucd.soho_pm_ips= :: :: ::
+sql.columnutypes.soho_pm_ips=
+
+sql.query.time.constraint.wind_imf_ips=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.wind_imf_ips=
+sql.query.coordinates.constraint.wind_imf_ips=
+sql.query.orderby.constraint.wind_imf_ips=
+sql.query.maxrecord.constraint.wind_imf_ips=2000
+sql.columnnames.wind_imf_ips=time_start
+sql.columndesc.wind_imf_ips=time_start
+sql.columnucd.wind_imf_ips=
+sql.columnutypes.wind_imf_ips=
+
+sql.query.time.constraint.wind_solar_wind_times=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.wind_solar_wind_times=
+sql.query.coordinates.constraint.wind_solar_wind_times=
+sql.query.orderby.constraint.wind_solar_wind_times=
+sql.query.maxrecord.constraint.wind_solar_wind_times=2000
+sql.columnnames.wind_solar_wind_times=time_start::time_end
+sql.columndesc.wind_solar_wind_times=time_start::time_end
+sql.columnucd.wind_solar_wind_times= ::
+sql.columnutypes.wind_solar_wind_times=
+
+sql.query.time.constraint.imp8_solar_wind_times=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.imp8_solar_wind_times=
+sql.query.coordinates.constraint.imp8_solar_wind_times=
+sql.query.orderby.constraint.imp8_solar_wind_times=
+sql.query.maxrecord.constraint.imp8_solar_wind_times=2000
+sql.columnnames.imp8_solar_wind_times=time_start::time_end
+sql.columndesc.imp8_solar_wind_times=time_start::time_end
+sql.columnucd.imp8_solar_wind_times= ::
+sql.columnutypes.imp8_solar_wind_times=
+
+
+sql.query.time.constraint.tsrs_event_list=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.tsrs_event_list=
+sql.query.coordinates.constraint.tsrs_event_list=
+sql.query.orderby.constraint.tsrs_event_list=
+sql.query.maxrecord.constraint.tsrs_event_list=2000
+sql.columnnames.tsrs_event_list=time_start::time_peak::time_end::freq::cpp::ps::sfu_max::radio_class::rem::file
+sql.columndesc.tsrs_event_list=time_start::time_peak::time_end::freq::cpp::ps::sfu_max::radio_class::rem::file
+sql.columnucd.tsrs_event_list= :: :: :: :: :: :: :: :: ::
+sql.columnutypes.tsrs_event_list=
+
+
+sql.query.time.constraint.latest_gev_flare=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.latest_gev_flare=
+sql.query.coordinates.constraint.latest_gev_flare=
+sql.query.orderby.constraint.latest_gev_flare=
+sql.query.maxrecord.constraint.latest_gev_flare=2000
+sql.columnnames.latest_gev_flare=time_start::time_peak::time_end::nar::latitude::longitude::xray_class::optical_class
+sql.columndesc.latest_gev_flare=time_start::time_peak::time_end::nar::latitude::longitude::xray_class::optical_class
+sql.columnucd.latest_gev_flare= :: :: :: :: :: :: :: 
+sql.columnutypes.latest_gev_flare=
+
+
+sql.query.time.constraint.gevloc_flares=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.gevloc_flares=
+sql.query.coordinates.constraint.gevloc_flares=
+sql.query.orderby.constraint.gevloc_flares=
+sql.query.maxrecord.constraint.gevloc_flares=2000
+sql.columnnames.gevloc_flares=time_start::xray_class::loc
+sql.columndesc.gevloc_flares=time_start::xray_class::loc
+sql.columnucd.gevloc_flares= :: :: 
+sql.columnutypes.gevloc_flares=
+
+
+sql.query.time.constraint.wind_waves_type_ii_burst=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.wind_waves_type_ii_burst=
+sql.query.coordinates.constraint.wind_waves_type_ii_burst=
+sql.query.orderby.constraint.wind_waves_type_ii_burst=
+sql.query.maxrecord.constraint.wind_waves_type_ii_burst=2000
+sql.columnnames.wind_waves_type_ii_burst=time_start::time_end::freq_start::freq_end::loc::nar::xray_class::time_cme::pa_central::pa_width::speed::rem
+sql.columndesc.wind_waves_type_ii_burst=time_start::time_end::freq_start::freq_end::loc::nar::xray_class::time_cme::pa_central::pa_width::speed::rem
+sql.columnucd.wind_waves_type_ii_burst= :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.wind_waves_type_ii_burst=
+
+sql.query.time.constraint.waves_exp_wind_stereo=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.waves_exp_wind_stereo=
+sql.query.coordinates.constraint.waves_exp_wind_stereo=
+sql.query.orderby.constraint.waves_exp_wind_stereo=
+sql.query.maxrecord.constraint.waves_exp_wind_stereo=2000
+sql.columnnames.waves_exp_wind_stereo=time_start::time_end::identifier::freq_start::freq_end::dyn_spec::rem
+sql.columndesc.waves_exp_wind_stereo=time_start::time_end::identifier::freq_start::freq_end::dyn_spec::rem
+sql.columnucd.waves_exp_wind_stereo= :: :: :: :: :: :: 
+sql.columnutypes.waves_exp_wind_stereo=
+
+sql.query.time.constraint.ulysses_swoops_icme=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.ulysses_swoops_icme=
+sql.query.coordinates.constraint.ulysses_swoops_icme=
+sql.query.orderby.constraint.ulysses_swoops_icme=
+sql.query.maxrecord.constraint.ulysses_swoops_icme=2000
+sql.columnnames.ulysses_swoops_icme=time_start::time_end::latitude::longitude::r::v_p::v_p_err::b::b_err
+sql.columndesc.ulysses_swoops_icme=time_start::time_end::latitude::longitude::r::v_p::v_p_err::b::b_err
+sql.columnucd.ulysses_swoops_icme= :: :: :: :: :: :: :: :: 
+sql.columnutypes.ulysses_swoops_icme=
+
+sql.query.time.constraint.stereo_euvi_catalog=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
+sql.query.instr.constraint.stereo_euvi_catalog=
+sql.query.coordinates.constraint.stereo_euvi_catalog=
+sql.query.orderby.constraint.stereo_euvi_catalog=
+sql.query.maxrecord.constraint.stereo_euvi_catalog=2000
+sql.columnnames.stereo_euvi_catalog=time_start::time_end::loc::cadence::spacecraft::xray_class::rhessi_peak_range::rhessi_peak_count::rem::cme_event_source
+sql.columndesc.stereo_euvi_catalog=time_start::time_end::loc::cadence::spacecraft::xray_class::rhessi_peak_range::rhessi_peak_count::rem::cme_event_source
+sql.columnucd.stereo_euvi_catalog= :: :: :: :: :: :: :: :: ::
+sql.columnutypes.stereo_euvi_catalog=
+
+
+
+sql.query.time.constraint.catalogues=
+sql.query.instr.constraint.catalogues=
+sql.query.coordinates.constraint.catalogues=
+sql.query.orderby.constraint.catalogues=
+sql.query.maxrecord.constraint.catalogues=2000
+sql.columnnames.catalogues=table_name::description::type::status::time_from::time_to
+sql.columndesc.catalogues=table_name::description::type::status::time_from::time_to
+sql.columnucd.catalogues= :: :: :: :: ::
+sql.columnutypes.catalogues=
+
+sql.votable.head.desc=Helio HEC time based query V1.15.0
+
