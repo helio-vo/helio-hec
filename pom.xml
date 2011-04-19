@@ -5,14 +5,15 @@
     <parent>
         <artifactId>heliovo</artifactId>
         <groupId>eu.heliovo</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.4-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>eu.heliovo</groupId>
     <artifactId>helio-hec</artifactId>
     <packaging>war</packaging>
     <name>helio-hec</name>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.4-SNAPSHOT</version>
     <description>
 		TODO: Add description in helio-hec/pom.xml
 	</description>
