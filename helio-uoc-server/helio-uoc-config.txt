@@ -3,17 +3,17 @@ jdbc.url=jdbc:postgresql://localhost/uoc
 jdbc.user=postgres
 jdbc.password=postgres
 
-sql.votable.head.desc=Helio UOC time based query V1.3.1
+sql.votable.head.desc=Helio UOC time based query V1.4.2
 
 sql.query.time.constraint.planetary_cat=time_start>='[:kwstartdate:]' AND time_end<='[:kwenddate:]'
-sql.query.instr.constraint.planetary_cat=instr_code ILIKE '%[:kwinstrument:]%'
+sql.query.instr.constraint.planetary_cat=obsinst_key ILIKE '%[:kwinstrument:]%'
 sql.query.coordinates.constraint.planetary_cat=
 sql.query.orderby.constraint.planetary_cat=
-sql.query.maxrecord.constraint.planetary_cat=200
+sql.query.maxrecord.constraint.planetary_cat=10000
 
-sql.columnnames.planetary_cat=time_start::time_end::instr_code::filename::filepath
-sql.columndesc.planetary_cat=Start Time::End Time::Instr_code::Filename::Link
-sql.columnucd.planetary_cat= :: :: :: ::
+sql.columnnames.planetary_cat=obsinst_key::provaider::time_start::time_end::url::ancil_filename::ancil_info
+sql.columndesc.planetary_cat=Obsinst key::Provaider::Time start::Time end::URL::Ancillary filename::Ancillary Info
+sql.columnucd.planetary_cat= :: :: :: :: :: ::
 sql.columnutypes.planetary_cat=
 
 
@@ -21,7 +21,7 @@ sql.query.time.constraint.instruments=TRUE
 sql.query.instr.constraint.instruments=instr_code ILIKE '%[:kwinstrument:]%'
 sql.query.coordinates.constraint.instruments=
 sql.query.orderby.constraint.instruments=
-sql.query.maxrecord.constraint.instruments=200
+sql.query.maxrecord.constraint.instruments=10000
 
 sql.columnnames.instruments=instr_code
 sql.columndesc.instruments=Instrument
@@ -33,7 +33,7 @@ sql.query.time.constraint.timeinterval=TRUE
 sql.query.instr.constraint.timeinterval=instr_code ILIKE '%[:kwinstrument:]%'
 sql.query.coordinates.constraint.timeinterval=
 sql.query.orderby.constraint.timeinterval=
-sql.query.maxrecord.constraint.timeinterval=200
+sql.query.maxrecord.constraint.timeinterval=10000
 
 sql.columnnames.timeinterval=min::max::instr_code
 sql.columndesc.timeinterval=min::max::Instrument
@@ -45,7 +45,7 @@ sql.query.time.constraint.ghan_cat=time_start>='[:kwstartdate:]' AND time_end<='
 sql.query.instr.constraint.ghan_cat=
 sql.query.coordinates.constraint.ghan_cat=
 sql.query.orderby.constraint.ghan_cat=
-sql.query.maxrecord.constraint.ghan_cat=1000
+sql.query.maxrecord.constraint.ghan_cat=10000
 
 sql.columnnames.ghan_cat=time_start::time_end::observatory::telescope::instrument::size_pixels::filetype::filepath::filename::ispubblic::contact
 sql.columndesc.ghan_cat=Start Time::End Time::Observatory::Telescope::Instrument::Size pixels::Filetype::Filepath::Filename::isPubblic::Contact
@@ -55,7 +55,7 @@ sql.query.time.constraint.eis_cat=time_start>='[:kwstartdate:]' AND time_end<='[
 sql.query.instr.constraint.eis_cat=
 sql.query.coordinates.constraint.eis_cat=
 sql.query.orderby.constraint.eis_cat=
-sql.query.maxrecord.constraint.eis_cat=1000
+sql.query.maxrecord.constraint.eis_cat=10000
 
 sql.columnnames.eis_cat=time_start::time_end::filename::fullname
 sql.columndesc.eis_cat=Start Time::End Time::Filename::Fullname
@@ -66,7 +66,7 @@ sql.query.time.constraint.solar_cat=Date_obs>='[:kwstartdate:]' AND Date_end<='[
 sql.query.instr.constraint.solar_cat=
 sql.query.coordinates.constraint.solar_cat=
 sql.query.orderby.constraint.solar_cat=
-sql.query.maxrecord.constraint.solar_cat=1000
+sql.query.maxrecord.constraint.solar_cat=10000
 
 sql.columnnames.solar_cat=Observatory::Telescope::Orbit::InstrumentType::SamplingMethod::DataType::ObservationMode::DomainType::EnergyRegime::PhysicalParam::Contact::Instrument::Date_obs::Date_end::Filename::Sci_Obj::Object::Obj_ID::Obs_prog::CoordSystem::LocationX::LocationY::CoordinateNameX::CoordinateNameY::CoordinateNameW::SpatialSamplingX::SpatialSamplingY::SpatialSamplingLAM1::SpatialSamplingLAM2::SpatialSamplingLAM3::SpatialSamplingLAM4::AreaCoveredDX::AreaCoveredDY::Naxis1::Naxis2::Naxis3::Naxis4:: Filter1:: Filter2:: Filter3:: Filter4:: Filter5:: Filter6:: Filter7:: Filter8:: Filter9:: Filter10:: Filter11:: Filter12:: Filter13:: Filter14:: Filter15:: Filter16:: Filter17:: Filter18:: Filter19:: Filter20:: Filter21:: Filter22:: Filter23:: Filter24:: Wavmin1:: Wavmin2:: Wavmin3:: Wavmin4:: Wavmin5:: Wavmin6:: Wavmin7:: Wavmin8:: Wavmin9:: Wavmin10:: Wavmin11:: Wavmin12:: Wavmin13:: Wavmin14:: Wavmin15:: Wavmin16:: Wavmin17:: Wavmin18:: Wavmin19:: Wavmin20:: Wavmin21:: Wavmin22:: Wavmin23:: Wavmin24:: Wavmax1:: Wavmax2:: Wavmax3:: Wavmax4:: Wavmax5:: Wavmax6:: Wavmax7:: Wavmax8:: Wavmax9:: Wavmax10:: Wavmax11:: Wavmax12:: Wavmax13:: Wavmax14:: Wavmax15:: Wavmax16:: Wavmax17:: Wavmax18:: Wavmax19:: Wavmax20:: Wavmax21:: Wavmax22:: Wavmax23:: Wavmax24::Slit_num::Exp_time::JD1::JD2:: SpectSampling
 sql.columndesc.solar_cat=Observatory::Telescope::Orbit::InstrumentType::SamplingMethod::DataType::ObservationMode::DomainType::EnergyRegime::PhysicalParam::Contact::Instrument::Date_obs::Date_end::Filename::Sci_Obj::Object::Obj_ID::Obs_prog::CoordSystem::LocationX::LocationY::CoordinateNameX::CoordinateNameY::CoordinateNameW::SpatialSamplingX::SpatialSamplingY::SpatialSamplingLAM1::SpatialSamplingLAM2::SpatialSamplingLAM3::SpatialSamplingLAM4::AreaCoveredDX::AreaCoveredDY::Naxis1::Naxis2::Naxis3::Naxis4:: Filter1:: Filter2:: Filter3:: Filter4:: Filter5:: Filter6:: Filter7:: Filter8:: Filter9:: Filter10:: Filter11:: Filter12:: Filter13:: Filter14:: Filter15:: Filter16:: Filter17:: Filter18:: Filter19:: Filter20:: Filter21:: Filter22:: Filter23:: Filter24:: Wavmin1:: Wavmin2:: Wavmin3:: Wavmin4:: Wavmin5:: Wavmin6:: Wavmin7:: Wavmin8:: Wavmin9:: Wavmin10:: Wavmin11:: Wavmin12:: Wavmin13:: Wavmin14:: Wavmin15:: Wavmin16:: Wavmin17:: Wavmin18:: Wavmin19:: Wavmin20:: Wavmin21:: Wavmin22:: Wavmin23:: Wavmin24:: Wavmax1:: Wavmax2:: Wavmax3:: Wavmax4:: Wavmax5:: Wavmax6:: Wavmax7:: Wavmax8:: Wavmax9:: Wavmax10:: Wavmax11:: Wavmax12:: Wavmax13:: Wavmax14:: Wavmax15:: Wavmax16:: Wavmax17:: Wavmax18:: Wavmax19:: Wavmax20:: Wavmax21:: Wavmax22:: Wavmax23:: Wavmax24::Slit_num::Exp_time::JD1::JD2:: SpectSampling
@@ -78,7 +78,7 @@ sql.query.time.constraint.cds_cat=Date_obs>='[:kwstartdate:]' AND Date_end<='[:k
 sql.query.instr.constraint.cds_cat=
 sql.query.coordinates.constraint.cds_cat=
 sql.query.orderby.constraint.cds_cat=
-sql.query.maxrecord.constraint.cds_cat=1000
+sql.query.maxrecord.constraint.cds_cat=10000
 
 sql.columnnames.cds_cat=Observatory::Telescope::Orbit::InstrumentType::SamplingMethod::DataType::ObservationMode::DomainType::EnergyRegime::PhysicalParam::Contact::Instrument::Date_obs::Date_end::Filename::Sci_Obj::Object::Obj_ID::Obs_prog::CoordSystem::LocationX::LocationY::CoordinateNameX::CoordinateNameY::CoordinateNameW::SpatialSamplingX::SpatialSamplingY::SpatialSamplingLAM1::SpatialSamplingLAM2::SpatialSamplingLAM3::SpatialSamplingLAM4::AreaCoveredDX::AreaCoveredDY::Naxis1::Naxis2::Naxis3::Naxis4:: Filter1:: Filter2:: Filter3:: Filter4:: Filter5:: Filter6:: Filter7:: Filter8:: Filter9:: Filter10:: Filter11:: Filter12:: Filter13:: Filter14:: Filter15:: Filter16:: Filter17:: Filter18:: Filter19:: Filter20:: Filter21:: Filter22:: Filter23:: Filter24:: Wavmin1:: Wavmin2:: Wavmin3:: Wavmin4:: Wavmin5:: Wavmin6:: Wavmin7:: Wavmin8:: Wavmin9:: Wavmin10:: Wavmin11:: Wavmin12:: Wavmin13:: Wavmin14:: Wavmin15:: Wavmin16:: Wavmin17:: Wavmin18:: Wavmin19:: Wavmin20:: Wavmin21:: Wavmin22:: Wavmin23:: Wavmin24:: Wavmax1:: Wavmax2:: Wavmax3:: Wavmax4:: Wavmax5:: Wavmax6:: Wavmax7:: Wavmax8:: Wavmax9:: Wavmax10:: Wavmax11:: Wavmax12:: Wavmax13:: Wavmax14:: Wavmax15:: Wavmax16:: Wavmax17:: Wavmax18:: Wavmax19:: Wavmax20:: Wavmax21:: Wavmax22:: Wavmax23:: Wavmax24::Slit_num::Exp_time::JD1::JD2:: SpectSampling
 sql.columndesc.cds_cat=Observatory::Telescope::Orbit::InstrumentType::SamplingMethod::DataType::ObservationMode::DomainType::EnergyRegime::PhysicalParam::Contact::Instrument::Date_obs::Date_end::Filename::Sci_Obj::Object::Obj_ID::Obs_prog::CoordSystem::LocationX::LocationY::CoordinateNameX::CoordinateNameY::CoordinateNameW::SpatialSamplingX::SpatialSamplingY::SpatialSamplingLAM1::SpatialSamplingLAM2::SpatialSamplingLAM3::SpatialSamplingLAM4::AreaCoveredDX::AreaCoveredDY::Naxis1::Naxis2::Naxis3::Naxis4:: Filter1:: Filter2:: Filter3:: Filter4:: Filter5:: Filter6:: Filter7:: Filter8:: Filter9:: Filter10:: Filter11:: Filter12:: Filter13:: Filter14:: Filter15:: Filter16:: Filter17:: Filter18:: Filter19:: Filter20:: Filter21:: Filter22:: Filter23:: Filter24:: Wavmin1:: Wavmin2:: Wavmin3:: Wavmin4:: Wavmin5:: Wavmin6:: Wavmin7:: Wavmin8:: Wavmin9:: Wavmin10:: Wavmin11:: Wavmin12:: Wavmin13:: Wavmin14:: Wavmin15:: Wavmin16:: Wavmin17:: Wavmin18:: Wavmin19:: Wavmin20:: Wavmin21:: Wavmin22:: Wavmin23:: Wavmin24:: Wavmax1:: Wavmax2:: Wavmax3:: Wavmax4:: Wavmax5:: Wavmax6:: Wavmax7:: Wavmax8:: Wavmax9:: Wavmax10:: Wavmax11:: Wavmax12:: Wavmax13:: Wavmax14:: Wavmax15:: Wavmax16:: Wavmax17:: Wavmax18:: Wavmax19:: Wavmax20:: Wavmax21:: Wavmax22:: Wavmax23:: Wavmax24::Slit_num::Exp_time::JD1::JD2:: SpectSampling
@@ -89,7 +89,7 @@ sql.query.time.constraint.sxt_cat=Date_obs>='[:kwstartdate:]' AND Date_end<='[:k
 sql.query.instr.constraint.sxt_cat=
 sql.query.coordinates.constraint.sxt_cat=
 sql.query.orderby.constraint.sxt_cat=
-sql.query.maxrecord.constraint.sxt_cat=1000
+sql.query.maxrecord.constraint.sxt_cat=10000
 
 sql.columnnames.sxt_cat=Observatory::Telescope::Instrument::Orbit::InstrumentType::SamplingMethod::DataType::ObservationMode::DomainType::EnergyRegime::Campaign::PhysicalParam::Contact::Date_obs::Date_end::Sci_Obj::Filename::CoordSystem::LocationX::LocationY::CoordinateNameX::CoordinateNameY::CoordinateNameW::SpatialSamplingX::SpatialSamplingY::AreaCoveredDX::AreaCoveredDY::Naxis1::Naxis2::Naxis3::SpectSampling::Filter::JD1::JD2
 sql.columndesc.sxt_cat=Observatory::Telescope::Instrument::Orbit::InstrumentType::SamplingMethod::DataType::ObservationMode::DomainType::EnergyRegime::Campaign::PhysicalParam::Contact::Date_obs::Date_end::Sci_Obj::Filename::CoordSystem::LocationX::LocationY::CoordinateNameX::CoordinateNameY::CoordinateNameW::SpatialSamplingX::SpatialSamplingY::AreaCoveredDX::AreaCoveredDY::Naxis1::Naxis2::Naxis3::SpectSampling::Filter::JD1::JD2
@@ -100,7 +100,7 @@ sql.query.time.constraint.trace_cat=Date_obs>='[:kwstartdate:]' AND Date_end<='[
 sql.query.instr.constraint.trace_cat=
 sql.query.coordinates.constraint.trace_cat=
 sql.query.orderby.constraint.trace_cat=
-sql.query.maxrecord.constraint.trace_cat=1000
+sql.query.maxrecord.constraint.trace_cat=10000
 
 sql.columnnames.trace_cat=Observatory::Telescope::Instrument::Orbit::InstrumentType::SamplingMethod::DataType::ObservationMode::DomainType::EnergyRegime::Campaign::PhysicalParam::Contact::Date_obs::Date_end::Sci_Obj::CoordSystem::LocationX::LocationY::CoordinateNameX::CoordinateNameY::CoordinateNameW::SpatialSamplingX::SpatialSamplingY::AreaCoveredDX::AreaCoveredDY::Naxis1::Naxis2::Naxis3::SpectSampling::Filter::JD1::JD2
 sql.columndesc.trace_cat=Observatory::Telescope::Instrument::Orbit::InstrumentType::SamplingMethod::DataType::ObservationMode::DomainType::EnergyRegime::Campaign::PhysicalParam::Contact::Date_obs::Date_end::Sci_Obj::CoordSystem::LocationX::LocationY::CoordinateNameX::CoordinateNameY::CoordinateNameW::SpatialSamplingX::SpatialSamplingY::AreaCoveredDX::AreaCoveredDY::Naxis1::Naxis2::Naxis3::SpectSampling::Filter::JD1::JD2

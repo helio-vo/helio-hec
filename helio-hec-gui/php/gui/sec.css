@@ -1,0 +1,7 @@
+BODY {font-family:helvetica; font-size:11pt; background-color:#fffff0; color:#000000}
+H1 {color: #FF0000}
+TABLE {font-size:10pt; color:#000000}
+TR.head {color:#000000; background-color:#ffffff}
+A:link, A:visited {text-decoration:underline; color:#202020}
+A:hover {text-decoration:underline; color:#ff0000}
+
