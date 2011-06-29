@@ -1,0 +1,4 @@
+#! /bin/bash
+/var/www/hec/hec_loader.sh
+
+#cp 000hec /etc/cron.daily
