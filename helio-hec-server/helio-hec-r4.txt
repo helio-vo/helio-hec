@@ -1,0 +1,1364 @@
+
+jdbc.driver=org.postgresql.Driver
+jdbc.url=jdbc:postgresql://localhost/hec
+jdbc.user=postgres
+jdbc.password=postgres
+
+
+sql.query.time.constraint.goes_xray_flare=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.goes_xray_flare=
+sql.query.coordinates.constraint.goes_xray_flare= 
+sql.query.orderby.constraint.goes_xray_flare=
+sql.query.maxrecord.constraint.goes_xray_flare=20000
+sql.columnnames.goes_xray_flare=goes_id::ntime_start::time_start::time_peak::time_end::ntime_end::nar::latitude::longitude::long_carr::xray_class::optical_class
+sql.columndesc.goes_xray_flare=Event identification number (HEC internal number)::Adjusted start time of flare - new start time = old start time - 2x dt between start and peak::Start time of flare::Peak time of flare::End time of flare::Adjusted end time of flare - new start time = old end time - 7x dt between end and peak::NOAA active region index::Heliographic latitude of event::Stonyhurst longitude of active region::Carrington longitude of active region::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of Watts/sq meter.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Average optical importance of flare -- a measurement of flare size and brilliance.  (See the 'Optical Class' in the HEC glossary for the specification of this field)
+sql.columnucd.goes_xray_flare= :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.goes_xray_flare=
+
+
+
+sql.query.time.constraint.halpha_flares_event=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.halpha_flares_event=
+sql.query.coordinates.constraint.halpha_flares_event= 
+sql.query.orderby.constraint.halpha_flares_event=
+sql.query.maxrecord.constraint.halpha_flares_event=20000
+sql.columnnames.halpha_flares_event=ha_id::time_start::time_peak::time_end::nar::latitude::longitude::long_carr::xray_class::optical_class
+sql.columndesc.halpha_flares_event=Event identification number (HEC internal number)::Earliest Universal Time of flare onset reported within a group.::Earliest Universal Time within group that flare reached maximum brightness::Average of flare end times::NOAA active region index::Average heliographic latitude marking the mean center of mass of the flaring region at its time of maximum brightness.::Average heliographic longitude of active region marking the mean center of mass of the flaring region at its time of maximum brightness.::Carrington longitude of the flaring region.::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of Watts/sq meter.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Average optical importance of flare -- a measurement of flare size and brilliance.  (See the 'Optical Class' in the HEC glossary for the specification of this field)
+sql.columnucd.halpha_flares_event= :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.halpha_flares_event=
+
+
+
+sql.query.time.constraint.sgas_event=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.sgas_event=
+sql.query.coordinates.constraint.sgas_event= 
+sql.query.orderby.constraint.sgas_event=
+sql.query.maxrecord.constraint.sgas_event=20000
+sql.columnnames.sgas_event=sgs_id::ntime_start::time_start::time_peak::time_end::ntime_end::nar::latitude::longitude::long_carr::xray_class::optical_class::radio_245mhz::radio_10cm::radio_sweep_ii::radio_sweep_iv::swf
+sql.columndesc.sgas_event=Event identification number (HEC internal number)::Adjusted start time of the event. This is an alternative start time that has been calculated by HELIO.::Start time::Peak time::End time::Adjusted end time of the event. This is an alternative end time calculated by HELIO.::NOAA active region index::Heliographic latitude of the active region::Stonyhurst longitude of active region::Carrington longitude of active region::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of Watts/sq meter.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Average optical importance of flare -- a measurement of flare size and brilliance.  (See the 'Optical Class' in the HEC glossary for the specification of this field)::::::Type II sweep frequency::Type IV sweep frequency::Shortwave fade
+sql.columnucd.sgas_event= :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.sgas_event=
+
+
+
+sql.query.time.constraint.lasco_cme_cat=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.lasco_cme_cat=
+sql.query.coordinates.constraint.lasco_cme_cat= 
+sql.query.orderby.constraint.lasco_cme_cat=
+sql.query.maxrecord.constraint.lasco_cme_cat=20000
+sql.columnnames.lasco_cme_cat=lcc_id::time_start::time_end::pa_central::pa_measure::pa_width::linear_speed::speed2_init::speed2_final::speed2_20r::acceleration
+sql.columndesc.lasco_cme_cat=Event identification number (HEC internal number)::Start time - the time of first appearance in the LASCO/C2 field of view.::End time::Central position angle for the CME::The position angle at which the height-time measurements are made (MPA for measurement position angle).::Position angle width of the CME::the linear speed obtained by fitting a straight line to the height-time measurements made at the fastest section of CMEs::quadratic speed obtained by fitting a parabola and evaluating the speed at the initial time of the event::quadratic speed obtained by fitting a parabola and evaluating the speed at the time of final height measurement::quadratic speed obtained by fitting a parabola and evaluating the speed at 20 solar radii::Acceleration is obtained from the quadratic fit to the height-time measurements
+sql.columnucd.lasco_cme_cat= :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.lasco_cme_cat=
+
+
+
+sql.query.time.constraint.hi_cme_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.hi_cme_list=
+sql.query.coordinates.constraint.hi_cme_list= 
+sql.query.orderby.constraint.hi_cme_list=
+sql.query.maxrecord.constraint.hi_cme_list=20000
+sql.columnnames.hi_cme_list=hi_cme_list_id::time_start::time_end::instrument::data_gap::cme_type::brightness::pa_central::pa_width::time_onset::not_in_list::linear_speed::longitude::longitude_err::time_1au::description
+sql.columndesc.hi_cme_list=Event identification number (HEC internal number)::Start time - approximate time that CME enters HI field of view.::End time - approximate time CME front leaves HI field of view.::This is the ID of the instrument on STEREO that was used to identify the event.::Indication of a data gap during the event::Classification of the CME type::Classification of the CME brightness::Central position angle for the observed CME::Position angle width of the CME::Estimated onset time for the event::Flag to indicate if the event is in the HI solar event list::Fitted CME speed.::Fitted Stonyhurst longitude of the event::Error in the fitted longitude measurement::Time at which the CME was expected to reach 1 AU based on fitted time elongation profile::Description of the CME feature
+sql.columnucd.hi_cme_list= :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.hi_cme_list=
+
+
+
+sql.query.time.constraint.noaa_proton_event=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.noaa_proton_event=
+sql.query.coordinates.constraint.noaa_proton_event= 
+sql.query.orderby.constraint.noaa_proton_event=
+sql.query.maxrecord.constraint.noaa_proton_event=20000
+sql.columnnames.noaa_proton_event=npe_id::time_start::time_peak::nar::latitude::longitude::proton_flux::assoc_cme::assoc_flare_pk::xray_class::optical_class
+sql.columndesc.noaa_proton_event=Event identification number (HEC internal number)::Start time - the first of 3 consecutive data points with fluxes greater than or equal to 10 pfu.::Peak time::The number for the closest NOAA active region index::Latitude of the associated active region::Longitude of the associated active region::Proton fluxes are integral 5-minute averages for energies > 10 MeV::ID of a SOHO/LASCO identified CME associated with this event (available since 1996 only).::The time of the peak in the associated X-ray flare.::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of Watts/sq meter.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Average optical importance of flare -- a measurement of flare size and brilliance.  (See the 'Optical Class' in the HEC glossary for the specification of this field)
+sql.columnucd.noaa_proton_event= :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.noaa_proton_event=
+
+
+
+sql.query.time.constraint.bas_magnetic_storms=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.bas_magnetic_storms=
+sql.query.coordinates.constraint.bas_magnetic_storms= 
+sql.query.orderby.constraint.bas_magnetic_storms=
+sql.query.maxrecord.constraint.bas_magnetic_storms=20000
+sql.columnnames.bas_magnetic_storms=bms_id::time_start::time_peak::time_end::dst::hduration
+sql.columndesc.bas_magnetic_storms=Event identification number (HEC internal number)::Start time of a geo-effective storm determined by a drop in the Dst.::The time of maximum enhancement of the ring-current during a geo-effective storm as characterised by the maximum (negative) deviation of the Dst index.::End associated with the end of a geo-effective storm as characterised by the dst index returning to its nominal value.::A measure of the strength of a geo-effective storm as characterised by the maximum negative deviation in the Dst ring current index.::The duration of the event measured in hours.
+sql.columnucd.bas_magnetic_storms= :: :: :: :: :: 
+sql.columnutypes.bas_magnetic_storms=
+
+
+
+sql.query.time.constraint.gle_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.gle_list=
+sql.query.coordinates.constraint.gle_list= 
+sql.query.orderby.constraint.gle_list=
+sql.query.maxrecord.constraint.gle_list=20000
+sql.columnnames.gle_list=gle_id::time_start::time_end::rem
+sql.columndesc.gle_list=Event identification number (HEC internal number)::Start time of event.::End time of event.::Comments
+sql.columnucd.gle_list= :: :: :: 
+sql.columnutypes.gle_list=
+
+
+
+sql.query.time.constraint.aastar_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.aastar_list=
+sql.query.coordinates.constraint.aastar_list= 
+sql.query.orderby.constraint.aastar_list=
+sql.query.maxrecord.constraint.aastar_list=20000
+sql.columnnames.aastar_list=aastar_id::time_start::time_peak::time_end::hduration::aastar_max::aastar_ave::aastar_sum
+sql.columndesc.aastar_list=Event identification number (HEC internal number)::Start time of onset of magnetic storm.::Time of maximum AA*.::End time of the magnetic storm.::Duation of event in hours::Maximum AA* during the event.::Average AA* value over the event.::AA* sum.
+sql.columnucd.aastar_list= :: :: :: :: :: :: :: 
+sql.columnutypes.aastar_list=
+
+
+
+sql.query.time.constraint.apstar_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.apstar_list=
+sql.query.coordinates.constraint.apstar_list= 
+sql.query.orderby.constraint.apstar_list=
+sql.query.maxrecord.constraint.apstar_list=20000
+sql.columnnames.apstar_list=apstar_id::time_start::time_peak::time_end::hduration::apstar_max::apstar_ave::apstar_sum
+sql.columndesc.apstar_list=Event identification number (HEC internal number)::Start time of onset of magnetic storm.::Time of maximum Ap*.::End time of magnetic storm.::Duation of magnetic storm in hours.::Maximum Ap* during the event.::Average Ap* value over the event.::Ap* sum.
+sql.columnucd.apstar_list= :: :: :: :: :: :: :: 
+sql.columnutypes.apstar_list=
+
+
+
+sql.query.time.constraint.ssc_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.ssc_list=
+sql.query.coordinates.constraint.ssc_list= 
+sql.query.orderby.constraint.ssc_list=
+sql.query.maxrecord.constraint.ssc_list=20000
+sql.columnnames.ssc_list=ssc_id::time_start::nstn_a::nstn_b::nstn_c::nsi
+sql.columndesc.ssc_list=Event identification number (HEC internal number)::Begin time for sudden storm commencement.::Number of stations reporting an A event. Letter A -- denotes very remarkable event observed.::Number of stations reporting a B event. Letter B -- denotes fair::Number of stations reporting a C event. Letter C -- denotes very poor::Number of stations reporting an "si" event. Letters "si" -- sudden impulse event (sudden magnetic  change which could not be classified as ssc (sudden storm commencement)
+sql.columnucd.ssc_list= :: :: :: :: :: 
+sql.columnutypes.ssc_list=
+
+
+
+sql.query.time.constraint.forbush_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.forbush_list=
+sql.query.coordinates.constraint.forbush_list= 
+sql.query.orderby.constraint.forbush_list=
+sql.query.maxrecord.constraint.forbush_list=20000
+sql.columnnames.forbush_list=forbush_id::time_start::sc::fe_magn::kpmax::dstmin::bimf_m::vsw_max::axy_min::az_r::tmin::dmin::tdmn::aftob::tilt
+sql.columndesc.forbush_list=Event identification number (HEC internal number)::Start time::Flag indicating if the onset of the event corresponds ("sc") to a Storm Sudden Commencement::Magnitude of 10 GV Cosmic Ray variation (in fact::Maximum of the Kp-index in the associated geomagnetic deisturbance::Minimum of the Dst-index in the associated geomagnetic disturbance::Maximum of the magnitude of the Interplanetary Magnetic Field in the associated solar wind disturbance::Maximum of the solar wind speed in the associated solar wind disturbance::Maximum of the equatorial component of anisotropy during the Forbush Decrease.::Range of change for the north-south component of anisotropy during the Forbush Decrease::Time from onset to the Forbush Decrease minimum::Maximum decrement between hourly counts of 10 GV Cosmic Rays::Time from the onset to the maximum decrement in the 10 GV Cosmic Rays::Ratio of the variation in the 10 GV cosmic rays to the maximum of the IMF intensity in the associated solar wind distrubance (fe_magn/bimf_m)::Heliospheric current sheet tilt for day of the event
+sql.columnucd.forbush_list= :: :: :: :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.forbush_list=
+
+
+
+sql.query.time.constraint.solar_wind_event=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.solar_wind_event=
+sql.query.coordinates.constraint.solar_wind_event= 
+sql.query.orderby.constraint.solar_wind_event=
+sql.query.maxrecord.constraint.solar_wind_event=20000
+sql.columnnames.solar_wind_event=solar_wind_event_id::sw_list::time_start::time_end::bzn::bzs::eyc::hss::imc::ir::is_::lss::pc::sbc::misc::w::i8::ace::rem
+sql.columndesc.solar_wind_event=Event identification number (HEC internal number)::The specific event category that the fature has been associated with::Start time::End time::Strong northward Bz for extended period  Interplanetary magnetic B-field North (GSM coordinate system)  A B-field North event is defined as an extended period of magnetic field oriented northward::Strong southward Bz for extended period  Interplanetary magnetic B-field South (GSM coordinate system)  A B-field South event is defined as an extended period of magnetic field oriented southward::Change in Ey=VxBz  Change of the "y" component of the Interplanetary Electric Field  Included are the observed events characterized by a sudden sign change and large amplitude variation in Ey (Ey=Bz*Vx) (the dawn to dusk component of the interplanetary electric field.::Very high speed stream for extended period  High Speed Stream An HSS is defined as a SW flow moving outward from the Sun with a high speed (usually a bulk velocity Vb great than 500 Km/sec)::Interplanetary magnetic cloud  An Interplanetary Magnetic Cloud is defined as (1) a smooth variation of the magnetic field direction::Interaction Region  Region of approximately half a day or longer showing unusually high magnetic and plasma pressures::Interplanetary shock  Interplanetary Fast Shock An IS is defined in term of simultaneous changes in the bulk velocity (Vb) of the SW ions::Very low speed stream for extended period::Pressure change  These are PCs other than IS. PC is defined as the sudden or gradual change (i.e. over a short period of time; usually less than an hour) in the type of the SW pressure (+ or -)::Interplanetary sector boundary crossings (usually in a set)  Sector Boundaries Crossing::Miscelaneous::Feature seen on the WIND spacecraft::Feature seen on the IMP-8 spacecraft::Feature seen on the ACE spacecraft::Comment about the observed solar wind feature.
+sql.columnucd.solar_wind_event= :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.solar_wind_event=
+
+
+
+sql.query.time.constraint.yohkoh_flare_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.yohkoh_flare_list=
+sql.query.coordinates.constraint.yohkoh_flare_list= 
+sql.query.orderby.constraint.yohkoh_flare_list=
+sql.query.maxrecord.constraint.yohkoh_flare_list=20000
+sql.columnnames.yohkoh_flare_list=yfc_id::time_start::time_peak::time_end::nar::latitude::longitude::xray_class::optical_class::hxt_lo::hxt_m1::hxt_m2::hxt_hi::rem::yoh_event
+sql.columndesc.yohkoh_flare_list=Event identification number (HEC internal number)::Start time of flare.::Time of flare maximum.::End time of flare.::NOAA active region index::Heliographic latitude.::Heliographic longitude.::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of Watts/sq meter.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Average optical importance of flare -- a measurement of flare size and brilliance.  (See the 'Optical Class' in the HEC glossary for the specification of this field)::L-band (13.9 - 22.7 keV) peak count rate in cts/s/SC (with background of ~ 2 cts/s/SC)::M1-band (22.7 - 32.7 keV) peak count rate in cts/s/SC (with background of ~ 1 cts/s/SC)::M2-band (32.7 - 52.7 keV) peak count rate in cts/s/SC (with background of ~ 1 cts/s/SC).::H-band (52.7 - 92.8 keV) peak count rate in cts/s/SC (with background of ~ 9 cts/s/SC).::Comments::Yohkoh HXT event number.
+sql.columnucd.yohkoh_flare_list= :: :: :: :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.yohkoh_flare_list=
+
+
+
+sql.query.time.constraint.hessi_flare=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.hessi_flare=
+sql.query.coordinates.constraint.hessi_flare= 
+sql.query.orderby.constraint.hessi_flare=
+sql.query.maxrecord.constraint.hessi_flare=20000
+sql.columnnames.hessi_flare=hef_id::time_start::time_peak::time_end::nar::x_arcsec::y_arcsec::radial_arcsec::duration::count_sec_peak::total_count::energy_kev::flare_number
+sql.columndesc.hessi_flare=Event identification number (HEC internal number)::Start time determined from when the flux rate in the 6-12 keV band exceeds 3*sigma above the background level calcualted on a 60s running average.::The time of the peak flux for the flare in the energy range greater than 6 keV::End time determined from when the flux rate in the 6-12 keV band drops below 3*sigma of the background level calcualted on a 60s running average.::The number for the closest NOAA active region index::Position in arcsecs from centre of the sun.::Position in arcsecs from centre of the sun.::Radial distance in arcsecs from the centre of the Sun.::Duration of the flare in seconds::Peak counts/second in energy range 12-25 keV::Total counts in energy range 12-25 keV integrated over duration of flare summed over all subcollimators::The highest energy band in which the flare was observed.::An ID number
+sql.columnucd.hessi_flare= :: :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.hessi_flare=
+
+
+
+sql.query.time.constraint.kso_flare=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.kso_flare=
+sql.query.coordinates.constraint.kso_flare= 
+sql.query.orderby.constraint.kso_flare=
+sql.query.maxrecord.constraint.kso_flare=20000
+sql.columnnames.kso_flare=kso_id::time_start::time_start_m::time_peak::time_peak_m::time_end::time_end_m::latitude::longitude::long_carr::optical_class
+sql.columndesc.kso_flare=Event identification number (HEC internal number)::Observed beginning of flare.::Time modifier:  E  means  Earlier                              U means  Uncertain                              D means  Later::Observed maximum of flare.::Time modifier:  E  means  Earlier                              U means  Uncertain                              D means  Later::Observed end of the flare.::Time modifier:  E  means  Earlier                              U means  Uncertain                              D means  Later::Heliographic latitude of flare::Heliographic longitude of flare::Carrington longitude of active region.::Average optical importance of flare -- a measurement of flare size and brilliance.  (See the 'Optical Class' in the HEC glossary for the specification of this field)
+sql.columnucd.kso_flare= :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.kso_flare=
+
+
+
+sql.query.time.constraint.eit_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.eit_list=
+sql.query.coordinates.constraint.eit_list= 
+sql.query.orderby.constraint.eit_list=
+sql.query.maxrecord.constraint.eit_list=20000
+sql.columnnames.eit_list=eit_id::time_start::previmg_time::img_time::quality::latitude::longitude::speed_planeofsky::speed_proj::pa_central::description
+sql.columndesc.eit_list=Event identification number (HEC internal number)::Start time of event (same as Image Time)::Time of previous image.::Image Time.::Quality Rating:     Q0: Very low reliability;     Q1: Low reliability;     Q2: Low reliability;     Q3: Intermediate reliability;    Q4: High reliability;     Q5: Nearly definite reliability;::Heliographic Latitude::Heliographic Longitude. (A source longitude of 90 or –90 indicates that the apparent source of the wave was either at::Speed of wave-front on the plane of the sky.::Speed of wave front assuming the wave travels in a great circle along the Sun's photosphere.::Direction of Measurement on the photosphere expressed as a position angle (measured N through E) in relation to the Sun-Earth line..::Comments.
+sql.columnucd.eit_list= :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.eit_list=
+
+
+
+sql.query.time.constraint.yohkoh_sxt_trace_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.yohkoh_sxt_trace_list=
+sql.query.coordinates.constraint.yohkoh_sxt_trace_list= 
+sql.query.orderby.constraint.yohkoh_sxt_trace_list=
+sql.query.maxrecord.constraint.yohkoh_sxt_trace_list=20000
+sql.columnnames.yohkoh_sxt_trace_list=yst_id::link::time_start_sxt::time_end_sxt::xray_class::n_img::x_arcsec_sxt::y_arcsec_sxt::time_start::time_end::time_sxt_trace::wl_dom::x_arcsec::y_arcsec::n171::n195::n284::n1600::n1216::nwl
+sql.columndesc.yohkoh_sxt_trace_list=Event identification number (HEC internal number)::Link to the SXT PFI file at ISAS.::Time of first flare mode SXT image.::Time of last flare mode SXT image.::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of Watts/sq meter.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Number of flare mode SXT images.::X coordinate (in arcsec from disk center) of the center of the 6th SXT flare mode image. Picked up the 6th because SXT sometimes changes the field of view after the first flare mode image.::Y coordinate (in arcsec from disk center) of the center of the 6th SXT flare mode image. Picked up the 6th because SXT sometimes changes the field of view after the first flare mode image.::First TRACE image in the period (time_start_sxt - 30min::Last TRACE image in the period (time_start_sxt - 30min::Time of the TRACE image closest to time_start_sxt.::Wavelength at which the greatest number of TRACE images is taken.::X coordinate (in arcsec from disk center) of the center of the TRACE image at time_sxt_trace.::Y coordinate (in arcsec from disk center) of the center of the TRACE image at time_sxt_trace.::Number of TRACE images at 171 Angstroms.::Number of TRACE images at 195 Angstroms.::Number of TRACE images at 284 Angstroms.::Number of TRACE images at 1600 Angstroms.::Number of TRACE images at 1216 Angstroms.::Number of TRACE White Light images.
+sql.columnucd.yohkoh_sxt_trace_list= :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.yohkoh_sxt_trace_list=
+
+
+
+sql.query.time.constraint.lasco_cme_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.lasco_cme_list=
+sql.query.coordinates.constraint.lasco_cme_list= 
+sql.query.orderby.constraint.lasco_cme_list=
+sql.query.maxrecord.constraint.lasco_cme_list=20000
+sql.columnnames.lasco_cme_list=lcl_id::time_start::pa_central::description
+sql.columndesc.lasco_cme_list=Event identification number (HEC internal number)::Start time of event.::Central position angle.::Short description of event.
+sql.columnucd.lasco_cme_list= :: :: :: 
+sql.columnutypes.lasco_cme_list=
+
+
+
+sql.query.time.constraint.hi_event=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.hi_event=
+sql.query.coordinates.constraint.hi_event= 
+sql.query.orderby.constraint.hi_event=
+sql.query.maxrecord.constraint.hi_event=20000
+sql.columnnames.hi_event=hi_event_id::date::instrument::speed::speed_err::longitude::longitude_err::time_start::time_1au
+sql.columndesc.hi_event=Event identification number (HEC internal number)::Date that event appears in H12 cameras field of view expressed as YYYY-MM-DD.::Instrument: STEREO_A__HI or  STEREO_B__HI.::Velocity of the event.::Uncertainty in velocity.::Longitude from S-E line.::Uncertainty in longitude from S-E line.::Estimated launch time of event (assuming instant acceleration).::Predicted time of arrival at 1 AU.
+sql.columnucd.hi_event= :: :: :: :: :: :: :: :: 
+sql.columnutypes.hi_event=
+
+
+
+sql.query.time.constraint.wind_imf_mag_cloud=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.wind_imf_mag_cloud=
+sql.query.coordinates.constraint.wind_imf_mag_cloud= 
+sql.query.orderby.constraint.wind_imf_mag_cloud=
+sql.query.maxrecord.constraint.wind_imf_mag_cloud=20000
+sql.columnnames.wind_imf_mag_cloud=wind_imf_mag_cloud_id::time_start::doy_start::time_end::doy_end::code::quality
+sql.columndesc.wind_imf_mag_cloud=Event identification number (HEC internal number)::Estimated start time of magnetic cloud (using the magnetic field model of Lepping et al.::Day of the year that the magnetic cloud starts.::Estimated end time of the magnetic cloud (using the magnetic field model of Lepping et al.::Day of the year at which the magnetic cloud ends.::Code number for identification.::Quality: 1 = Excellent
+sql.columnucd.wind_imf_mag_cloud= :: :: :: :: :: :: 
+sql.columnutypes.wind_imf_mag_cloud=
+
+
+
+sql.query.time.constraint.wind_imf_bow_shock=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.wind_imf_bow_shock=
+sql.query.coordinates.constraint.wind_imf_bow_shock= 
+sql.query.orderby.constraint.wind_imf_bow_shock=
+sql.query.maxrecord.constraint.wind_imf_bow_shock=20000
+sql.columnnames.wind_imf_bow_shock=wind_imf_bow_shock_id::last_bs_crossing::last_bs_flag::first_hr_kept::first_hr_flag::last_hr_kept::last_hr_flag::first_bs_crossing::first_bs_flag::time_start::time_end
+sql.columndesc.wind_imf_bow_shock=Event identification number (HEC internal number)::The time of the last BS crossing as the spacecraft was leaving the Earth's magnetosheath.::A flag to indicate one of the following for the last BS crossing time:     #: First data point in our data set     *: BS occurred in data gap::The first full hour which has only unshocked solar wind data in it.::A flag to indicate one of the following for the last BS crossing time:     +: Strong foreshock activity before BS also excluded::The last full hour which still contains interplanetary magnetic field data.::A flag to indicate one of the following for the last BS crossing time:     +: Strong foreshock activity before BS also excluded::The time of the 1st BS crossing on the way into the Earth magnetosphere.::A flag to indicate one of the following for the last BS crossing time:     #: First data point in our data set     *: BS occurred in data gap::Start time set as the last BS crossing time.::End time set as the time of the 1st BS crossing on the way into the Earth magnetosphere.
+sql.columnucd.wind_imf_bow_shock= :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.wind_imf_bow_shock=
+
+
+
+sql.query.time.constraint.istp_solar_wind_cat=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.istp_solar_wind_cat=
+sql.query.coordinates.constraint.istp_solar_wind_cat= 
+sql.query.orderby.constraint.istp_solar_wind_cat=
+sql.query.maxrecord.constraint.istp_solar_wind_cat=20000
+sql.columnnames.istp_solar_wind_cat=istp_solar_wind_cat_id::time_start::time_end::category
+sql.columndesc.istp_solar_wind_cat=Event identification number (HEC internal number)::Start time of event.::End time of event.::Category of event - one or more of the following features separated by a /.  BzN  - Interplanetary magnetic B-field North (GSM coordinate system)   A B-field North event is defined as an extended period of magnetic field oriented northward Presently the catalog includes only those BzN events that extend for periods longer than 4 hours
+sql.columnucd.istp_solar_wind_cat= :: :: :: 
+sql.columnutypes.istp_solar_wind_cat=
+
+
+
+sql.query.time.constraint.=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.=
+sql.query.coordinates.constraint.= 
+sql.query.orderby.constraint.=
+sql.query.maxrecord.constraint.=20000
+sql.columnnames.=based in the observations of the sudden change in the B-field and plasma quantities that within the resolution of the available KPs can be interpreted as being consistent with an interplanetary shock.   LSS - Low Speed Stream  Only those periods of LSS when the Vb less than 330Km/sec are included.  An occassional feature of a LSS is the presence of multiple SBCs (see def. Below)
+sql.columndesc.=and PC disruptions.   PC - Pressure Change  These are PCs other than IS. PC is defined as the sudden or gradual change (i.e. Over a short period of time; usually less than an hour) in the type of the SW pressure (+ or -)
+sql.columnucd.= 
+sql.columnutypes.=
+
+
+
+sql.query.time.constraint.istp_solar_wind_cat=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.istp_solar_wind_cat=
+sql.query.coordinates.constraint.istp_solar_wind_cat= 
+sql.query.orderby.constraint.istp_solar_wind_cat=
+sql.query.maxrecord.constraint.istp_solar_wind_cat=20000
+sql.columnnames.istp_solar_wind_cat=spacecraft::rem
+sql.columndesc.istp_solar_wind_cat=Spacecraft - can be one or more of 8 (for IMP-8)::Comments
+sql.columnucd.istp_solar_wind_cat= :: 
+sql.columnutypes.istp_solar_wind_cat=
+
+
+
+sql.query.time.constraint.soho_pm_ips=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.soho_pm_ips=
+sql.query.coordinates.constraint.soho_pm_ips= 
+sql.query.orderby.constraint.soho_pm_ips=
+sql.query.maxrecord.constraint.soho_pm_ips=20000
+sql.columnnames.soho_pm_ips=soho_pm_ips_id::time_start::doy_start::zone
+sql.columndesc.soho_pm_ips=Event identification number (HEC internal number)::Start time of shock.::Day of year of start of shock.::Zone of shock
+sql.columnucd.soho_pm_ip_shock=meta.record::time.start::meta.code.class::meta.note 
+sql.columnutypes.soho_pm_ip_shock=::helio:time_period.time_start::helio:solar_wind.ip_shock_zone::helio:comment 
+votable.query.info.soho_pm_ip_shock=TABLE_NAME,soho_pm_ip_shock
+
+
+
+sql.query.time.constraint.=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.=
+sql.query.coordinates.constraint.= 
+sql.query.orderby.constraint.=
+sql.query.maxrecord.constraint.=20000
+sql.columnnames.=then one can estimate that less than 10% of shocks of sufficient strength to reach Zone category 2 or higher are undetected by Shockspotter.
+sql.columndesc.=
+sql.columnucd.= 
+sql.columnutypes.=
+
+
+
+sql.query.time.constraint.soho_pm_ips=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.soho_pm_ips=
+sql.query.coordinates.constraint.soho_pm_ips= 
+sql.query.orderby.constraint.soho_pm_ips=
+sql.query.maxrecord.constraint.soho_pm_ips=20000
+sql.columnnames.soho_pm_ips=rem
+sql.columndesc.soho_pm_ips=Comments.
+sql.columnucd.soho_pm_ips= 
+sql.columnutypes.soho_pm_ips=
+
+
+
+sql.query.time.constraint.wind_imf_ips=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.wind_imf_ips=
+sql.query.coordinates.constraint.wind_imf_ips= 
+sql.query.orderby.constraint.wind_imf_ips=
+sql.query.maxrecord.constraint.wind_imf_ips=20000
+sql.columnnames.wind_imf_ips=wind_imf_ips_id::time_start
+sql.columndesc.wind_imf_ips=Event identification number (HEC internal number)::Start time of shock.
+sql.columnucd.wind_imf_ips= :: 
+sql.columnutypes.wind_imf_ips=
+
+
+
+sql.query.time.constraint.wind_solar_wind_times=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.wind_solar_wind_times=
+sql.query.coordinates.constraint.wind_solar_wind_times= 
+sql.query.orderby.constraint.wind_solar_wind_times=
+sql.query.maxrecord.constraint.wind_solar_wind_times=20000
+sql.columnnames.wind_solar_wind_times=wind_solar_wind_times_id::time_start::time_end
+sql.columndesc.wind_solar_wind_times=Event identification number (HEC internal number)::Start time for spacecraft in the solar wind.::End time for spacecraft in the solar wind.
+sql.columnucd.wind_solar_wind_times= :: :: 
+sql.columnutypes.wind_solar_wind_times=
+
+
+
+sql.query.time.constraint.imp8_solar_wind_times=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.imp8_solar_wind_times=
+sql.query.coordinates.constraint.imp8_solar_wind_times= 
+sql.query.orderby.constraint.imp8_solar_wind_times=
+sql.query.maxrecord.constraint.imp8_solar_wind_times=20000
+sql.columnnames.imp8_solar_wind_times=imp8_solar_wind_times_id::time_start::time_end
+sql.columndesc.imp8_solar_wind_times=Event identification number (HEC internal number)::Start time for spacecraft in the solar wind.::End time for spacecraft in the solar wind.
+sql.columnucd.imp8_solar_wind_times= :: :: 
+sql.columnutypes.imp8_solar_wind_times=
+
+
+
+sql.query.time.constraint.tsrs_event_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.tsrs_event_list=
+sql.query.coordinates.constraint.tsrs_event_list= 
+sql.query.orderby.constraint.tsrs_event_list=
+sql.query.maxrecord.constraint.tsrs_event_list=20000
+sql.columnnames.tsrs_event_list=tsrs_event_list_id::time_start::time_peak::time_end::freq::cpp::ps::sfu_max::radio_class::rem::file
+sql.columndesc.tsrs_event_list=Event identification number (HEC internal number)::Start time of event.::Peak time of event.::End time of event.::Radio frequency of observation.::Circular polarization percentage measured at peak flux.::Polarization sense (R - Right-handed; L - Left-handed).::Maximum flux (solar flux units).::Morphological classification of the radio events based on Solar-Geophysical Data::Comments. Events that saturated the receiver are flagged as "SAT"(uration).::URL link to quick-look picture file.
+sql.columnucd.tsrs_event_list= :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.tsrs_event_list=
+
+
+
+sql.query.time.constraint.latest_gev_flare=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.latest_gev_flare=
+sql.query.coordinates.constraint.latest_gev_flare= 
+sql.query.orderby.constraint.latest_gev_flare=
+sql.query.maxrecord.constraint.latest_gev_flare=20000
+sql.columnnames.latest_gev_flare=latest_gev_flare_id::time_start::time_peak::time_end::nar::latitude::longitude::xray_class::optical_class
+sql.columndesc.latest_gev_flare=Event identification number (HEC internal number)::Start time of the flare.::Peak time of the flare.::End time of the flare.::The number for the closest NOAA active region index::Heliographic Latitude.::Heliographic Longitude.::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of Watts/sq meter.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Average optical importance of flare -- a measurement of flare size and brilliance.  (See the 'Optical Class' in the HEC glossary for the specification of this field)
+sql.columnucd.latest_gev_flare= :: :: :: :: :: :: :: :: 
+sql.columnutypes.latest_gev_flare=
+
+
+
+sql.query.time.constraint.gevloc_flares=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.gevloc_flares=
+sql.query.coordinates.constraint.gevloc_flares= 
+sql.query.orderby.constraint.gevloc_flares=
+sql.query.maxrecord.constraint.gevloc_flares=20000
+sql.columnnames.gevloc_flares=gevloc_flares_id::time_start::xray_class::loc
+sql.columndesc.gevloc_flares=Event identification number (HEC internal number)::Start time of the flare.::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of Watts/sq meter.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Derived Position of the flare in heliographic coordinates.
+sql.columnucd.gevloc_flares= :: :: :: 
+sql.columnutypes.gevloc_flares=
+
+
+
+sql.query.time.constraint.wind_waves_type_ii_burst=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.wind_waves_type_ii_burst=
+sql.query.coordinates.constraint.wind_waves_type_ii_burst= 
+sql.query.orderby.constraint.wind_waves_type_ii_burst=
+sql.query.maxrecord.constraint.wind_waves_type_ii_burst=20000
+sql.columnnames.wind_waves_type_ii_burst=wind_waves_type_ii_burst_id::time_start::time_end::freq_start::freq_end::loc::nar::xray_class::time_cme::pa_central::pa_width::speed::rem
+sql.columndesc.wind_waves_type_ii_burst=Event identification number (HEC internal number)::Start time of the type II burst.::End time of the type II burst.::Starting frequency of type II burst (kHz).::Ending frequency of type II burst (kHz).::Solar source location (Loc) of the associated eruption in heliographic coordinates. S25E16 means the latitude is 25 deg south and 16 deg east (source located in the southeast quadrant of the Sun. N denotes northern latitudes and W denotes western longitudes. Entries like SW90 indicate that the source information is not complete::NOAA active region index. If the active region number is not available or if the source region is not an active region::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of Watts/sq meter.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Time of the associated CME.::Central position angle  for non-halo CMEs.  (See the 'Central position angle' in the HEC glossary for the specification of this field)::CME width in the sky plane. Width = 360 means the CME is a fill halo. For some entries::CME speed in the sky plane (km/s).::Comments.
+sql.columnucd.wind_waves_type_ii_burst= :: :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.wind_waves_type_ii_burst=
+
+
+
+sql.query.time.constraint.waves_exp_wind_stereo=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.waves_exp_wind_stereo=
+sql.query.coordinates.constraint.waves_exp_wind_stereo= 
+sql.query.orderby.constraint.waves_exp_wind_stereo=
+sql.query.maxrecord.constraint.waves_exp_wind_stereo=20000
+sql.columnnames.waves_exp_wind_stereo=waves_exp_wind_stereo_id::identifier::time_start::time_end::freq_start::freq_end::dyn_spec::rem
+sql.columndesc.waves_exp_wind_stereo=Event identification number (HEC internal number)::An internal WAVES Experiment Type II/IV event identifier::Start time of radio burst.::End time of radio burst.::Start of frequency range measured.::End of frequency range measured.::Dynamic spectra type:  Those marked with 'S' or 'X' are standard frequency versus time dynamic spectra.  Those marked with 'F' are inverse frequency versus time::Comments -brief description of type of burst.
+sql.columnucd.waves_exp_wind_stereo= :: :: :: :: :: :: :: 
+sql.columnutypes.waves_exp_wind_stereo=
+
+
+
+
+
+sql.query.time.constraint.stereo_euvi_catalog=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.stereo_euvi_catalog=
+sql.query.coordinates.constraint.stereo_euvi_catalog= 
+sql.query.orderby.constraint.stereo_euvi_catalog=
+sql.query.maxrecord.constraint.stereo_euvi_catalog=20000
+sql.columnnames.stereo_euvi_catalog=stereo_euvi_catalog_id::id_num::time_start::time_end::loc::cadence::spacecraft::xray_class::rhessi_peak_range::rhessi_peak_count::rem::cme_event_source
+sql.columndesc.stereo_euvi_catalog=Event identification number (HEC internal number)::STEREO/EUVI event Catalogue Number.::Start time::End time::Location of event in heliographic coordinates.::Instrument cadence.::Spacecraft::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of Watts/sq meter.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Peak RHESSI energy range in which event is observed.::Counts in peak RHESSI energy range.::Comments using the following EUVI Classification:                      A=Ahead only without Behind data                      B=Behind only without Ahead data                      I=Impulsive time profile (peak in coincidence with SXR)                     P=Postflare loop or arcade (delayed emission after SXR peak)                      D=Dimming (EUV flux decreases after SXR peak)                     E=Eruptive filament                     O=Occulted for A (if flare position is east) or B (if west)                     T=Test images (or poor image quality)                     W=Waves and oscillations::CME reported by one or both of the following:   L=LASCO/SOHO  S=SECCHI/Cor-1
+sql.columnucd.stereo_euvi_catalog= :: :: :: :: :: :: :: :: :: :: ::
+sql.columnutypes.stereo_euvi_catalog=
+
+
+
+
+sql.query.time.constraint.srs_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.srs_list=
+sql.query.coordinates.constraint.srs_list= 
+sql.query.orderby.constraint.srs_list=
+sql.query.maxrecord.constraint.srs_list=20000
+sql.columnnames.srs_list=srs_id::time_start::nar::latitude::longitude::long_carr::area::zurich_class::p_value::c_value::long_extent::n_spots::mag_class
+sql.columndesc.srs_list=Event identification number (HEC internal number)::Start time::NOAA active region index::::Heliographic Longitude.::Carrington longitude of active region::Total corrected area of the group in millionths of the solar hemisphere.::Modified Zurich classification of the group.::?::?::?::Number of sunspots.::Magnitude class
+sql.columnucd.srs_list= :: :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.srs_list=
+
+
+
+sql.query.time.constraint.dsd_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.dsd_list=
+sql.query.coordinates.constraint.dsd_list= 
+sql.query.orderby.constraint.dsd_list=
+sql.query.maxrecord.constraint.dsd_list=20000
+sql.columnnames.dsd_list=dsd_id::time_start::radio_10cm::sesc_ssn::ss_area::new_regions::stan_smf::xray_bkg::c_flares::m_flares::x_flares::opts_flares::opt1_flares::opt2_flares::opt3_flares
+sql.columndesc.dsd_list=Event identification number (HEC internal number)::Date.::Radio Flux Penticton 10.7 cm: The 10.7 cm (2800 MHz) full Sun radio flux  reported by the Dominion Radio Astrophysical Observatory at Penticton::Sunspot No: The SESC sunspot number for the indicated date is from the daily  Solar Region Summary issued by SESC. The SESC sunspot number is computed  according to the Wolf Sunspot Number R=k (10g+s)::Sunspot Area : Sum of the corrected area of all observed sunspots::New Regions.::Stanford Solar Mean Field.::X-ray Background Flux : The daily average background x-ray flux as measured on  the SWPC primary GOES satellite. Note: X-ray flux values below the B1 level can  be erroneous. Energetic electron contamination of the x-ray sensors occurs. At  times of high electron flux at geosynchronous altitude::Number of Type C X-Ray Flares.::Number of Type M X-Ray Flares.::Number of Type X X-Ray Flares.::Number of Type S Optical Flares.::Number of Type 1 Optical Flares.::Number of Type 2 Optical Flares.::Number of Type 3 Optical Flares.
+sql.columnucd.dsd_list= :: :: :: :: :: :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.dsd_list=
+
+
+
+sql.query.time.constraint.soho_camp=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.soho_camp=
+sql.query.coordinates.constraint.soho_camp= 
+sql.query.orderby.constraint.soho_camp=
+sql.query.maxrecord.constraint.soho_camp=20000
+sql.columnnames.soho_camp=soho_id::time_start::time_end::sohoc_num::sohoc_name::sohoc_type::sohoc_obj::sohoc_coord::sohoc_part::sohoc_comm
+sql.columndesc.soho_camp=Event identification number (HEC internal number)::Start time of campaign.::End time of campaign.::SOHO Campaign Number.::SOHO Campaign Name.::SOHO Campaign type.::SOHO Campaign objectives.::SOHO Campaign coordinators.::::Comments.
+sql.columnucd.soho_camp= :: :: :: :: :: :: :: :: :: 
+sql.columnutypes.soho_camp=
+
+
+
+sql.query.time.constraint.sidc_sunspot_number=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.sidc_sunspot_number=
+sql.query.coordinates.constraint.sidc_sunspot_number= 
+sql.query.orderby.constraint.sidc_sunspot_number=
+sql.query.maxrecord.constraint.sidc_sunspot_number=20000
+sql.columnnames.sidc_sunspot_number=ssn_id::time_start::time_end::ssn
+sql.columndesc.sidc_sunspot_number=Event identification number (HEC internal number)::Start time::End time.::Smoothed monthly sunspot number.
+sql.columnucd.sidc_sunspot_number= :: :: :: 
+sql.columnutypes.sidc_sunspot_number=
+
+
+
+sql.query.time.constraint.drao_10cm_flux=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.drao_10cm_flux=
+sql.query.coordinates.constraint.drao_10cm_flux= 
+sql.query.orderby.constraint.drao_10cm_flux=
+sql.query.maxrecord.constraint.drao_10cm_flux=20000
+sql.columnnames.drao_10cm_flux=sfm_id::time_start::time_end::sfu_observed::sfu_adjusted::sfu_series_d
+sql.columndesc.drao_10cm_flux=Event identification number (HEC internal number)::Start of solar flux measurement.::End of solar flux measurement.::Observed 10.7cm Solar Flux measured by the solar radio telescope.::Observed 10.7cm Solar Flux adjusted to 1 AU.::Observed 10.7cm Solar converted to the "Series D Flux".
+sql.columnucd.drao_10cm_flux= :: :: :: :: :: 
+sql.columnutypes.drao_10cm_flux=
+
+
+
+
+
+sql.query.time.constraint.cactus_cme_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.cactus_cme_list=
+sql.query.coordinates.constraint.cactus_cme_list= 
+sql.query.orderby.constraint.cactus_cme_list=
+sql.query.maxrecord.constraint.cactus_cme_list=20000
+sql.columnnames.cactus_cme_list=cactus_cme_list_id::sat_id::r_hci::lat_hci::long_hci::time_start::duration::pa::pa_width::v::dv::v_min::v_max::flag_halo::event_detail::dummy
+sql.columndesc.cactus_cme_list=cactus_cme_list_id::sat_id::r_hci::lat_hci::long_hci::time_start::duration::pa::pa_width::v::dv::v_min::v_max::flag_halo::event_detail::dummy
+sql.columnucd.cactus_cme_list= :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::
+sql.columnutypes.cactus_cme_list=
+
+sql.query.time.constraint.cactus_soho_cme_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.cactus_soho_cme_list=
+sql.query.coordinates.constraint.cactus_soho_cme_list= 
+sql.query.orderby.constraint.cactus_soho_cme_list=
+sql.query.maxrecord.constraint.cactus_soho_cme_list=20000
+sql.columnnames.cactus_soho_cme_list=cactus_soho_cme_list_id::sat_id::r_hci::long_hci::lat_hci::time_start::duration::pa::pa_width::v::dv::v_min::v_max::cme_number::flag_halo::event_detail
+sql.columndesc.cactus_soho_cme_list=Event Identification number (HEC internal number)::Satellite ID::Heliocentric Inertial (HCI) Radial distance::Heliocentric Inertial (HCI) Longitude::Heliocentric Inertial (HCI) Latitude::Onset time::Duration of liftoff (hours)::Position angle (degrees::Angular width of the CME (degrees)::Median velocity (km/s)::Variation (1 sigma) of velocity over the width of the CME::Lowest velocity detected within the CME::Highest velocity detected within the CME  maxv Highest velocity detected within the CME::II if da greater than 90::CME number [[corresponds to column 'CME' in the original file without leading zeros]]::Link to details and graphs of specified CME [yymm-CME0010]
+sql.columnucd.cactus_soho_cme_list= :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::
+sql.columnutypes.cactus_soho_cme_list=
+
+sql.query.time.constraint.cactus_sta_cme_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.cactus_sta_cme_list=
+sql.query.coordinates.constraint.cactus_sta_cme_list= 
+sql.query.orderby.constraint.cactus_sta_cme_list=
+sql.query.maxrecord.constraint.cactus_sta_cme_list=20000
+sql.columnnames.cactus_sta_cme_list=cactus_sta_cme_list_id::sat_id::r_hci::long_hci::lat_hci::time_start::duration::pa::pa_width::v::dv::v_min::v_max::cme_number::flag_halo::event_detail
+sql.columndesc.cactus_sta_cme_list=Event Identification number (HEC internal number)::Satellite ID::Heliocentric Inertial (HCI) Radial distance::Heliocentric Inertial (HCI) Longitude::Heliocentric Inertial (HCI) Latitude::Onset time::Duration of liftoff (hours)::Position angle (degrees::Angular width of the CME (degrees)::Median velocity (km/s)::Variation (1 sigma) of velocity over the width of the CME::Lowest velocity detected within the CME::Highest velocity detected within the CME  maxv Highest velocity detected within the CME::II if da greater than 90::CME number [[corresponds to column 'CME' in the original file without leading zeros]]::Link to details and graphs of specified CME [yymm-CME0010]
+sql.columnucd.cactus_sta_cme_list= :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::
+sql.columnutypes.cactus_sta_cme_list=
+
+sql.query.time.constraint.cactus_stb_cme_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.cactus_stb_cme_list=
+sql.query.coordinates.constraint.cactus_stb_cme_list= 
+sql.query.orderby.constraint.cactus_stb_cme_list=
+sql.query.maxrecord.constraint.cactus_stb_cme_list=20000
+sql.columnnames.cactus_stb_cme_list=cactus_stb_cme_list_id::sat_id::r_hci::long_hci::lat_hci::time_start::duration::pa::pa_width::v::dv::v_min::v_max::cme_number::flag_halo::event_detail
+sql.columndesc.cactus_stb_cme_list=Event Identification number (HEC internal number)::Satellite ID::Heliocentric Inertial (HCI) Radial distance::Heliocentric Inertial (HCI) Longitude::Heliocentric Inertial (HCI) Latitude::Onset time::Duration of liftoff (hours)::Position angle (degrees::Angular width of the CME (degrees)::Median velocity (km/s)::Variation (1 sigma) of velocity over the width of the CME::Lowest velocity detected within the CME::Highest velocity detected within the CME  maxv Highest velocity detected within the CME::II if da greater than 90::CME number [[corresponds to column 'CME' in the original file without leading zeros]]::Link to details and graphs of specified CME [yymm-CME0010]
+sql.columnucd.cactus_stb_cme_list= :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::
+sql.columnutypes.cactus_stb_cme_list=
+
+sql.query.time.constraint.cactus_soho_flow_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.cactus_soho_flow_list=
+sql.query.coordinates.constraint.cactus_soho_flow_list= 
+sql.query.orderby.constraint.cactus_soho_flow_list=
+sql.query.maxrecord.constraint.cactus_soho_flow_list=20000
+sql.columnnames.cactus_soho_flow_list=cactus_soho_flow_list_id::sat_id::r_hci::long_hci::lat_hci::time_start::duration::pa::pa_width::v::dv::v_min::v_max::cme_number::flag_halo::event_detail
+sql.columndesc.cactus_soho_flow_list=Event Identification number (HEC internal number)::Satellite ID::Heliocentric Inertial (HCI) Radial distance::Heliocentric Inertial (HCI) Longitude::Heliocentric Inertial (HCI) Latitude::Onset time::Duration of liftoff (hours)::Position angle (degrees::Angular width of the CME (degrees)::Median velocity (km/s)::Variation (1 sigma) of velocity over the width of the CME::Lowest velocity detected within the CME::Highest velocity detected within the CME  maxv Highest velocity detected within the CME::II if da greater than 90::CME number [[corresponds to column 'CME' in the original file without leading zeros]]::Link to details and graphs of specified CME [yymm-CME0010]
+sql.columnucd.cactus_soho_flow_list= :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::
+sql.columnutypes.cactus_soho_flow_list=
+
+sql.query.time.constraint.cactus_sta_flow_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.cactus_sta_flow_list=
+sql.query.coordinates.constraint.cactus_sta_flow_list= 
+sql.query.orderby.constraint.cactus_sta_flow_list=
+sql.query.maxrecord.constraint.cactus_sta_flow_list=20000
+sql.columnnames.cactus_sta_flow_list=cactus_sta_flow_list_id::sat_id::r_hci::long_hci::lat_hci::time_start::duration::pa::pa_width::v::dv::v_min::v_max::cme_number::flag_halo::event_detail
+sql.columndesc.cactus_sta_flow_list=Event Identification number (HEC internal number)::Satellite ID::Heliocentric Inertial (HCI) Radial distance::Heliocentric Inertial (HCI) Longitude::Heliocentric Inertial (HCI) Latitude::Onset time::Duration of liftoff (hours)::Position angle (degrees::Angular width of the CME (degrees)::Median velocity (km/s)::Variation (1 sigma) of velocity over the width of the CME::Lowest velocity detected within the CME::Highest velocity detected within the CME  maxv Highest velocity detected within the CME::II if da greater than 90::CME number [[corresponds to column 'CME' in the original file without leading zeros]]::Link to details and graphs of specified CME [yymm-CME0010]
+sql.columnucd.cactus_sta_flow_list= :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::
+sql.columnutypes.cactus_sta_flow_list=
+
+sql.query.time.constraint.cactus_stb_flow_list=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.cactus_stb_flow_list=
+sql.query.coordinates.constraint.cactus_stb_flow_list= 
+sql.query.orderby.constraint.cactus_stb_flow_list=
+sql.query.maxrecord.constraint.cactus_stb_flow_list=20000
+sql.columnnames.cactus_stb_flow_list=cactus_stb_flow_list_id::sat_id::r_hci::long_hci::lat_hci::time_start::duration::pa::pa_width::v::dv::v_min::v_max::cme_number::flag_halo::event_detail
+sql.columndesc.cactus_stb_flow_list=Event Identification number (HEC internal number)::Satellite ID::Heliocentric Inertial (HCI) Radial distance::Heliocentric Inertial (HCI) Longitude::Heliocentric Inertial (HCI) Latitude::Onset time::Duration of liftoff (hours)::Position angle (degrees::Angular width of the CME (degrees)::Median velocity (km/s)::Variation (1 sigma) of velocity over the width of the CME::Lowest velocity detected within the CME::Highest velocity detected within the CME  maxv Highest velocity detected within the CME::II if da greater than 90::CME number [[corresponds to column 'CME' in the original file without leading zeros]]::Link to details and graphs of specified CME [yymm-CME0010]
+sql.columnucd.cactus_stb_flow_list= :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::
+sql.columnutypes.cactus_stb_flow_list=
+
+sql.query.time.constraint.halo_cme_flare_magnetic_storm=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.halo_cme_flare_magnetic_storm=
+sql.query.coordinates.constraint.halo_cme_flare_magnetic_storm= 
+sql.query.orderby.constraint.halo_cme_flare_magnetic_storm=
+sql.query.maxrecord.constraint.halo_cme_flare_magnetic_storm=20000
+sql.columnnames.halo_cme_flare_magnetic_storm=hec_id::time_start::cme_speed::pa_measure::lat_hg::long_hg::long_carr::pos_flag::time_flare::xray_class::time_storm::dst
+sql.columndesc.halo_cme_flare_magnetic_storm=::Start time of the CME::Speed of the CME::Measurement Position Angle (MPA) at which CME height-time measurement was made.::Latitude solar source location of the CME heliographic coordinates given for frontside halos.::Latitude solar source location of the CME heliographic coordinates given for frontside halos.::long_carr::If the CME source location is on the Earthward side of the solar disk then this entry will be blank and the postion will be given in the the latitude and longitude fields. Otherwise flag will take one of the following values: "Backside": The source is behind the Sun  "B?":             The source is most likely backside. There may be some disk activity::Time of the associated GOES X-ray flare::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of Watts/sq meter.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Time of the associated geomagnetic storm correspodning to the time of minimum Dst index.::Minimum Dst value.
+sql.columnucd.halo_cme_flare_magnetic_storm=meta.record::time.start::phys.veloc::pos.posAng;phys.angSize::pos.bodyrc.lat;pos.heliographic::pos.bodyrc.long;pos.heliographic::pos::meta.code::time.epoch::meta.code.class;em.X-ray::time.epoch:: 
+sql.columnutypes.halo_cme_flare_magnetic_storm=::helio:time_period.time_start::::helio:location.pa_measure::helio:location.lat_hg::helio:location.long_hg::helio:location.long_carr::::::helio:flare.magnitude.xray_class:::: 
+
+
+sql.query.time.constraint.catalogues=
+sql.query.instr.constraint.catalogues=
+sql.query.coordinates.constraint.catalogues=
+sql.query.orderby.constraint.catalogues=
+sql.query.maxrecord.constraint.catalogues=2000
+sql.columnnames.catalogues=table_name::description::type::status::time_from::time_to
+sql.columndesc.catalogues=table_name::description::type::status::time_from::time_to
+sql.columnucd.catalogues= :: :: :: :: ::
+sql.columnutypes.catalogues=
+
+
+jdbc.driver=org.postgresql.Driver
+jdbc.url=jdbc:postgresql://localhost/hec
+jdbc.user=postgres
+jdbc.password=postgres
+
+
+sql.query.time.constraint.goes_sxr_flare='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.goes_sxr_flare=
+sql.query.coordinates.constraint.goes_sxr_flare= 
+sql.query.orderby.constraint.goes_sxr_flare=
+sql.query.maxrecord.constraint.goes_sxr_flare=20000
+sql.columnnames.goes_sxr_flare=HEC_id::time_start::time_peak::time_end::nar::lat_hg::long_hg::long_carr::xray_class::optical_class
+sql.columndesc.goes_sxr_flare=Event identification number (HEC internal number)::Start time of flare::Peak time of flare::End time of flare::NOAA active region index::Heliographic latitude of event::Stonyhurst longitude of active region::Carrington longitude of active region::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of Watts/sq meter.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Average optical importance of flare -- a measurement of flare size and brilliance.  (See the 'Optical Class' in the HEC glossary for the specification of this field)
+sql.columnucd.goes_sxr_flare=meta.record::time.start::time.phase::time.end::meta.id.cross::pos.bodyrc.lat;pos.heliographic::pos.bodyrc.long;pos.heliographic::pos::meta.code.class;em.X-ray::meta.code.class;em.opt
+sql.columnutypes.goes_sxr_flare=::helio:time_period.time_start::helio:time.time_peak::helio:time_period.time_end::helio:flare.nar::helio:location.lat_hg::helio:location.long_hg::helio:location.long_carr::helio:flare.magnitude.xray_class::helio:flare.magnitude.optical_class
+votable.query.info.goes_sxr_flare=TABLE_NAME,goes_sxr_flare
+
+
+
+sql.query.time.constraint.ngdc_halpha_flare='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.ngdc_halpha_flare=
+sql.query.coordinates.constraint.ngdc_halpha_flare= 
+sql.query.orderby.constraint.ngdc_halpha_flare=
+sql.query.maxrecord.constraint.ngdc_halpha_flare=20000
+sql.columnnames.ngdc_halpha_flare=HEC_id::time_start::time_peak::time_end::nar::lat_hg::long_hg::long_carr::xray_class::optical_class
+sql.columndesc.ngdc_halpha_flare=Event identification number (HEC internal number)::Earliest Universal Time of flare onset reported within a group.::Earliest Universal Time within group that flare reached maximum brightness::Average of flare end times::NOAA active region index::Average heliographic latitude marking the mean center of mass of the flaring region at its time of maximum brightness.::Average heliographic longitude of active region marking the mean center of mass of the flaring region at its time of maximum brightness.::Carrington longitude of the flaring region.::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of Watts/sq meter.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Average optical importance of flare -- a measurement of flare size and brilliance.  (See the 'Optical Class' in the HEC glossary for the specification of this field)
+sql.columnucd.ngdc_halpha_flare=meta.record::time.start::time.phase::time.end::meta.id.cross::pos.bodyrc.lat;pos.heliographic::pos.bodyrc.long;pos.heliographic::pos::meta.code.class;em.X-ray::meta.code.class;em.opt
+sql.columnutypes.ngdc_halpha_flare=::helio:time_period.time_start::helio:time.time_peak::helio:time_period.time_end::helio:flare.nar::helio:location.lat_hg::helio:location.long_hg::helio:location.long_carr::helio:flare.magnitude.xray_class::helio:flare.magnitude.optical_class
+votable.query.info.ngdc_halpha_flare=TABLE_NAME,ngdc_halpha_flare
+
+
+
+sql.query.time.constraint.noaa_energetic_event='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.noaa_energetic_event=
+sql.query.coordinates.constraint.noaa_energetic_event= 
+sql.query.orderby.constraint.noaa_energetic_event=
+sql.query.maxrecord.constraint.noaa_energetic_event=20000
+sql.columnnames.noaa_energetic_event=HEC_id::time_start::time_peak::time_end::nar::lat_hg::long_hg::long_carr::xray_class::optical_class::radio_245mhz::radio_10cm::radio_sweep_ii::radio_sweep_iv::swf
+sql.columndesc.noaa_energetic_event=Event identification number (HEC internal number)::Start time::Peak time::End time::NOAA active region index::Heliographic latitude of the active region::Stonyhurst longitude of active region::Carrington longitude of active region::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of Watts/sq meter.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Average optical importance of flare -- a measurement of flare size and brilliance.  (See the 'Optical Class' in the HEC glossary for the specification of this field)::::::Type II sweep frequency::Type IV sweep frequency::Shortwave fade
+sql.columnucd.noaa_energetic_event=meta.record::time.start::time.phase::time.end::meta.id.cross::pos.bodyrc.lat;pos.heliographic::pos.bodyrc.long;pos.heliographic::pos::meta.code.class;em.X-ray::meta.code.class;em.opt::em.radio.200-400MHz::em.radio.1500-3000MHz::em.radio::em.radio::meta.code
+sql.columnutypes.noaa_energetic_event=::helio:time_period.time_start::helio:time.time_peak::helio:time_period.time_end::helio:flare.nar::helio:location.lat_hg::helio:location.long_hg::helio:location.long_carr::helio:flare.magnitude.xray_class::helio:flare.magnitude.optical_class::helio:radio.radio_245mhz::helio:radio.radio_10cm::helio:radio.radio_sweep_ii::helio:radio.radio_sweep_iv::helio:radio.shortwave_fade
+votable.query.info.noaa_energetic_event=TABLE_NAME,noaa_energetic_event
+
+
+
+sql.query.time.constraint.soho_lasco_cme=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.soho_lasco_cme=
+sql.query.coordinates.constraint.soho_lasco_cme= 
+sql.query.orderby.constraint.soho_lasco_cme=
+sql.query.maxrecord.constraint.soho_lasco_cme=20000
+sql.columnnames.soho_lasco_cme=HEC_id::time_start::pa::pa_width::v::v_init::v_final::v_20r::accel::pa_measure
+sql.columndesc.soho_lasco_cme=Event identification number (HEC internal number)::Start time - the time of first appearance in the LASCO/C2 field of view.::Central position angle for the CME::Position angle width of the CME::the linear speed obtained by fitting a straight line to the height-time measurements made at the fastest section of CMEs::quadratic speed obtained by fitting a parabola and evaluating the speed at the initial time of the event::quadratic speed obtained by fitting a parabola and evaluating the speed at the time of final height measurement::quadratic speed obtained by fitting a parabola and evaluating the speed at 20 solar radii::Acceleration is obtained from the quadratic fit to the height-time measurements::The position angle at which the height-time measurements are made (MPA for measurement position angle).
+sql.columnucd.soho_lasco_cme=meta.record::time.start::pos.posAng::pos.posAng;phys.angSize::pos.posAng;phys.angSize::phys.veloc::phys.veloc::phys.veloc::phys.veloc::phys.acceleration
+sql.columnutypes.soho_lasco_cme=::helio:time_period.time_start::helio:location.pa::helio:location.pa_measure::helio:location.pa_width::helio:cme.velocity.v::helio:cme.velocity.v_init::helio:cme.velocity.v_final::helio:cme.velocity.v_20r::helio:cme.acceleration
+votable.query.info.soho_lasco_cme=TABLE_NAME,soho_lasco_cme
+
+
+sql.query.time.constraint.stereo_hi_cme='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.stereo_hi_cme=
+sql.query.coordinates.constraint.stereo_hi_cme= 
+sql.query.orderby.constraint.stereo_hi_cme=
+sql.query.maxrecord.constraint.stereo_hi_cme=20000
+sql.columnnames.stereo_hi_cme=HEC_id::time_start::time_end::instrument::data_gap::cme_type::brightness::pa::pa_width::time_onset::not_in_list::v::long_hg::long_err::time_1au::comment
+sql.columndesc.stereo_hi_cme=Event identification number (HEC internal number)::Start time - approximate time that CME enters HI field of view.::End time - approximate time CME front leaves HI field of view.::This is the ID of the instrument on STEREO that was used to identify the event.::Indication of a data gap during the event::Classification of the CME type::Classification of the CME brightness::Central position angle for the observed CME::Position angle width of the CME::Estimated onset time for the event::Flag to indicate if the event is in the HI solar event list::Fitted CME speed.::Fitted Stonyhurst longitude of the event::Error in the fitted longitude measurement::Time at which the CME was expected to reach 1 AU based on fitted time elongation profile::Description of the CME feature
+sql.columnucd.stereo_hi_cme=meta.record::time.start::time.end::instr::meta.code::meta.code.class::::pos.posAng::pos.posAng;phys.angSize::time.phase::::phys.veloc::pos.bodyrc.long;pos.heliographic::pos.bodyrc.long;pos.heliographic;meta.code.error::time.phase::meta.note
+sql.columnutypes.stereo_hi_cme=::helio:time_period.time_start::helio:time_period.time_end::helio:instrument::helio:cme.data_gap::helio:cme.cme_type::helio:cme.brightness::helio:location.pa::helio:location.pa_width::helio:cme.time_onset::::helio:cme.velocity.v::helio:location.long_hg::helio:location.long_err::helio:time.time_1au::helio:comment
+votable.query.info.stereo_hi_cme=TABLE_NAME,stereo_hi_cme
+
+
+
+sql.query.time.constraint.goes_proton_event=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.goes_proton_event=
+sql.query.coordinates.constraint.goes_proton_event= 
+sql.query.orderby.constraint.goes_proton_event=
+sql.query.maxrecord.constraint.goes_proton_event=20000
+sql.columnnames.goes_proton_event=HEC_id::time_start::time_peak::nar::lat_hg::long_hg::proton_flux::cme_parameters::time_peak_flare::xray_class::optical_class
+sql.columndesc.goes_proton_event=Event identification number (HEC internal number)::Start time - the first of 3 consecutive data points with fluxes greater than or equal to 10 pfu.::Peak time::The number for the closest NOAA active region index::Latitude of the associated active region::Longitude of the associated active region::Proton fluxes are integral 5-minute averages for energies > 10 MeV, given in Particle Flux Units (pfu), measured by GOES spacecraft at Geosynchronous orbit: 1 pfu = 1 p/sq. cm-s-sr.::ID of a SOHO/LASCO identified CME associated with this event (available since 1996 only).::The time of the peak in the associated X-ray flare.::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of Watts/sq meter.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Average optical importance of flare -- a measurement of flare size and brilliance.  (See the 'Optical Class' in the HEC glossary for the specification of this field)
+sql.columnucd.goes_proton_event=meta.record::time.start::time.phase::meta.id.cross::pos.bodyrc.lat;pos.heliographic::pos.bodyrc.long;pos.heliographic::prot.flux::::time.phase::meta.code.class;em.X-ray::meta.code.class;em.opt
+sql.columnutypes.goes_proton_event=::helio:time_period.time_start::helio:time.time_peak::helio:flare.nar::helio:location.lat_hg::helio:location.long_hg::helio:proton_event.proton_flux::helio:comment::helio:time.time_peak::helio:flare.magnitude.xray_class::helio:flare.magnitude.optical_class
+votable.query.info.goes_proton_event=TABLE_NAME,goes_proton_event
+
+
+sql.query.time.constraint.aad_gle='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.aad_gle=
+sql.query.coordinates.constraint.aad_gle= 
+sql.query.orderby.constraint.aad_gle=
+sql.query.maxrecord.constraint.aad_gle=20000
+sql.columnnames.aad_gle=HEC_id::time_start::time_end::comment
+sql.columndesc.aad_gle=Event identification number (HEC internal number)::Start time of event.::End time of event.::Comments
+sql.columnucd.aad_gle=meta.record::time.start::time.end::meta.note
+sql.columnutypes.aad_gle=::helio:time_period.time_start::helio:time_period.time_end::helio:comment
+votable.query.info.aad_gle=TABLE_NAME,aad_gle
+
+
+
+sql.query.time.constraint.ngdc_aastar_storm='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.ngdc_aastar_storm=
+sql.query.coordinates.constraint.ngdc_aastar_storm= 
+sql.query.orderby.constraint.ngdc_aastar_storm=
+sql.query.maxrecord.constraint.ngdc_aastar_storm=20000
+sql.columnnames.ngdc_aastar_storm=HEC_id::time_start::time_peak::time_end::duration::aastar_max::aastar_ave::aastar_sum
+sql.columndesc.ngdc_aastar_storm=Event identification number (HEC internal number)::Start time of onset of magnetic storm.::Time of maximum AA*.::End time of the magnetic storm.::Duation of event in hours::Maximum AA* during the event.::Average AA* value over the event.::AA* sum.
+sql.columnucd.ngdc_aastar_storm=meta.record::time.start::time.phase::time.end::time.duration::::::
+sql.columnutypes.ngdc_aastar_storm=::helio:time_period.time_start::helio:time.time_peak::helio:time_period.time_end::::helio:magnetic_storm.aastar_max::helio:magnetic_storm.aastar_average::helio:magnetic_storm.aastar_sum
+votable.query.info.ngdc_aastar_storm=TABLE_NAME,ngdc_aastar_storm
+
+
+
+sql.query.time.constraint.ngdc_apstar_storm='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.ngdc_apstar_storm=
+sql.query.coordinates.constraint.ngdc_apstar_storm= 
+sql.query.orderby.constraint.ngdc_apstar_storm=
+sql.query.maxrecord.constraint.ngdc_apstar_storm=20000
+sql.columnnames.ngdc_apstar_storm=HEC_id::time_start::time_peak::time_end::duration::apstar_max::apstar_ave::apstar_sum
+sql.columndesc.ngdc_apstar_storm=Event identification number (HEC internal number)::Start time of onset of magnetic storm.::Time of maximum Ap*.::End time of magnetic storm.::Duation of magnetic storm in hours.::Maximum Ap* during the event.::Average Ap* value over the event.::Ap* sum.
+sql.columnucd.ngdc_apstar_storm=meta.record::time.start::time.phase::time.end::time.duration::::::
+sql.columnutypes.ngdc_apstar_storm=::helio:time_period.time_start::helio:time.time_peak::helio:time_period.time_end::helio:magnetic_storm.duration::helio:magnetic_storm.apstar_max::helio:magnetic_storm.apstar_average::helio:magnetic_storm.apstar_sum
+votable.query.info.ngdc_apstar_storm=TABLE_NAME,ngdc_apstar_storm
+
+
+
+sql.query.time.constraint.ngdc_ssc=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.ngdc_ssc=
+sql.query.coordinates.constraint.ngdc_ssc= 
+sql.query.orderby.constraint.ngdc_ssc=
+sql.query.maxrecord.constraint.ngdc_ssc=20000
+sql.columnnames.ngdc_ssc=HEC_id::time_start::nstn_a::nstn_b::nstn_c::nsi
+sql.columndesc.ngdc_ssc=Event identification number (HEC internal number)::Begin time for sudden storm commencement.::Number of stations reporting an A event. Letter A -- denotes very remarkable event observed.::Number of stations reporting a B event. Letter B -- denotes fair, ordinary, but unmistakable event observed.::Number of stations reporting a C event. Letter C -- denotes very poor, doubtful event observed.::Number of stations reporting an "si" event. Letters "si" -- sudden impulse event (sudden magnetic change which could not be classified as ssc (sudden storm commencement), bs, etc.)
+sql.columnucd.ngdc_ssc=meta.record::time.start::meta.number::meta.number::meta.number::meta.number
+sql.columnutypes.ngdc_ssc=::helio:time_period.time_start::helio:magnetic_storm.number_stations_a::helio:magnetic_storm.number_stations_b::helio:magnetic_storm.number_stations_c::helio:magnetic_storm.number_stations_si
+votable.query.info.ngdc_ssc=TABLE_NAME,ngdc_ssc
+
+
+
+sql.query.time.constraint.cme_forbush_event=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.cme_forbush_event=
+sql.query.coordinates.constraint.cme_forbush_event= 
+sql.query.orderby.constraint.cme_forbush_event=
+sql.query.maxrecord.constraint.cme_forbush_event=20000
+sql.columnnames.cme_forbush_event=HEC_id::time_start::flag_ssc::fe_magn::kpmax::dst_min::b_max::vsw_max::axy_min::az_r::tmin::dc_min::tdmn::aftob::tilt
+sql.columndesc.cme_forbush_event=Event identification number (HEC internal number)::Start time::Flag indicating if the onset of the event corresponds ("sc") to a Storm Sudden Commencement, otherwise the flag is left blank.::Magnitude of 10 GV Cosmic Ray variation (in fact, magnitude of the FE)::Maximum of the Kp-index in the associated geomagnetic deisturbance::Minimum of the Dst-index in the associated geomagnetic disturbance::Maximum of the magnitude of the Interplanetary Magnetic Field in the associated solar wind disturbance::Maximum of the solar wind speed in the associated solar wind disturbance::Maximum of the equatorial component of anisotropy during the Forbush Decrease.::Range of change for the north-south component of anisotropy during the Forbush Decrease::Time from onset to the Forbush Decrease minimum::Maximum decrement between hourly counts of 10 GV Cosmic Rays::Time from the onset to the maximum decrement in the 10 GV Cosmic Rays::Ratio of the variation in the 10 GV cosmic rays to the maximum of the IMF intensity in the associated solar wind distrubance (fe_magn/bimf_m)::Heliospheric current sheet tilt for day of the event
+
+sql.columnucd.cme_forbush_event=meta.record::time.start::meta.code:: :: :: ::stat.max;phys.magField::phys.veloc;stat.max:: :: ::time.duration;stat.min::meta.number;stat.min::time.duration:: :: 
+sql.columnutypes.cme_forbush_event=::helio:time_period.time_start:: :: :: :: :: :: :: :: :: :: :: :: :: 
+
+votable.query.info.cme_forbush_event=TABLE_NAME,cme_forbush_event
+
+
+
+sql.query.time.constraint.yohkoh_hxr_flare='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.yohkoh_hxr_flare=
+sql.query.coordinates.constraint.yohkoh_hxr_flare= 
+sql.query.orderby.constraint.yohkoh_hxr_flare=
+sql.query.maxrecord.constraint.yohkoh_hxr_flare=20000
+sql.columnnames.yohkoh_hxr_flare=HEC_id::time_start::time_peak::time_end::nar::lat_hg::long_hg::long_carr::xray_class::optical_class::hxt_lo::hxt_m1::hxt_m2::hxt_hi::sxs_pc21::sxs_pc22::hxs_pc1::hxs_pc2::x_lat_hg::x_long_hg::x_long_carr::comment::yoh_event
+sql.columndesc.yohkoh_hxr_flare=Event identification number (HEC internal number)::Start time of flare.::Time of flare maximum.::End time of flare.::NOAA active region index::Heliographic latitude of H-alpha flare.::Heliographic longitude of H-alpha flare.::Carrington longitude of H-alpha flare.::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of W m^-2.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Average optical importance of flare -- a measurement of flare size and brilliance.  (See the 'Optical Class' in the HEC glossary for the specification of this field)::L-band (13.9 - 22.7 keV) peak count rate in cts s^-1 SC^-1 (with background of ~ 2 cts s^-1 SC^-1)::M1-band (22.7 - 32.7 keV) peak count rate in cts s^-1 SC^-1 (with background of ~ 1 cts s^-1 SC^-1)::M2-band (32.7 - 52.7 keV) peak count rate in cts s^-1 SC^-1 (with background of ~ 1 cts s^-1 SC^-1).::H-band (52.7 - 92.8 keV) peak count rate in cts s^-1 SC^-1 (with background of ~ 9 cts s^-1 SC^-1).::3 - 30 keV peak count rate in cts s^-1.::3 - 30 keV peak count rate in cts s^-1.::20 - 50 keV peak count rate in cts s^-1.::50 - 600 keV peak count rate in cts s^-1.::Heliographic latitude of X-ray flare.::Heliographic longitude of X-ray flare.::Carrington longitude of X-ray flare.::Comments::Yohkoh HXT event number.
+sql.columnucd.yohkoh_hxr_flare=meta.record::time.start::time.phase::time.end::meta.id.cross::pos.bodyrc.lat;pos.heliographic::pos.bodyrc.long;pos.heliographic::pos::meta.code.class;em.X-ray::meta.code.class;em.opt::::::::::::::::::::::::meta.note::  
+sql.columnutypes.yohkoh_hxr_flare=::helio:time_period.time_start::helio:time.time_peak::helio:time_period.time_end::helio:flare.nar::helio:location.lat_hg::helio:location.long_hg::helio:location.long_carr::helio:flare.magnitude.xray_class::helio:flare.magnitude.optical_class::helio:flare.magnitude.hard_xray_quantifier.hard_xray_count::helio:flare.magnitude.hard_xray_quantifier.hard_xray_count::helio:flare.magnitude.hard_xray_quantifier.hard_xray_count::helio:flare.magnitude.hard_xray_quantifier.hard_xray_count::::::::::::::::helio:comment::  
+votable.query.info.yohkoh_hxr_flare=TABLE_NAME,yohkoh_hxr_flare
+
+
+
+sql.query.time.constraint.rhessi_hxr_flare='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.rhessi_hxr_flare=
+sql.query.coordinates.constraint.rhessi_hxr_flare= 
+sql.query.orderby.constraint.rhessi_hxr_flare=
+sql.query.maxrecord.constraint.rhessi_hxr_flare=20000
+sql.columnnames.rhessi_hxr_flare=HEC_id::time_start::time_peak::time_end::nar::x_cart::y_cart::radial_arcsec::duration::count_sec_peak::total_count::energy_kev::flare_number
+sql.columndesc.rhessi_hxr_flare=Event identification number (HEC internal number)::Start time determined from when the flux rate in the 6-12 keV band exceeds 3*sigma above the background level calcualted on a 60s running average.::The time of the peak flux for the flare in the energy range greater than 6 keV::End time determined from when the flux rate in the 6-12 keV band drops below 3*sigma of the background level calcualted on a 60s running average.::The number for the closest NOAA active region index::Position in arcsecs from centre of the sun.::Position in arcsecs from centre of the sun.::Radial distance in arcsecs from the centre of the Sun.::Duration of the flare in seconds::Peak counts/second in energy range 12-25 keV, averaged over active collimators, including background.::Total counts in energy range 12-25 keV integrated over duration of flare summed over all subcollimators, including background.::The highest energy band in which the flare was observed.::An ID number, ymmddnn, e.g., 2042101 is the first flare found for 21-Apr-2002. These numbers are not time ordered, e.g., flare 2042129 occurred before 2042104. Also all sorts of problems have been noted since 2010 has started, and the energy range has been changed, resulting in more than 100 flares in certain days. Flare_ids for 2010 and beyond start with a 2 digit year, and there can be 3 digits for the flare number in a given day e.g., 100601102.
+sql.columnucd.rhessi_hxr_flare=meta.record::time.start::time.phase::time.end::meta.id.cross::pos.cartesian.x;pos.bodyrc;pos.heliocentric/heliographic ?::pos.cartesian.y;pos.bodyrc;pos.heliocentric/heliographic ?::pos.heliographic/heliocentric?;pos.distance::time.duration::phot.count::meta.number::phys.energy::meta.id 
+sql.columnutypes.rhessi_hxr_flare=::helio:time_period.time_start::helio:time.time_peak::helio:time_period.time_end::helio:flare.nar::helio:location.x_cart::helio:location.y_cart::helio:location.radial_arcsec::helio:flare.duration::helio:flare.magnitude.hard_xray_quantifier.hard_xray_count::helio:flare.magnitude.hard_xray_quantifier.hard_xray_count::helio:flare.magnitude.hard_xray_quantifier.energy_keV::helio:flare.rhessi_flare_number 
+votable.query.info.rhessi_hxr_flare=TABLE_NAME,rhessi_hxr_flare
+
+
+
+sql.query.time.constraint.kso_halpha_flare='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.kso_halpha_flare=
+sql.query.coordinates.constraint.kso_halpha_flare= 
+sql.query.orderby.constraint.kso_halpha_flare=
+sql.query.maxrecord.constraint.kso_halpha_flare=20000
+sql.columnnames.kso_halpha_flare=HEC_id::time_start::time_start_m::time_peak::time_peak_m::time_end::time_end_m::lat_hg::long_hg::long_carr::optical_class
+sql.columndesc.kso_halpha_flare=Event identification number (HEC internal number)::Observed beginning of flare.::Time modifier:  E  means  Earlier                             U means  Uncertain                             D means  Later::Observed maximum of flare.::Time modifier:  E  means  Earlier                             U means  Uncertain                             D means  Later::Observed end of the flare.::Time modifier:  E  means  Earlier                             U means  Uncertain                             D means  Later::Heliographic latitude of flare::Heliographic longitude of flare::Carrington longitude of active region.::Average optical importance of flare -- a measurement of flare size and brilliance.  (See the 'Optical Class' in the HEC glossary for the specification of this field)
+sql.columnucd.kso_halpha_flare=meta.record::time.start::meta.code::time.phase::meta.code::time.end::meta.code::pos.bodyrc.lat;pos.heliographic::pos.bodyrc.long;pos.heliographic::pos::meta.code.class;em.opt 
+sql.columnutypes.kso_halpha_flare=::helio:time_period.time_start::helio:flare.time_start_modifier::helio:time.time_peak::helio:flare.time_peak_modifier::helio:time_period.time_end::helio:flare.time_end_modifier::helio:location.lat_hg::helio:location.long_hg::helio:location.long_carr::helio:flare.magnitude.optical_class 
+votable.query.info.kso_halpha_flare=TABLE_NAME,kso_halpha_flare
+
+
+
+sql.query.time.constraint.soho_eit_wave_transient=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.soho_eit_wave_transient=
+sql.query.coordinates.constraint.soho_eit_wave_transient= 
+sql.query.orderby.constraint.soho_eit_wave_transient=
+sql.query.maxrecord.constraint.soho_eit_wave_transient=20000
+sql.columnnames.soho_eit_wave_transient=HEC_id::time_start::previmg_time::img_time::quality::lat_hg::long_hg::v_ps::v_proj::pa::comment
+sql.columndesc.soho_eit_wave_transient=Event identification number (HEC internal number)::Start time of event (same as Image Time)::Time of previous image.::Image Time.::Quality Rating:   Q0: Very low reliability;    Q1: Low reliability;    Q2: Low reliability;    Q3: Intermediate reliability;   Q4: High reliability;    Q5: Nearly definite reliability;::Heliographic Latitude::Heliographic Longitude. (A source longitude of 90 or –90 indicates that the apparent source of the wave was either at, above, or possibly behind the solar limb.)::Speed of wave-front on the plane of the sky.::Speed of wave front assuming the wave travels in a great circle along the Sun's photosphere.::Direction of Measurement on the photosphere expressed as a position angle (measured N through E) in relation to the Sun-Earth line..::Comments.
+sql.columnucd.soho_eit_wave_transient=meta.record::time.start::time.creation::time.creation::meta.code.class::pos.bodyrc.lat;pos.heliographic::pos.bodyrc.long;pos.heliographic::phys.veloc::phys.veloc::pos.posAng::meta.note 
+sql.columnutypes.soho_eit_wave_transient=::helio:time_period.time_start::helio:time.time::helio:time.time::helio:eit.quality::helio:location.lat_hg::helio:location.long_hg::helio:eit.velocity.v_plane_of_sky::helio:eit.velocity.v_projected::helio:location.pa::helio:comment 
+votable.query.info.soho_eit_wave_transient=TABLE_NAME,soho_eit_wave_transient
+
+
+
+sql.query.time.constraint.stereo_hi_sw_transient=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.stereo_hi_sw_transient=
+sql.query.coordinates.constraint.stereo_hi_sw_transient= 
+sql.query.orderby.constraint.stereo_hi_sw_transient=
+sql.query.maxrecord.constraint.stereo_hi_sw_transient=20000
+sql.columnnames.stereo_hi_sw_transient=HEC_id::date::instrument::v::v_err::long_hg::long_err::time_start::time_1au
+sql.columndesc.stereo_hi_sw_transient=Event identification number (HEC internal number)::Date that event appears in H12 cameras field of view expressed as YYYY-MM-DD.::Instrument: STEREO_A__HI or  STEREO_B__HI.::Velocity of the event.::Uncertainty in velocity.::Longitude from S-E line.::Uncertainty in longitude from S-E line.::Estimated launch time of event (assuming instant acceleration).::Predicted time of arrival at 1 AU.
+sql.columnucd.stereo_hi_sw_transient=meta.record::time.phase::instr::phys.veloc::phys.veloc;stat.error::pos.bodyrc.long;pos.heliographic::pos.bodyrc.long;pos.heliographic;meta.code.error::time.start::time.phase 
+sql.columnutypes.stereo_hi_sw_transient=::helio:time.time::helio:instrument::helio:cme.velocity.v::helio:solar_wind.velocity_proton_error.v_proton::helio:location.long_hg::helio:location.long_err::helio:time_period.time_start::helio:time.time_1au 
+votable.query.info.stereo_hi_sw_transient=TABLE_NAME,stereo_hi_sw_transient
+
+
+
+sql.query.time.constraint.wind_mfi_mag_cloud='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.wind_mfi_mag_cloud=
+sql.query.coordinates.constraint.wind_mfi_mag_cloud= 
+sql.query.orderby.constraint.wind_mfi_mag_cloud=
+sql.query.maxrecord.constraint.wind_mfi_mag_cloud=20000
+sql.columnnames.wind_mfi_mag_cloud=HEC_id::time_start::time_end::code::quality
+sql.columndesc.wind_mfi_mag_cloud=Event identification number (HEC internal number)::Estimated start time of magnetic cloud (using the magnetic field model of Lepping et al., 1990). .::Estimated end time of the magnetic cloud (using the magnetic field model of Lepping et al., 1990).::Code number for identification.::Quality: 1 = Excellent, 2 = Good, 3 = Poor
+sql.columnucd.wind_mfi_mag_cloud=meta.record::time.start::time.end::meta.id::meta.code.class 
+sql.columnutypes.wind_mfi_mag_cloud=::helio:time_period.time_start::helio:time_period.time_end::helio:solar_wind.magnetic_cloud_id::helio:solar_wind.magnetic_cloud_quality 
+votable.query.info.wind_mfi_mag_cloud=TABLE_NAME,wind_mfi_mag_cloud
+
+
+
+sql.query.time.constraint.wind_mfi_bs_crossing_time='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.wind_mfi_bs_crossing_time=
+sql.query.coordinates.constraint.wind_mfi_bs_crossing_time= 
+sql.query.orderby.constraint.wind_mfi_bs_crossing_time=
+sql.query.maxrecord.constraint.wind_mfi_bs_crossing_time=20000
+sql.columnnames.wind_mfi_bs_crossing_time=HEC_id::last_bs_crossing::flag_last_bs::first_hr_kept::flag_first_hr::last_hr_kept::flag_last_hr::first_bs_crossing::flag_first_bs::time_start::time_end
+sql.columndesc.wind_mfi_bs_crossing_time=Event identification number (HEC internal number)::The time of the last BS crossing as the spacecraft was leaving the Earth's magnetosheath.::A flag to indicate one of the following for the last BS crossing time:   #: First data point in our data set    *: BS occurred in data gap, time listed is the last point before the gap    +: Strong foreshock activity before BS also excluded::The first full hour which has only unshocked solar wind data in it.::A flag to indicate one of the following for the last BS crossing time:   +: Strong foreshock activity before BS also excluded::The last full hour which still contains interplanetary magnetic field data.::A flag to indicate one of the following for the last BS crossing time:   +: Strong foreshock activity before BS also excluded::The time of the 1st BS crossing on the way into the Earth magnetosphere.::A flag to indicate one of the following for the last BS crossing time:   #: First data point in our data set    *: BS occurred in data gap, time listed is the last point before the gap    +: Strong foreshock activity before BS also excluded::Start time set as the last BS crossing time.::End time set as the time of the 1st BS crossing on the way into the Earth magnetosphere.
+sql.columnucd.wind_mfi_bs_crossing_time=meta.record::time.phase::meta.code::time.phase::meta.code::time.phase::meta.code::time.phase::meta.code::time.start::time.end 
+sql.columnutypes.wind_mfi_bs_crossing_time=::::::::::::::::::helio:time_period.time_start::helio:time_period.time_end 
+votable.query.info.wind_mfi_bs_crossing_time=TABLE_NAME,wind_mfi_bs_crossing_time
+
+
+
+sql.query.time.constraint.istp_sw_event='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.istp_sw_event=
+sql.query.coordinates.constraint.istp_sw_event= 
+sql.query.orderby.constraint.istp_sw_event=
+sql.query.maxrecord.constraint.istp_sw_event=20000
+sql.columnnames.istp_sw_event=HEC_id::time_start::time_end::category::spacecraft::comment
+sql.columndesc.istp_sw_event=Event identification number (HEC internal number)::Start time of event.::End time of event.::Category of event - one or more of the following features separated by a /.BzN  - Interplanetary magnetic B-field North (GSM coordinate system) A B-field North event is defined as an extended period of magnetic field oriented northwardPresently the catalog includes only those BzN events that extend for periods longer than 4 hours, within which only brief southward excurtions may occur.BzS - Interplanetary magnetic B-field South (GSM coordinate system) A B-field South event is defined as an extended period of magnetic field oriented southwardPresently the catalog includes under this entry only those BzS events that extend for periods longer than 4 hours, within which only brief Northward violations may occur.EyC - Change of the "y" component of the Interplanetary Electric Field Included are the observed events characterized by a sudden sign change and large amplitude variation in Ey (Ey=Bz*Vx) (the dawn to dusk component of the interplanetary electric field).HSS - High Speed StreamAn HSS is defined as a SW flow moving outward from the Sun with a high speed (usually a bulk velocity Vb great than 500 Km/sec), accompanied by low density and high temperature protons.Presently the catalog includes only those HSS events that extended for periods longer than a day.IMC - Interplanetary Magnetic CloudAn Interplanetary Magnetic Cloud is defined as (1) a smooth variation of the magnetic field direction, through a large angle; (2) strong magnetic fields; and (3) low ion temperature and low proton beta; all occurrring on a time scale of about 1 day or so. IR - Interaction RegionRegion of approximately half a day or longer showing unusually high magnetic and plasma pressures.IS - Interplanetary Fast ShockAn IS is defined in term of simultaneous changes in the bulk velocity (Vb) of the SW ions, their thermal velocity (Vth), and density (n) as well as the magnitude of the magnetic field (|B|), (and sometimes its direction), so that the Rankine-Hugoniot equations are expected to be satisfied for the event. Fast forward shocks, those most commonly seen in the interplanetary medium at 1 AU, are identified by positive changes in all of these quantities in time. Strong IS accompanied by a Southward oriented B-field have been associated with the observance of strong geomagnetic storms.The catalog contains only "candidates" for the IS category, based in the observations of the sudden change in the B-field and plasma quantities that within the resolution of the available KPs can be interpreted as being consistent with an interplanetary shock.LSS - Low Speed StreamOnly those periods of LSS when the Vb less than 330Km/sec are included.An occassional feature of a LSS is the presence of multiple SBCs (see def. Below), and PC disruptions.PC - Pressure ChangeThese are PCs other than IS. PC is defined as the sudden or gradual change (i.e. Over a short period of time; usually less than an hour) in the type of the SW pressure (+ or -), i.e., between kinetic and the magnetic field pressures. There may or may not be pressure equilibrium accross this region during the change.SBC - Sector Boundaries Crossing, also heliospheric current sheet crossingA SBC is identified by an usually rapid change in field direction by 180+/-60 Degs. Such that the field goes from one relatively stable direction (over several days) to another after the change(s).Sometimes this transition ocurrs after a large (and odd) number of such crossings, for many hours. Commonly there is a brief dip in field intensity (magnetic hole) at a crossing.MISC - Miscellaneous EventsEvents/Information deemed relevant to Solar, SW, or magnetospheric studies but failing to fit the other categories are added to the catalog under the MISC category.::Spacecraft - can be one or more of 8 (for IMP-8),  W (for WIND) and ACE.::Comments
+sql.columnucd.istp_sw_event=meta.record::time.start::time.end::meta.code.class::instr.obsty::meta.note 
+sql.columnutypes.istp_sw_event=::helio:time_period.time_start::helio:time_period.time_end::helio:solar_wind.category::helio:observatory.observatory_name::helio:comment 
+votable.query.info.istp_sw_event=TABLE_NAME,istp_sw_event
+
+
+
+sql.query.time.constraint.soho_pm_ip_shock=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.soho_pm_ip_shock=
+sql.query.coordinates.constraint.soho_pm_ip_shock= 
+sql.query.orderby.constraint.soho_pm_ip_shock=
+sql.query.maxrecord.constraint.soho_pm_ip_shock=20000
+sql.columnnames.soho_pm_ip_shock=HEC_id::time_start::zone::comment
+sql.columndesc.soho_pm_ip_shock=Event identification number (HEC internal number)::Start time of shock.::Zone of shock-- which indicates the likelihood of the event being a shock.There are 2 questions one must ask: 1) How many of the events found by Shockspotter are actually shocks?The percentage shocks entries given in the table below were derived by comparing the Shockspotter output for the 6-year period from Jan 21, 1996 to March 31, 2002 with the shock events listed on the Figs web page. The shock events listed on that page were originally subjectively identified by eye, and then checked to be at least consistent with the magnetic field behavior from either the ACE or WIND spacecraft. Since some of those identifications may be incorrect, the stated percentage shocks is only approximate. The Confidence Level is derived a bit more conservatively by decreasing the # shocks entries by 1 for each category. In general, a stronger shock will fall into a higher Zone than a weaker shock, and a shock detected during quiet pre-existing solar wind conditions wil fall into a higher zone than one detected during turbulent conditions. Type        Zone    # Events  # shocks  percentage shocks  Confidence Level  Forward     1             38           17                    45%                          42%  Forward     2             28           20                    71%                          68%  Forward     3             36           34                    94%                          92%  Forward     4             67           67                   100%                         99%  Reverse     1             13             6                     46%                         38%  2) How many shocks are missed by Shockspotter? This is a much more difficult question to answer. There are 105 forward or reverse shocks from 21 Jan 1996 to 21 Jan 2001 listed on the Figs page (as of this writing), of which 93 were found by Shockspotter. However, the shock list on the Figs page is far from complete; there are undoubtedly many weaker shocks that were not identified with this subjective procedure. For example, one of the Shockspotter tests requires a minimum speed jump of about 25 km/s (this minimum required jump speed is actually a function of density, see here for details). If one asks How many relatively large shocks are missed by Shcoksptter?, then one can estimate that less than 10% of shocks of sufficient strength to reach Zone category 2 or higher are undetected by Shockspotter.::Comments.
+sql.columnucd.soho_pm_ip_shock=meta.record::time.start::meta.code.class::meta.note 
+sql.columnutypes.soho_pm_ip_shock=::helio:time_period.time_start::helio:solar_wind.ip_shock_zone::helio:comment 
+votable.query.info.soho_pm_ip_shock=TABLE_NAME,soho_pm_ip_shock
+
+
+
+sql.query.time.constraint.wind_mfi_ip_shock=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.wind_mfi_ip_shock=
+sql.query.coordinates.constraint.wind_mfi_ip_shock= 
+sql.query.orderby.constraint.wind_mfi_ip_shock=
+sql.query.maxrecord.constraint.wind_mfi_ip_shock=20000
+sql.columnnames.wind_mfi_ip_shock=HEC_id::time_start
+sql.columndesc.wind_mfi_ip_shock=Event identification number (HEC internal number)::Start time of shock.
+sql.columnucd.wind_mfi_ip_shock=meta.record::time.start 
+sql.columnutypes.wind_mfi_ip_shock=::helio:time_period.time_start 
+votable.query.info.wind_mfi_ip_shock=TABLE_NAME,wind_mfi_ip_shock
+
+
+
+sql.query.time.constraint.wind_sw_crossing_time='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.wind_sw_crossing_time=
+sql.query.coordinates.constraint.wind_sw_crossing_time= 
+sql.query.orderby.constraint.wind_sw_crossing_time=
+sql.query.maxrecord.constraint.wind_sw_crossing_time=20000
+sql.columnnames.wind_sw_crossing_time=HEC_id::time_start::time_end
+sql.columndesc.wind_sw_crossing_time=Event identification number (HEC internal number)::Start time for spacecraft in the solar wind.::End time for spacecraft in the solar wind.
+sql.columnucd.wind_sw_crossing_time=meta.record::time.start::time.end 
+sql.columnutypes.wind_sw_crossing_time=::helio:time_period.time_start::helio:time_period.time_end 
+votable.query.info.wind_sw_crossing_time=TABLE_NAME,wind_sw_crossing_time
+
+
+
+sql.query.time.constraint.imp8_sw_crossing_time='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.imp8_sw_crossing_time=
+sql.query.coordinates.constraint.imp8_sw_crossing_time= 
+sql.query.orderby.constraint.imp8_sw_crossing_time=
+sql.query.maxrecord.constraint.imp8_sw_crossing_time=20000
+sql.columnnames.imp8_sw_crossing_time=HEC_id::time_start::time_end
+sql.columndesc.imp8_sw_crossing_time=Event identification number (HEC internal number)::Start time for spacecraft in the solar wind.::End time for spacecraft in the solar wind.
+sql.columnucd.imp8_sw_crossing_time=meta.record::time.start::time.end 
+sql.columnutypes.imp8_sw_crossing_time=::helio:time_period.time_start::helio:time_period.time_end 
+votable.query.info.imp8_sw_crossing_time=TABLE_NAME,imp8_sw_crossing_time
+
+
+
+sql.query.time.constraint.tsrs_solar_radio_event='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.tsrs_solar_radio_event=
+sql.query.coordinates.constraint.tsrs_solar_radio_event= 
+sql.query.orderby.constraint.tsrs_solar_radio_event=
+sql.query.maxrecord.constraint.tsrs_solar_radio_event=20000
+sql.columnnames.tsrs_solar_radio_event=HEC_id::time_start::time_peak::time_end::freq::cpp::ps::sfu_max::radio_class::comment::data_url
+sql.columndesc.tsrs_solar_radio_event=Event identification number (HEC internal number)::Start time of event.::Peak time of event.::End time of event.::Radio frequency of observation.::Circular polarization percentage measured at peak flux.::Polarization sense (R - Right-handed; L - Left-handed).::Maximum flux (solar flux units).::Morphological classification of the radio events based on Solar-Geophysical Data, Explanation                    of data reports (July 1987, No. 515)                Morphological classes:                SPIKE: Very fast and narrow event                S 1: Simple and impulsive event with a narrow maximum region                S 2: Simple and impulsive event with a wider maximum region                C: Complex event: combination of a few or many simple bursts                F: Fluctuation: minor C sometimes superposed in the main burst                GB: Great Burst: particularly complex, long lasting event                SER: Series of events occurring in a short time period                Combinations of this symbols can be used for events not completely described by the previous classification classes.::Comments. Events that saturated the receiver are flagged as "SAT"(uration).::URL link to quick-look picture file.
+sql.columnucd.tsrs_solar_radio_event=meta.record::time.start::time.phase::time.end::em.freq;em.radio::phys.polarization.circular::phys.polarization.circular::phot.flux;stat.max::meta.code.class;em.radio::meta.note::meta.ref.url 
+sql.columnutypes.tsrs_solar_radio_event=::helio:time_period.time_start::helio:time.time_peak::helio:time_period.time_end::helio:radio.frequency::helio:radio.circular_polarization_percent::helio:radio.polarization_direction::helio:radio.sfu_max::helio:radio.radio_class::helio:comment::helio:radio.data_url 
+votable.query.info.tsrs_solar_radio_event=TABLE_NAME,tsrs_solar_radio_event
+
+
+
+sql.query.time.constraint.wind_typeii_soho_cme='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.wind_typeii_soho_cme=
+sql.query.coordinates.constraint.wind_typeii_soho_cme= 
+sql.query.orderby.constraint.wind_typeii_soho_cme=
+sql.query.maxrecord.constraint.wind_typeii_soho_cme=20000
+sql.columnnames.wind_typeii_soho_cme=HEC_id::time_start::time_end::freq_start::freq_end::loc::nar::xray_class::time_cme::pa::pa_width::v_ps::comment
+sql.columndesc.wind_typeii_soho_cme=Event identification number (HEC internal number)::Start time of the type II burst.::End time of the type II burst.::Starting frequency of type II burst (kHz).::Ending frequency of type II burst (kHz).::Solar source location (Loc) of the associated eruption in heliographic coordinates. S25E16 means the latitude is 25 deg south and 16 deg east (source located in the southeast quadrant of the Sun. N denotes northern latitudes and W denotes western longitudes. Entries like SW90 indicate that the source information is not complete, but we can say that the eruption occurs on the west limb but at southern latitudes; if such entries have a subscript b (e.g., NE90b) it means that the source is behind the particular limb. This information is usually gathered from SOHO/EIT difference images, which show dimming above the limb in question. Completely backside events with no information on the source location are marked as BACK.::NOAA active region index. If the active region number is not available or if the source region is not an active region, the entry is blank. Filament regions are denoted by FILA or DSF for disappearing solar filament.::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of Watts/sq meter.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Time of the associated CME.::Central position angle  for non-halo CMEs.  (See the 'Central position angle' in the HEC glossary for the specification of this field)::CME width in the sky plane. Width = 360 means the CME is a fill halo. For some entries, there is a prefix >, which means the reported width is a lower limit.::CME speed in the sky plane (km/s).::Comments.
+sql.columnucd.wind_typeii_soho_cme=meta.record::time.start::time.end::em.freq::em.freq::pos.bodyrc;pos.heliographic::meta.id.cross::meta.code.class;em.X-ray::::pos.posAng::pos.posAng;phys.angSize::phys.veloc::meta.note 
+sql.columnutypes.wind_typeii_soho_cme=::helio:time_period.time_start::helio:time_period.time_end::helio:radio.frequency_start::helio:radio.frequency_end::helio:::helio:flare.nar::helio:flare.magnitude.xray_class::::helio:location.pa::helio:location.pa_width::helio:cme.velocity.v_plane_of_sky::helio:comment 
+votable.query.info.wind_typeii_soho_cme=TABLE_NAME,wind_typeii_soho_cme
+
+
+
+sql.query.time.constraint.wind_stereo_ii_iv_radioburst='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.wind_stereo_ii_iv_radioburst=
+sql.query.coordinates.constraint.wind_stereo_ii_iv_radioburst= 
+sql.query.orderby.constraint.wind_stereo_ii_iv_radioburst=
+sql.query.maxrecord.constraint.wind_stereo_ii_iv_radioburst=20000
+sql.columnnames.wind_stereo_ii_iv_radioburst=HEC_id::identifier::time_start::time_end::freq_start::freq_end::dyn_spec::comment
+sql.columndesc.wind_stereo_ii_iv_radioburst=Event identification number (HEC internal number)::An internal WAVES Experiment Type II/IV event identifier, which, as the events are organised in separate files for each year, is incremented for each event during the year and reset to 1 at the start of the next year.::Start time of radio burst.::End time of radio burst.::Start of frequency range measured.::End of frequency range measured.::Dynamic spectra type:Those marked with 'S' or 'X' are standard frequency versus time dynamic spectra.Those marked with 'F' are inverse frequency versus time, corresponding roughly to distance from the sun versus time.::Comments -brief description of type of burst.
+sql.columnucd.wind_stereo_ii_iv_radioburst=meta.record::meta.id.cross::time.start::time.end::em.freq::em.freq::meta.code::meta.note 
+sql.columnutypes.wind_stereo_ii_iv_radioburst=::::helio:time_period.time_start::helio:time_period.time_end::helio:radio.frequency_start::helio:radio.frequency_end::helio:radio.dyn_spectra::helio:comment 
+votable.query.info.wind_stereo_ii_iv_radioburst=TABLE_NAME,wind_stereo_ii_iv_radioburst
+
+
+
+sql.query.time.constraint.ulysses_swoops_icme='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.ulysses_swoops_icme=
+sql.query.coordinates.constraint.ulysses_swoops_icme= 
+sql.query.orderby.constraint.ulysses_swoops_icme=
+sql.query.maxrecord.constraint.ulysses_swoops_icme=20000
+sql.columnnames.ulysses_swoops_icme=HEC_id::time_start::time_end::lat_hgi::long_hgi::r_hgi::v_p::v_p_err::b::b_err
+sql.columndesc.ulysses_swoops_icme=Event identification number (HEC internal number)::CME start time::CME end time.::The spacecraft heliographic inertial (HGI) latitude at the beginning of the event.::The spacecraft heliographic inertial (HGI) longitude for the the day in which the event was identified.::Ulysses-Sun radial distance using the heliographic inertial (HGI) coordinate system.::Average proton velocity within the event timeframe.::Error in the average proton velocity.::Average total magnetic field strength of the plasma within the event timeframe.::Error in the magnetic field strength.
+sql.columnucd.ulysses_swoops_icme=meta.record::time.start::time.end::pos.bodyrc.lat;pos.heliographic::pos.bodyrc.long;pos.heliographic::pos.bodyrc.alt;pos.heliographic::phys.veloc::phys.veloc;stat.error::phys.magField;stat.mean::stat.error;phys.magField 
+sql.columnutypes.ulysses_swoops_icme=::helio:time_period.time_start::helio:time_period.time_end::helio:location.lat_hgi::helio:location.long_hgi::helio:location.r_hgi::helio:icme.velocity.v_proton::helio:icme.velocity.v_uncertainty_factor::helio:icme.plasma_magnetic_field_strength::helio:icme.plasma_magnetic_field_strength_error 
+votable.query.info.ulysses_swoops_icme=TABLE_NAME,ulysses_swoops_icme
+
+
+sql.query.time.constraint.stereo_euvi_event='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.stereo_euvi_event=
+sql.query.coordinates.constraint.stereo_euvi_event= 
+sql.query.orderby.constraint.stereo_euvi_event=
+sql.query.maxrecord.constraint.stereo_euvi_event=20000
+sql.columnnames.stereo_euvi_event=HEC_id::id_num::time_start::time_end::lat_hg::long_hg::long_carr::cadence::spacecraft::xray_class::rhessi_peak_range::rhessi_peak_count::comment::cme_event_source
+sql.columndesc.stereo_euvi_event=Event identification number (HEC internal number)::STEREO/EUVI event Catalogue Number.::Start time::End time::Heliographic Latitude.::Heliographic Longitude.::Carrington longitude of active region::Instrument cadence.::Spacecraft ID::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of W m^-2.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Peak RHESSI energy range in which event is observed.::Counts in peak RHESSI energy range.::Comments using the following EUVI Classification:                      A=Ahead only without Behind data                      B=Behind only without Ahead data                      I=Impulsive time profile (peak in coincidence with SXR)                     P=Postflare loop or arcade (delayed emission after SXR peak)                      D=Dimming (EUV flux decreases after SXR peak)                     E=Eruptive filament                     O=Occulted for A (if flare position is east) or B (if west)                     T=Test images (or poor image quality)                     W=Waves and oscillations::CME reported by one or both of the following:   L=LASCO/SOHO  S=SECCHI/Cor-1,Cor-2
+sql.columnucd.stereo_euvi_event=meta.record::meta.id.cross::time.start::time.end::pos.bodyrc.lat;pos.heliographic::pos.bodyrc.long;pos.heliographic::pos::::instr.obsty::meta.code.class;em.X-ray::phys.energy;stat.max;inst.bandwidth::phys.energy;stat.max;meta.number::meta.note::instr 
+sql.columnutypes.stereo_euvi_event=::::helio:time_period.time_start::helio:time_period.time_end::helio:location.lat_hg::helio:location.long_hg::helio:location.long_carr::helio:instr.cadence_s::helio:observatory.observatory_name::helio:flare.magnitude.xray_class::::::helio:comment:: 
+votable.query.info.stereo_euvi_event=TABLE_NAME,stereo_euvi_event
+
+
+
+sql.query.time.constraint.noaa_active_region_summary=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.noaa_active_region_summary=
+sql.query.coordinates.constraint.noaa_active_region_summary= 
+sql.query.orderby.constraint.noaa_active_region_summary=
+sql.query.maxrecord.constraint.noaa_active_region_summary=20000
+sql.columnnames.noaa_active_region_summary=HEC_id::time_start::nar::lat_hg::long_hg::long_carr::area::zurich_class::p_value::c_value::dlong_hg::n_spots::mag_class::region_type
+sql.columndesc.noaa_active_region_summary=Event identification number (HEC internal number)::Start time::NOAA active region index::::Heliographic Longitude.::Carrington longitude of active region::Total corrected area of the group in millionths of the solar hemisphere.::Modified Zurich classification of the group.::?::?::?::Number of sunspots.::Magnitude class::Comment on type of region
+sql.columnucd.noaa_active_region_summary=meta.record::time.start::meta.id.cross::pos.bodyrc.lat;pos.heliographic::pos.bodyrc.long;pos.heliographic::pos::phys.area::meta.code.class::stat.value::stat.value::pos.bodyrc.long;pos.heliographic::meta.number::meta.code.class;phot.magi:: 
+sql.columnutypes.noaa_active_region_summary=::helio:time_period.time_start::helio:flare.nar::helio:location.lat_hg::helio:location.long_hg::helio:location.long_carr:::::::::::::::: 
+votable.query.info.noaa_active_region_summary=TABLE_NAME,noaa_active_region_summary
+
+
+
+sql.query.time.constraint.noaa_daily_solar_data=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.noaa_daily_solar_data=
+sql.query.coordinates.constraint.noaa_daily_solar_data= 
+sql.query.orderby.constraint.noaa_daily_solar_data=
+sql.query.maxrecord.constraint.noaa_daily_solar_data=20000
+sql.columnnames.noaa_daily_solar_data=HEC_id::time_start::radio_10cm::sesc_ssn::ss_area::new_regions::stan_smf::xray_bkg::n_c_flares::m_flares::x_flares::opts_flares::opt1_flares::opt2_flares::opt3_flares
+sql.columndesc.noaa_daily_solar_data=Event identification number (HEC internal number)::Date.::Radio Flux Penticton 10.7 cm: The 10.7 cm (2800 MHz) full Sun radio flux reported by the Dominion Radio Astrophysical Observatory at Penticton, B.C., Canada on the date indicated.  Measurements are made at approximately 2000UT. Values are in units of 10 E-22/Sq Wm/Hz and are not corrected for the variable Sun-Earth distance resulting from the eccentric orbit of the Earth around the Sun.::Sunspot No: The SESC sunspot number for the indicated date is from the daily Solar Region Summary issued by SESC. The SESC sunspot number is computed according to the Wolf Sunspot Number R=k (10g+s), where g is the number of sunspot groups (regions), s is the total number of individual spots in all the groups, and k is a variable scaling factor (usually less than 1) that indicates the combined effects of observing conditions, telescope, and bias of the solar observers.  A sunspot number of zero indicates there were no visible sunspots on that date; a * indicates that no observations were taken. The   sunspot region information used to compute the daily sunspot number incorporates reports from as many as six observatories.  These reports are used to form a composite picture of each individual region, including sunspot number, area and classification, taking into account such factors as  the time of observation and the quality of seeing.  This composite information is the daily average obtained from the reporting observatories and may not represent the latest data. It is reported daily in the Solar Region Summary and listed in the Region Summary section of the Weekly.::Sunspot Area : Sum of the corrected area of all observed sunspots, in units of millionths of the solar hemisphere.::New Regions.::Stanford Solar Mean Field.::X-ray Background Flux : The daily average background x-ray flux as measured on the SWPC primary GOES satellite. Note: X-ray flux values below the B1 level can be erroneous. Energetic electron contamination of the x-ray sensors occurs. At times of high electron flux at geosynchronous altitude, the x-ray measurementsin the low A-class range can be in error by 20-30%. Measurements taken duringperiods of low energetic electron fluxes are much more accurate.   Daily GOES X-ray Background Flux algorithm:     o The 24 one-hour X-ray 1-8 Angstrom; values are divided into three        8-hour sections     o The minimum for each of these three 8-hour sections is determined;         ... Call them min1, min2, and min3     o The average of the minima from the first and last 8-hour sections         is calculated: min_avg = 1/2 (min1 + min3)     o Daily Background X-Ray Flux is the smallest of min2 or min_avg      X-Ray_background = minimum of (min2 or min_avg)::Number of Type C X-Ray Flares.::Number of Type M X-Ray Flares.::Number of Type X X-Ray Flares.::Number of Type S Optical Flares.::Number of Type 1 Optical Flares.::Number of Type 2 Optical Flares.::Number of Type 3 Optical Flares.
+sql.columnucd.noaa_daily_solar_data=meta.record::time.start::phot.flux;em.radio.1500-3000MHz::meta.number;meta.modelled::phys.area::meta.number::::instr.background;phot.flux;em.X-ray;meta.code.class::meta.number::meta.number::meta.number::meta.number::meta.number::meta.number::meta.number 
+sql.columnutypes.noaa_daily_solar_data=::helio:time_period.time_start:::::::::::::::::::::::::: 
+votable.query.info.noaa_daily_solar_data=TABLE_NAME,noaa_daily_solar_data
+
+
+
+sql.query.time.constraint.cactus_soho_cme=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.cactus_soho_cme=
+sql.query.coordinates.constraint.cactus_soho_cme= 
+sql.query.orderby.constraint.cactus_soho_cme=
+sql.query.maxrecord.constraint.cactus_soho_cme=20000
+sql.columnnames.cactus_soho_cme=HEC_id::time_start::duration::pa::pa_width::v::dv::v_min::v_max::flag_halo::cme_number::event_detail
+sql.columndesc.cactus_soho_cme=Event Identification number (HEC internal number)::Onset time, earliest indication of liftoff::Duration of liftoff (hours)::Position angle (degrees, counterclockwise from North)::Angular width of the CME (degrees)::Median velocity (km/s)::Variation (1 sigma) of velocity over the width of the CME::Lowest velocity detected within the CME::Highest velocity detected within the CME maxv Highest velocity detected within the CME::II if da greater than 90, III if da greater than 180, IV if da greater than 270, indicating potential halo/partial halo/CME ????::CME number [[corresponds to column 'CME' in the original file without leading zeros]]::Link to details and graphs of specified CME [yymm-CME0010]
+sql.columnucd.cactus_soho_cme=meta.record::time.start::time.duration::pos.posAng::pos.posAng;phys.angSize::phys.veloc::::phys.veloc;stat.min::phys.veloc;stat.max::meta.code::meta.number::meta.ref.url 
+sql.columnutypes.cactus_soho_cme=::helio:time_period.time_start::::helio:location.pa::helio:location.pa_width::helio:cme.velocity.v:::::::::::: 
+votable.query.info.cactus_soho_cme=TABLE_NAME,cactus_soho_cme
+
+
+
+votable.query.info.halo_cme_flare_magnetic_storm=TABLE_NAME,halo_cme_flare_magnetic_storm
+
+
+
+sql.query.time.constraint.ulysses_grb_xray_flare=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.ulysses_grb_xray_flare=
+sql.query.coordinates.constraint.ulysses_grb_xray_flare= 
+sql.query.orderby.constraint.ulysses_grb_xray_flare=
+sql.query.maxrecord.constraint.ulysses_grb_xray_flare=20000
+sql.columnnames.ulysses_grb_xray_flare=HEC_id::time_start::time_start_earth::r_hgi::lat_hgi::long_hgi
+sql.columndesc.ulysses_grb_xray_flare=::The time the X-ray flare events were detected by Ulysses::The time the corresponding event was detected near the Earth by the GOES spacecraft.::The heliocentric distance of Ulysses at the time of the event.::The heliocentric latitude of Ulysses at the time of the event.::The heliocentric longitude of Ulysses at the time of the event.
+sql.columnucd.ulysses_grb_xray_flare=meta.record::time.start::time.phase::pos.distance;pos.heliocentric/heliographic?::pos.bodyrc.lat;pos.heliographic::pos.bodyrc.long;pos.heliographic 
+sql.columnutypes.ulysses_grb_xray_flare=::helio:time_period.time_start::::::helio:location.lat_hgi:: 
+votable.query.info.ulysses_grb_xray_flare=TABLE_NAME,ulysses_grb_xray_flare
+
+
+sql.query.time.constraint.cactus_stereoa_cme=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.cactus_stereoa_cme=
+sql.query.coordinates.constraint.cactus_stereoa_cme=
+sql.query.orderby.constraint.cactus_stereoa_cme=
+sql.query.maxrecord.constraint.cactus_stereoa_cme=20000
+sql.columnnames.cactus_stereoa_cme=hec_id::sat_id::r_hci::long_hci::lat_hci::time_start::duration::pa::pa_width::v::dv::v_min::v_max::cme_number::flag_halo::event_detail
+sql.columndesc.cactus_stereoa_cme=Event Identification number (HEC internal number)::Satellite ID::Heliocentric Inertial (HCI) Radial distance::Heliocentric Inertial (HCI) Longitude::Heliocentric Inertial (HCI) Latitude::Onset time::Duration of liftoff (hours)::Position angle (degrees::Angular width of the CME (degrees)::Median velocity (km/s)::Variation (1 sigma) of velocity over the width of the CME::Lowest velocity detected within the CME::Highest velocity detected within the CME  maxv Highest velocity detected within the CME::II if da greater than 90::CME number [[corresponds to column 'CME' in the original file without leading zeros]]::Link to details and graphs of specified CME [yymm-CME0010]
+sql.columnucd.cactus_stereoa_cme=meta.record::meta.id;instr.obsty::pos.bodyrc.alt;pos.heliocentric::pos.bodyrc.lat;pos.heliocentric::pos.bodyrc.long;pos.heliocentric::time.start::time.duration::pos.posAng::pos.posAng;phys.angSize::phys.veloc::::phys.veloc;stat.min::phys.veloc;stat.max::meta.code::meta.number::meta.ref.url 
+sql.columnutypes.cactus_stereoa_cme=::::::::helio:location.long_err::helio:time_period.time_start::::helio:location.pa::helio:location.pa_width::helio:cme.velocity.v:::::::::::: 
+
+
+
+
+sql.query.time.constraint.cactus_stereob_cme=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.cactus_stereob_cme=
+sql.query.coordinates.constraint.cactus_stereob_cme=
+sql.query.orderby.constraint.cactus_stereob_cme=
+sql.query.maxrecord.constraint.cactus_stereob_cme=20000
+sql.columnnames.cactus_stereob_cme=hec_id::sat_id::r_hci::long_hci::lat_hci::time_start::duration::pa::pa_width::v::dv::v_min::v_max::cme_number::flag_halo::event_detail
+sql.columndesc.cactus_stereob_cme=Event Identification number (HEC internal number)::Satellite ID::Heliocentric Inertial (HCI) Radial distance::Heliocentric Inertial (HCI) Longitude::Heliocentric Inertial (HCI) Latitude::Onset time::Duration of liftoff (hours)::Position angle (degrees::Angular width of the CME (degrees)::Median velocity (km/s)::Variation (1 sigma) of velocity over the width of the CME::Lowest velocity detected within the CME::Highest velocity detected within the CME  maxv Highest velocity detected within the CME::II if da greater than 90::CME number [[corresponds to column 'CME' in the original file without leading zeros]]::Link to details and graphs of specified CME [yymm-CME0010]
+sql.columnucd.cactus_stereob_cme=meta.record::meta.id;instr.obsty::pos.bodyrc.alt;pos.heliocentric::pos.bodyrc.lat;pos.heliocentric::pos.bodyrc.long;pos.heliocentric::time.start::time.duration::pos.posAng::pos.posAng;phys.angSize::phys.veloc::::phys.veloc;stat.min::phys.veloc;stat.max::meta.code::meta.number::meta.ref.url 
+sql.columnutypes.cactus_stereob_cme=::::::::helio:location.long_err::helio:time_period.time_start::::helio:location.pa::helio:location.pa_width::helio:cme.velocity.v:::::::::::: 
+
+
+sql.query.time.constraint.cactus_stereob_flow=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.cactus_stereob_flow=
+sql.query.coordinates.constraint.cactus_stereob_flow=
+sql.query.orderby.constraint.cactus_stereob_flow=
+sql.query.maxrecord.constraint.cactus_stereob_flow=20000
+sql.columnnames.cactus_stereob_flow=hec_id::sat_id::r_hci::long_hci::lat_hci::time_start::duration::pa::pa_width::v::dv::v_min::v_max::cme_number::flag_halo::event_detail
+sql.columndesc.cactus_stereob_flow=Event Identification number (HEC internal number)::Satellite ID::Heliocentric Inertial (HCI) Radial distance::Heliocentric Inertial (HCI) Longitude::Heliocentric Inertial (HCI) Latitude::Onset time::Duration of liftoff (hours)::Position angle (degrees::Angular width of the CME (degrees)::Median velocity (km/s)::Variation (1 sigma) of velocity over the width of the CME::Lowest velocity detected within the CME::Highest velocity detected within the CME  maxv Highest velocity detected within the CME::II if da greater than 90::CME number [[corresponds to column 'CME' in the original file without leading zeros]]::Link to details and graphs of specified CME [yymm-CME0010]
+sql.columnucd.cactus_stereob_flow=meta.record::meta.id;instr.obsty::pos.bodyrc.alt;pos.heliocentric::pos.bodyrc.lat;pos.heliocentric::pos.bodyrc.long;pos.heliocentric::time.start::time.duration::pos.posAng::pos.posAng;phys.angSize::phys.veloc::::phys.veloc;stat.min::phys.veloc;stat.max::meta.code::meta.number::meta.ref.url 
+sql.columnutypes.cactus_stereob_flow=::::::::helio:location.long_err::helio:time_period.time_start::::helio:location.pa::helio:location.pa_width::helio:cme.velocity.v:::::::::::: 
+
+sql.query.time.constraint.cactus_stereoa_flow=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.cactus_stereoa_flow=
+sql.query.coordinates.constraint.cactus_stereoa_flow=
+sql.query.orderby.constraint.cactus_stereoa_flow=
+sql.query.maxrecord.constraint.cactus_stereoa_flow=20000
+sql.columnnames.cactus_stereoa_flow=hec_id::sat_id::r_hci::long_hci::lat_hci::time_start::duration::pa::pa_width::v::dv::v_min::v_max::cme_number::flag_halo::event_detail
+sql.columndesc.cactus_stereoa_flow=Event Identification number (HEC internal number)::Satellite ID::Heliocentric Inertial (HCI) Radial distance::Heliocentric Inertial (HCI) Longitude::Heliocentric Inertial (HCI) Latitude::Onset time::Duration of liftoff (hours)::Position angle (degrees::Angular width of the CME (degrees)::Median velocity (km/s)::Variation (1 sigma) of velocity over the width of the CME::Lowest velocity detected within the CME::Highest velocity detected within the CME  maxv Highest velocity detected within the CME::II if da greater than 90::CME number [[corresponds to column 'CME' in the original file without leading zeros]]::Link to details and graphs of specified CME [yymm-CME0010]
+sql.columnucd.cactus_stereoa_flow=meta.record::meta.id;instr.obsty::pos.bodyrc.alt;pos.heliocentric::pos.bodyrc.lat;pos.heliocentric::pos.bodyrc.long;pos.heliocentric::time.start::time.duration::pos.posAng::pos.posAng;phys.angSize::phys.veloc::::phys.veloc;stat.min::phys.veloc;stat.max::meta.code::meta.number::meta.ref.url 
+sql.columnutypes.cactus_stereoa_flow=::::::::helio:location.long_err::helio:time_period.time_start::::helio:location.pa::helio:location.pa_width::helio:cme.velocity.v:::::::::::: 
+
+sql.query.time.constraint.cactus_soho_flow=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.cactus_soho_flow=
+sql.query.coordinates.constraint.cactus_soho_flow=
+sql.query.orderby.constraint.cactus_soho_flow=
+sql.query.maxrecord.constraint.cactus_soho_flow=20000
+sql.columnnames.cactus_soho_flow=hec_id::sat_id::r_hci::long_hci::lat_hci::time_start::duration::pa::pa_width::v::dv::v_min::v_max::cme_number::flag_halo::event_detail
+sql.columndesc.cactus_soho_flow=Event Identification number (HEC internal number)::Satellite ID::Heliocentric Inertial (HCI) Radial distance::Heliocentric Inertial (HCI) Longitude::Heliocentric Inertial (HCI) Latitude::Onset time::Duration of liftoff (hours)::Position angle (degrees::Angular width of the CME (degrees)::Median velocity (km/s)::Variation (1 sigma) of velocity over the width of the CME::Lowest velocity detected within the CME::Highest velocity detected within the CME  maxv Highest velocity detected within the CME::II if da greater than 90::CME number [[corresponds to column 'CME' in the original file without leading zeros]]::Link to details and graphs of specified CME [yymm-CME0010]
+sql.columnucd.cactus_soho_flow=meta.record::meta.id;instr.obsty::pos.bodyrc.alt;pos.heliocentric::pos.bodyrc.lat;pos.heliocentric::pos.bodyrc.long;pos.heliocentric::time.start::time.duration::pos.posAng::pos.posAng;phys.angSize::phys.veloc::::phys.veloc;stat.min::phys.veloc;stat.max::meta.code::meta.number::meta.ref.url 
+sql.columnutypes.cactus_soho_flow=::::::::helio:location.long_err::helio:time_period.time_start::::helio:location.pa::helio:location.pa_width::helio:cme.velocity.v:::::::::::: 
+
+
+
+sql.query.time.constraint.cactus_all=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.cactus_all=
+sql.query.coordinates.constraint.cactus_all=
+sql.query.orderby.constraint.cactus_all=
+sql.query.maxrecord.constraint.cactus_all=20000
+sql.columnnames.cactus_all=hec_id::sat_id::r_hci::long_hci::lat_hci::time_start::duration::pa::pa_width::v::dv::v_min::v_max::cme_number::flag_halo::event_detail
+sql.columndesc.cactus_all=Event Identification number (HEC internal number)::Satellite ID::Heliocentric Inertial (HCI) Radial distance::Heliocentric Inertial (HCI) Longitude::Heliocentric Inertial (HCI) Latitude::Onset time::Duration of liftoff (hours)::Position angle (degrees::Angular width of the CME (degrees)::Median velocity (km/s)::Variation (1 sigma) of velocity over the width of the CME::Lowest velocity detected within the CME::Highest velocity detected within the CME  maxv Highest velocity detected within the CME::II if da greater than 90::CME number [[corresponds to column 'CME' in the original file without leading zeros]]::Link to details and graphs of specified CME [yymm-CME0010]
+sql.columnucd.cactus_all=meta.record::meta.id;instr.obsty::pos.bodyrc.alt;pos.heliocentric::pos.bodyrc.lat;pos.heliocentric::pos.bodyrc.long;pos.heliocentric::time.start::time.duration::pos.posAng::pos.posAng;phys.angSize::phys.veloc::::phys.veloc;stat.min::phys.veloc;stat.max::meta.number::meta.code::meta.ref.url 
+sql.columnutypes.cactus_all=::::::::helio:location.long_err::helio:time_period.time_start::::helio:location.pa::helio:location.pa_width::helio:cme.velocity.v:::::::::::: 
+votable.query.info.cactus_all=TABLE_NAME,cactus_all
+
+votable.query.info.cactus_soho_flow=TABLE_NAME,cactus_soho_flow
+votable.query.info.cactus_stereoa_cme=TABLE_NAME,cactus_stereoa_cme
+votable.query.info.cactus_stereob_cme=TABLE_NAME,cactus_stereob_cme
+votable.query.info.cactus_stereoa_flow=TABLE_NAME,cactus_stereoa_flow
+votable.query.info.cactus_stereob_flow=TABLE_NAME,cactus_stereob_flow
+
+
+sql.query.time.constraint.mars_earth_icme=time_start_mars>='[:kwstartdate:]' AND time_start_mars<='[:kwenddate:]'
+sql.query.instr.constraint.mars_earth_icme=
+sql.query.coordinates.constraint.mars_earth_icme= 
+sql.query.orderby.constraint.mars_earth_icme=
+sql.query.maxrecord.constraint.mars_earth_icme=20000
+sql.columnnames.mars_earth_icme=hec_id::event_id::time_start_mars::p_dyn_mars::counts_max_mars::time_start_earth::p_dyn_earth::v_max_earth::density_max_earth::counts_max_goes::long_hci_sepn
+sql.columndesc.mars_earth_icme=Event Identification number (HEC internal number).::ICME event identifier in paper.::Start of shock event at Mars.::The maximum solar wind (particle) dynamic pressure at Mars (MGS).::The maximum background count rate in the Electron Re_x000d_flectometer on MGS.::Start of shock event at the Earth.::The maximum dynamic pressure at Earth (OMNI).::The maximum speed of CME at Earth (OMNI).::The maximum density of CME at Earth (OMNI).::The maximum GOES signal (>30MeV).::The heliocentric longitude distance between Earth and Mars.
+sql.columnucd.mars_earth_icme=meta.record::meta.id::time.start::phys.pressure;stat.max::phys.energy;stat.max;meta.number::time.start;pos.earth::phys.pressure;stat.max;pos.earth::phys.veloc;stat.max;pos.earth::phys.density;stat.max;pos.earth::phys.energy;stat.max::pos.bodyrc.long;pos.heliocentric;pos.distance  
+sql.columnutypes.mars_earth_icme=::::time.time_start::::helio:flare.magnitude.hard_xray_quantifier.hard_xray_count::time.time_start::::::::::  
+votable.query.info.mars_earth_icme=TABLE_NAME,mars_earth_icme
+
+sql.query.time.constraint.wind_ace_sir='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.wind_ace_sir=
+sql.query.coordinates.constraint.wind_ace_sir= 
+sql.query.orderby.constraint.wind_ace_sir=
+sql.query.maxrecord.wind_ace_sir.wind_ace_sir=20000
+sql.columnnames.wind_ace_sir=hec_id::sir_id::flag_hybrid::cir_id::time_start::time_end::time_discon1::f_r_shock1::time_discon2::f_r_shock2::time_discon3::f_r_shock3::time_si::pt_max::v_max::v_min::delta_v::b_max::comment
+sql.columndesc.wind_ace_sir=Event Identification number (HEC internal number).::Stream interaction region number which is reset to 1 at the beginning of the year.::* means that it is a hybrid case consisting of more than one event.::Corotating interaction region (CIR) number which is reset to 1 at the beginning of the year.::Start time of the event.::End time of the event.::Time of the first discontinuity.::If there is a dicontinuity, this has one of the following values:                 F it is a forward shock,                R it is a reverse shock,                / it is neither a forward or a reverse shock,                SR it is a slow reverse shock, from Justin Kasper's shock list of Wind.::Time of the second discontinuity.::If there is a second dicontinuity, this has one of the following values:                 F it is a forward shock,                R it is a reverse shock,                / it is neither a forward or a reverse shock,                SR it is a slow reverse shock, from Justin Kasper's shock list of Wind.::Time of the third discontinuity.::If there is a third dicontinuity, this has one of the following values:                 F it is a forward shock,                R it is a reverse shock,                / it is neither a forward or a reverse shock,                SR it is a slow reverse shock, from Justin Kasper's shock list of Wind.::Time at the stream interface.::Maximum total perpendicular pressure.::Maximum velocity.::Minimum velocity.::Difference between maximum and minimum velocities.::Peak magnetic field intensity.::Comments.
+sql.columnucd.wind_ace_sir=meta.record::meta.id::meta.code::meta.id::time.start::time.end::time.epoch::meta.code::time.epoch::meta.code::time.epoch::meta.code::time.epoch::phys.pressure;stat.max::phys.veloc;stat.max::phys.veloc;stat.min::arith.rate;phys.veloc::stat.max;phys.magField::meta.note  
+sql.columnutypes.wind_ace_sir=::::::::helio:time_period.time_start::helio:time_period.time_end::::::::::::::::::::::::::  
+votable.query.info.wind_ace_sir=TABLE_NAME,wind_ace_sir
+
+sql.query.time.constraint.goes_flare_sep_event='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.goes_flare_sep_event=
+sql.query.coordinates.constraint.goes_flare_sep_event= 
+sql.query.orderby.constraint.goes_flare_sep_event=
+sql.query.maxrecord.constraint.goes_flare_sep_event=20000
+sql.columnnames.goes_flare_sep_event=hec_id::time_start::time_peak::time_end::loc_source::lat_hg::long_hg::long_carr::optical_class::xray_class::time_start_rise_sep::upper_limit::intensity_sep_peak::intensity_sep_exp::comment
+sql.columndesc.goes_flare_sep_event=Event Identification number (HEC internal number).::Start time of the event.::Time of the peak of the event.::End time of event.::G indicates the location inferred from the Halpha observations as given in the GOES X-ray list. S indicates it is from the Solar Geophysical Data (SGD) Comprehensive Reports.::Heliographic latitude of x-ray flare.::Heliographic longitude of x-ray flare.::Carrington longitude of x-ray flare.::Average optical importance of flare -- a measurement of flare size and brilliance.  (See the 'Optical Class' in the HEC glossary for the specification of this field)::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of W m^-2.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Time at which the proton intensity starts to rise.::Y if the peak integral proton intensity is an upper limit - N if not.::The peak integral proton intensity at energies above 10 MeV.::For upper limits for the intensity, the expected value of the integral intensity above 10 MeV as defined, based on the soft X-ray properties, by Equation (6) of Garcia (2004), Space Weather, 2, S02002.::If the event is in the SEP list complied by NOAA, it is indicated by NOAA and a time. A capital C indicates a 'confined' event associated with CME-less X-class bursts. There are five categories of events:  (a) 21 SEP events that were catalogued by NOAA based on GOES observations. (b) 10 SEP events detected by GOES that were not catalogued because their peak intensity did not exceed the threshold of 10 pfu. (c) 8 prominent GOES SEP events that were not catalogued because the intensity at event onset was already above the threshold of 10 pfu due to a previous event. 5 further weak SEP events were identified on top of previous excess intensities labelled ‘(c')’. (d) GOES/EPS showed no excess signal above background after 15 X-class flares, and six further cases where no new rise was detected on top of a high intensity from a previous event (labelled ‘(d')’). (u) In four cases the GOES SEP detection was uncertain because of the high background from energetic storm particles (ESP) or because of possible confusion of SEP signatures with a previous event.
+sql.columnucd.goes_flare_sep_event=meta.record::time.start::time.phase::time.end::meta.code;pos::pos.bodyrc.lat;pos.heliographic::pos.bodyrc.long;pos.heliographic::::meta.code.class;em.opt::meta.code.class;em.X-ray::time.epoch::meta.code;stat.max::stat.max;prot.flux::prot.flux::meta.note  
+sql.columnutypes.goes_flare_sep_event=::helio:time_period.time_start::time.time_peak::helio:time_period.time_end::::location.lat_hg::location.long_hg::location.long_carr::flare.magnitude.optical_class::flare.magnitude.xray_class::::::::proton_event.proton_flux::  
+votable.query.info.goes_flare_sep_event=TABLE_NAME,goes_flare_sep_event
+
+sql.query.time.constraint.hec_catalogue='[:kwenddate:]'>=timefrom AND '[:kwstartdate:]'<=timeto
+sql.query.instr.constraint.hec_catalogue=status NOT LIKE 'deleted'
+sql.query.coordinates.constraint.hec_catalogue=
+sql.query.orderby.constraint.hec_catalogue=sort
+sql.query.maxrecord.constraint.hec_catalogue=20000
+sql.columnnames.hec_catalogue=name::description::timefrom::timeto::type::status::flare::cme::swind::part::otyp::solar::ips::geo::planet
+sql.columndesc.hec_catalogue=table name::description::timefrom::timeto::type::status::flare flag::cme flag::swind flag::part flag::otyp flag::solar flag::ips flag::geo flag::planet flag
+sql.columnucd.hec_catalogue= :: :: :: :: :: :: :: :: :: :: :: :: :: ::
+sql.columnutypes.hec_catalogue=
+
+sql.query.time.constraint.timed_see_flare='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.timed_see_flare=
+sql.query.coordinates.constraint.timed_see_flare= 
+sql.query.orderby.constraint.timed_see_flare=
+sql.query.maxrecord.constraint.timed_see_flare=20000
+sql.columnnames.timed_see_flare=hec_id::time_start::time_peak::time_end::lat_hg::long_hg::long_carr::xray_class::nar::nevent::see_xps_index::see_egs_index::obs_time_offset::url_ftp_file
+sql.columndesc.timed_see_flare=Event Identification number (HEC internal number).::Start time of the event provided by the NOAA-SEC daily event report.::Time of event peak provided by the NOAA-SEC daily event report.::Time at the end of the event provided by the NOAA-SEC daily event report.::Heliographic latitude of x-ray flare defined by SXI or H-alpha when no SXI location is reported.::Heliographic longitude of x-ray flare defined by SXI or H-alpha when no SXI location is reported.::Carrington longitude of x-ray flare.::Importance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of W m^-2.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::NOAA active region index.::NOAA Event number.::SEE-XPS Index - TIMED-SEE XPS (0.1-7 nm) Flare Index (1=no flare, >1=flare).::TIMED-SEE EGS Flare Index (1=no flare, >1=flare).::Center of the TIMED-SEE observation time relative to the flare peak expressed in seconds. SEE observations are approximately 180 seconds. Positive numbers indicate seconds after the peak, negative numbers indicate seconds prior to the peak.::Link pointing to the SEE level 3A (observation avg) data file that contains the measurement closest to the peak.
+sql.columnucd.timed_see_flare=meta.record::time.start::time.phase::time.end::pos.bodyrc.lat;pos.heliographic::pos.bodyrc.long;pos.heliographic::::meta.code.class;em.X-ray::meta.id.cross::meta.number::meta.code;em.X-ray::meta.code;em.UV::time.duration::meta.ref.url  
+sql.columnutypes.timed_see_flare=::helio:time_period.time_start::time.time_peak::helio:time_period.time_end::location.lat_hg::location.long_hg::location.long_carr::flare.magnitude.xray_class::flare.nar::::::::::  
+votable.query.info.timed_see_flare=TABLE_NAME,timed_see_flare
+
+sql.query.time.constraint.hfc_wind_waves='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.hfc_wind_waves=
+sql.query.coordinates.constraint.hfc_wind_waves= 
+sql.query.orderby.constraint.hfc_wind_waves=
+sql.query.maxrecord.constraint.hfc_wind_waves=20000
+sql.columnnames.hfc_wind_waves=hec_id::rb_id,observatory::instrument::time_start::freq_start::time_end::freq_end::feat_max_int::feat_mean_int::comment
+sql.columndesc.hfc_wind_waves=Event identification number (HEC internal number)::rb_id::observatory::instrument::time_start::freq_start::time_end::freq_end::feat_max_int::feat_mean_int::comment
+sql.columnucd.hfc_wind_waves= 
+sql.columnutypes.hfc_wind_waves= 
+votable.query.info.hfc_wind_waves=TABLE_NAME,hfc_wind_waves
+
+
+sql.query.time.constraint.ulysses_hxr_flare='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.ulysses_hxr_flare=
+sql.query.coordinates.constraint.ulysses_hxr_flare= 
+sql.query.orderby.constraint.ulysses_hxr_flare=
+sql.query.maxrecord.constraint.ulysses_hxr_flare=20000
+sql.columnnames.ulysses_hxr_flare=hec_id::time_start::time_peak::time_end::lat_hg::long_hg::long_carr::xray_class::r_hgi::lat_hgi::long_hgi::incr::fsu_angle::countrate_peak
+sql.columndesc.ulysses_hxr_flare=Event Identification number (HEC internal number)::The time that the start of the X-ray flare event was detected by Ulysses::Time of the peak X-ray flux::The time that the X-ray event ends::Heliographic latitude of x-ray flare from GOES location.::Heliographic longitude of x-ray flare from GOES location.::Carrington longitude of x-ray flare from GOES location.::mportance of flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of W m^-2.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Distance of Ulysses from the Sun (AU).::Solar latitude.::Solar longitude::Indicates whether the flare is seen as a count rate increase in the Ulysses data (Y) or not (N), or whether it is not known (?) due to missing telemetry or to a high background caused by in situ charged particles.::Flare-Sun-Ulysses (F-S-U) angle.::The peak count rate (non-normalized and corrected for rollover and dead time effects where necessary) measured by GRB during the event if seen.
+
+sql.columnucd.ulysses_hxr_flare=meta.record::time.start::time.phase::time.end::pos.bodyrc.lat;pos.heliographic::pos.bodyrc.long;pos.heliographic::pos::meta.code.class;em.X-ray::pos.bodyrc.alt;pos.heliocentric::pos.bodyrc.lat;pos.heliocentric::pos.bodyrc.long;pos.heliocentric::meta.code::pos.phaseAng::phys.energy;stat.max;meta.number  
+sql.columnutypes.ulysses_hxr_flare=::helio:time_period.time_start::helio:time.time_peak::helio:time_period.time_end::helio:location.lat_hg::helio:location.long_hg::helio:location.long_carr::helio:flare.magnitude.xray_class::helio:location.r_hci::helio:location.lat_hci::helio:location.long_err::::::helio:flare.magnitude.hard_xray_quantifier.hard_xray_count  
+votable.query.info.ulysses_hxr_flare=TABLE_NAME,ulysses_hxr_flare
+
+
+sql.query.time.constraint.ulysses_hxr_flare_farside=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.ulysses_hxr_flare_farside=
+sql.query.coordinates.constraint.ulysses_hxr_flare_farside= 
+sql.query.orderby.constraint.ulysses_hxr_flare_farside=
+sql.query.maxrecord.constraint.ulysses_hxr_flare_farside=20000
+sql.columnnames.ulysses_hxr_flare_farside=hec_id::time_start::r_hgi::countrate_peak::inferred_xray_class::xray_class_error
+sql.columndesc.ulysses_hxr_flare_farside=Event Identification number (HEC internal number)::The time that the start of the X-ray flare event was detected by Ulysses.::Distance of Ulysses from the Sun (AU).::The non-normalized peak GRB count rate after correction for dead time and rollover.::The inferred GOES X-class intensity.::The Uncertainty in GOES X-class intensity.
+sql.columnucd.ulysses_hxr_flare_farside=meta.record::time.start::pos.bodyrc.alt;pos.heliocentric::phys.energy;stat.max;meta.number::phot.flux; em.X-ray::phot.flux;meta.code.error  
+sql.columnutypes.ulysses_hxr_flare_farside=::helio:time_period.time_start::location.r_hci::helio:flare.magnitude.hard_xray_quantifier.hard_xray_count::::  
+votable.query.info.ulysses_hxr_flare_farside=TABLE_NAME,ulysses_hxr_flare_farside
+
+
+
+sql.query.time.constraint.goes_flare_no_sep_radio_cme=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.goes_flare_no_sep_radio_cme=
+sql.query.coordinates.constraint.goes_flare_no_sep_radio_cme=
+sql.query.orderby.constraint.goes_flare_no_sep_radio_cme=
+sql.query.maxrecord.constraint.goes_flare_no_sep_radio_cme=20000
+sql.columnnames.goes_flare_no_sep_radio_cme=hec_id::time_start::time_peak::cutoff_hf::time_spec_peak::frequ_spec_peak::flux_spec_peak::cutoff_lf_hi::cutoff_lf_lo::alpha_lf::deci_metre_waves::time_start_dh_typeIII::time_end_dh_typeIII::n_bursts::comment_dh_typeIII::flag_dimming::time_start_cme::time_cme_solar_radius::cme_speed::pa_width::comment_cme
+sql.columndesc.goes_flare_no_sep_radio_cme=Event Identification number (HEC internal number).::Start time of flare.::Time of flare maximum.::High-frequency cut-off. * indicates that it is based on microwave patrol reports compiled in Solar Geophysical Data.::Time of the spectral maximum.::Frequency of the spectral maximum.::Flux density at the spectral maximum.::High end of the low frequency cut-off range where the event is visible.::Low end of the low frequency cut-off range where the event is invisible.::Spectral index at low frequencies.::A rough characterisation of the radio emission at decimetre-to-metre wavelengths (frequency range 600 – 30 MHz), as compiled from Solar Geophysical Data and from observatory web sites.::Start time of DH type III burst.::End of DH type III burst.::Number of individual bursts.::Comment on DH type III burst.::Y when CME times are determined by dimming, otherwise it is N.::Time at which the backwards extrapolated time-height trajectory of the CME front is at 0.::Time at which the backwards extrapolated time-height trajectory of the CME front is at 1 solar radius.::Projected speed of CME.::Angular width of the CME.::Comments on the CME.
+sql.columnucd.goes_flare_no_sep_radio_cme= 
+sql.columnutypes.goes_flare_no_sep_radio_cme= 
+votable.query.info.goes_flare_no_sep_radio_cme=TABLE_NAME,goes_flare_no_sep_radio_cme
+
+
+sql.query.time.constraint.stereo_impactplastic_icme='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.stereo_impactplastic_icme=
+sql.query.coordinates.constraint.stereo_impactplastic_icme=
+sql.query.orderby.constraint.stereo_impactplastic_icme=
+sql.query.maxrecord.constraint.stereo_impactplastic_icme=20000
+sql.columnnames.stereo_impactplastic_icme=hec_id::id::flag::spacecraft::time_start::time_mag_obstacle_start::time_end::pt_max::pt_max_sheath::b_max::b_max_sheath::v_max::v_max_sheath::delta_v::groups::comment
+sql.columndesc.stereo_impactplastic_icme=Event Identification number (HEC internal number).::Event identifier (reset at beginning of year).::? indicates an ambiguous event * indicates a hybrid event (i.e. Combined with another solar wind structure)::STEREO spacecraft A or B.::Start time of the event.::tart time of magnetic obstacle (~ flux rope).::End time of the event.::The maximum total pressure (Pt, sum of magnetic and perpendicular plasma thermal pressures) perpendicular to the magnetic field.::Maximum Pt including the sheath region.::Maximum magnetic field measured in the event.::Maximum magnetic field including the sheath region.::Maximum velocity.::Maximum velocity including the sheath region.::Temporal variation of solar wind speed over one event, negative value indicating solar wind is expanding. No value means the solar wind speed remains almost constant over the event.::In the hypothesis that all ICMEs have a central flux rope, these three groups of Pt profiles are due to different approach distances to the central flux rope. Group 1 includes events that appear to be traversed near the ICME center, showing an apparent enhanced central Pt Group 3 represents ICMEs passed far away from the center, displaying a rapid rise and then gradual decay in Pt; Group 2 includes events with intermediate signatures.::Short description of event.
+sql.columnucd.stereo_impactplastic_icme=meta.record::meta.id::meta.code::instr.obsty::time.start::time.start;phys.magField::time.end::phys.pressure;stat.max::phys.pressure;stat.max::stat.max;phys.magField::stat.max;phys.magField::phys.veloc;stat.max::phys.veloc;stat.max::arith.rate;phys.veloc::meta.code.class::meta.note  
+sql.columnutypes.stereo_impactplastic_icme=::::::helio:observatory.observatory_name::helio:time_period.time_start::::helio:time_period.time_end::::::::::::::::::helio:comment  
+votable.query.info.stereo_impactplastic_icme=TABLE_NAME,stereo_impactplastic_icme
+
+sql.query.time.constraint.stereoa_impactplastic_sir='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.stereoa_impactplastic_sir=
+sql.query.coordinates.constraint.stereoa_impactplastic_sir= 
+sql.query.orderby.constraint.stereoa_impactplastic_sir=
+sql.query.maxrecord.constraint.stereoa_impactplastic_sir=20000
+sql.columnnames.stereoa_impactplastic_sir=hec_id::comp_id::id::flag::spacecraft::time_start::time_end::time_pt_max::pt_max::b_max::np_max::v_min::v_max
+sql.columndesc.stereoa_impactplastic_sir=Event Identification number (HEC internal number).::Comparison pair between spacecraft A and B (before 2008 when they were relatively close together).::Event identifier (reset at beginning of year).::* indicates a hybrid event combined by a SIR and another solar wind structure (e.g. an ICME). ? Indicates an ambiguous event.::STEREO spacecraft - A.::Start time of the event.::End time of the event.::The approximate stream interface time, because it is where the forces at the two sides of the interface are equal and in opposite directions.::The maximum total pressure (Pt, sum of magnetic and perpendicular plasma thermal pressures) perpendicular to the magnetic field.::Maximum magnetic field in the event.::Maximum proton number density in the event.::Minimum velocity.::Maximum velocity.
+sql.columnucd.stereoa_impactplastic_sir=meta.record::meta.id.cross::meta.id::meta.code::instr.obsty::time.start::time.end::time.phase;phys.pressure;stat.max::phys.pressure;stat.max::stat.max;phys.magField::phys.density;stat.max::phys.veloc;stat.min::phys.veloc;stat.max  
+sql.columnutypes.stereoa_impactplastic_sir=::::::::helio:observatory.observatory_name::helio:time_period.time_start::helio:time_period.time_end::::::::::::  
+votable.query.info.stereoa_impactplastic_sir=TABLE_NAME,stereoa_impactplastic_sir
+
+sql.query.time.constraint.stereob_impactplastic_sir='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.stereob_impactplastic_sir=
+sql.query.coordinates.constraint.stereob_impactplastic_sir= 
+sql.query.orderby.constraint.stereob_impactplastic_sir=
+sql.query.maxrecord.constraint.stereob_impactplastic_sir=20000
+sql.columnnames.stereob_impactplastic_sir=hec_id::comp_id::id::flag::spacecraft::time_start::time_end::time_pt_max::pt_max::b_max::np_max::v_min::v_max
+sql.columndesc.stereob_impactplastic_sir=Event Identification number (HEC internal number).::Comparison pair between spacecraft A and B (before 2008 when they were relatively close together).::Event identifier (reset at beginning of year).::* indicates a hybrid event combined by a SIR and another solar wind structure (e.g. an ICME). ? Indicates an ambiguous event.::STEREO spacecraft - B.::Start time of the event.::End time of the event.::The approximate stream interface time, because it is where the forces at the two sides of the interface are equal and in opposite directions.::The maximum total pressure (Pt, sum of magnetic and perpendicular plasma thermal pressures) perpendicular to the magnetic field.::Maximum magnetic field of the event.::Maximum proton number density.::Minimum velocity.::Maximum velocity.
+sql.columnucd.stereob_impactplastic_sir=meta.record::meta.id.cross::meta.id::meta.code::instr.obsty::time.start::time.end::time.phase;phys.pressure;stat.max::phys.pressure;stat.max::stat.max;phys.magField::phys.density;stat.max::phys.veloc;stat.min::phys.veloc;stat.max  
+sql.columnutypes.stereob_impactplastic_sir=::::::::helio:observatory.observatory_name::helio:time_period.time_start::helio:time_period.time_end::::::::::::  
+votable.query.info.stereob_impactplastic_sir=TABLE_NAME,stereob_impactplastic_sir
+
+
+sql.query.time.constraint.stereoa_impactplastic_shock=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.stereoa_impactplastic_shock=
+sql.query.coordinates.constraint.stereoa_impactplastic_shock= 
+sql.query.orderby.constraint.stereoa_impactplastic_shock=
+sql.query.maxrecord.constraint.stereoa_impactplastic_shock=20000
+sql.columnnames.stereoa_impactplastic_shock=hec_id::id::time_start::mag_ratio::norm_angle::beta::mach_no::data_avail::f_r_shock::comment
+sql.columndesc.stereoa_impactplastic_shock=Event Identification number (HEC internal number).::Event identifier.::Start time of the event.::Ratio of downstream magnetic field intensity to upstream magnetic field intensity.::Shock normal angle.::The ratio of plasma thermal pressure to magnetic pressure upstream of the shock, assumed as 1 when there is data gap (DG).::Magnetosonic Mach number.::Y or N indicates the availability of 32-Hz MAG data for this shock.::Forward(F)/Reverse(R) Shock.::Short description of event.
+sql.columnucd.stereoa_impactplastic_shock=meta.record::meta.id::time.start::arith.ratio;phys.magField::::phys.magField;phys.pressure;arith.ratio::phys.veloc;arith.ratio::meta.code::meta.code::meta.note  
+sql.columnutypes.stereoa_impactplastic_shock=::::helio:time_period.time_start::::::::::::::helio:comment  
+votable.query.info.stereoa_impactplastic_shock=TABLE_NAME,stereoa_impactplastic_shock
+
+sql.query.time.constraint.stereob_impactplastic_shock=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.stereob_impactplastic_shock=
+sql.query.coordinates.constraint.stereob_impactplastic_shock= 
+sql.query.orderby.constraint.stereob_impactplastic_shock=
+sql.query.maxrecord.constraint.stereob_impactplastic_shock=20000
+sql.columnnames.stereob_impactplastic_shock=hec_id::id::time_start::mag_ratio::norm_angle::beta::mach_no::data_avail::f_r_shock::comment
+sql.columndesc.stereob_impactplastic_shock=Event Identification number (HEC internal number).::Event identifier,::Start time of the event.::Ratio of downstream magnetic field intensity to upstream magnetic field intensity.::Shock normal angle.::The ratio of plasma thermal pressure to magnetic pressure upstream of the shock, assumed as 1 when there is data gap (DG).::Magnetosonic Mach number.::Y or N indicates the availability of 32-Hz MAG data for this shock.::Forward(F)/Reverse(R) Shock.::Short description of event.
+sql.columnucd.stereob_impactplastic_shock=meta.record::meta.id::time.start::arith.ratio;phys.magField::::phys.magField;phys.pressure;arith.ratio::phys.veloc;arith.ratio::meta.code::meta.code::meta.note  
+sql.columnutypes.stereob_impactplastic_shock=::::helio:time_period.time_start::::::::::::::helio:comment  
+votable.query.info.stereob_impactplastic_shock=TABLE_NAME,stereob_impactplastic_shock
+
+sql.query.time.constraint.icme_earth_cycle23='[:kwenddate:]'>=time_start_icme AND '[:kwstartdate:]'<=time_end_icme
+sql.query.instr.constraint.icme_earth_cycle23=
+sql.query.coordinates.constraint.icme_earth_cycle23= 
+sql.query.orderby.constraint.icme_earth_cycle23=
+sql.query.maxrecord.constraint.icme_earth_cycle23=20000
+sql.columnnames.icme_earth_cycle23=HEC_id::time_start::time_start_icme::time_end_icme::flag_a_w::time_offset_start_sig::flag_toff_start_sig::time_offset_end_sig::flag_toff_end_sig::time_offset_start_mc::flag_toff_start_mc::time_offset_end_mc::flag_toff_end_mc::bidir_flow_e::bidir_flow_ion::qual_time_est::flag_weak_event::v_incr_sw::flag_upstream_shock::v_mean_sw::v_max_sw::b_mean::flag_mag_cloud::flag_mc_list::dst_min::flag_dst::v_1au::time_lasco::flag_halo
+sql.columndesc.icme_earth_cycle23=Event Identification number (HEC internal number).::The start time of the ICME-related “disturbance”. For a fast ICME, this is given by the arrival of the ICME-driven shock. In this case, the time given is typically that of the geomagnetic storm sudden commencement (SC) that frequently accompanies a shock reaching the Earth’s magnetosphere since this provides a spacecraft-independent arrival time that is also appropriate for comparison with phenomena at the Earth.::The start time of the ICME. The ICME start time is inferred primarily from plasma and magnetic field data and given to the nearest hour.::The end time of the ICME. The ICME end time is inferred primarily from plasma and magnetic field data and given to the nearest hour.::If a sudden commencement (SC) is reported this flag is not set. If an SC is not reported, the time of shock passage at ACE (indicated by (A)) is given. If there are no data at ACE, or a shock is not reported at that spacecraft, the shock time at WIND (W) is listed if a shock is reported. If no shock is reported for a slower ICME, a wave-like feature or developing shock may be evident in the plasma and field data. The time of such a feature is given in the table to the nearest hour.::Estimated offset of the start of the compositional/charge state signatures in the vicinity of the ICME relative to the “ICME” start time.::“ns” indicates that there is no compositional/charge state signature while “nc” indicates that there is no change or there is no clear compositional/charge state change. An absence of data is indicated by “nd ”. Close agreement between the ICME and composition/ charge state boundaries (to within an hour or so, limited by the resolution of the SWICS data) is indicated by a “zero hour” offset. Different compositional/charge state changes may not coincide exactly though frequently there is a consensus. Typically the O7/O6 ratio is used as a reference.::Estimated offset of the end of the compositional/charge state signatures in the vicinity of the ICME relative to the “ICME” end time.::“ns” indicates that there is no compositional/charge state signature while “nc” indicates that there is no change or there is no clear compositional/charge state change. An absence of data is indicated by “nd ”. Close agreement between the ICME and composition/ charge state boundaries (to within an hour or so, limited by the resolution of the SWICS data) is indicated by a “zero hour” offset. Different compositional/charge state changes may not coincide exactly though frequently there is a consensus. Typically the O7/O6 ratio is used as a reference.::Time offset (in hours) of the magnetic leading boundary relative to the ICME boundary based primarily on the WIND magnetic cloud list. Additional events identified by Huttunen et al. (2005) in 1996 – 2003 are also included.::'"nd' indicates an absence of data."::Time offset (in hours) of the magnetic trailing boundary relative to the ICME boundary based primarily on the WIND magnetic cloud list. Additional events identified by Huttunen et al. (2005) in 1996 – 2003 are also included.::'"nd' indicates an absence of data. '2' indicates that two magnetic clouds are identified in the interval of interest. The offsets are then estimated from the leading edge of the first magnetic cloud and the trailing edge of the second."::Indicates whether or not bidirectional suprathermal electrons were observed within the ICME (Y/N = yes/no), based on an assessment of the SWEPAM electron pitchangle plots from the ACE Science Center. For events before the launch of ACE, and events where SWEPAM observations are dominated by solar energetic particles, the 260 eV electron pitch-angle plots from the WIND 3DP instrument (http://sprg.ssl.berkeley.edu/wind3dp/) were examined. In a few cases, indicated by “SEP”, it was not possible to assess the presence of BDEs in either data set because of the presence of solar energetic particles. Overall, 67% of the ICMEs (205/308), where an assessment can be made, data show evidence of BDEs.::Indicates the presence of bidirectional energetic ion flows (BIFs) observed by the IMP 8 GME (for the ICME commencing on 31 October 2003, the BIFs are reported by Malandraki et al. (2005)). Here, “. nd ” indicates that either there are no data for a given ICME, the available data cover a limited region of the ICME such that it is not possible to assess whether any bidirectional flows were present, particle counts are insufficient to be able to assess the particle flows, or IMP 8 was inside the bow shock. “Y” or “N” indicate that there is, or is no, evidence (in the available data, which may not extend throughout the ICME interval) of bidirectional flows. Overall, energetic ion flows can be examined for 114 ICMEs, of which 66 (58%) show evidence of BIFs.::indicates the overall “quality” of the ICME boundary time estimates, where ‘1’ is the most reliable.::“W” indicates a marginal event with weak ICME signatures.::The increase in solar wind speed at the upstream disturbance (to the nearest 10 km s−1) estimated from 1-hour averaged data.::An ‘S’ indicates that a shock reported in the ACE or Kasper shock lists contributed to the speed increase (which may be larger than the actual speed increase at the shock if for example, the solar wind speed increased further following the shock). Of the 322 ICMEs, 163 (51%) have identified upstream shocks. Note that in a few cases (e.g., 4 May 1998), there is a large increase in solar wind speed but no shock is reported. Typically, the speed transition is too gradual to be associated with a true shock.::The average ICME speed based on the plasma/field ICME intervals.::The maximum post-shock solar wind speed (i.e., between the shock/disturbance and plasma/field ICME trailing edge),::The average magnetic field strength within the plasma/field ICME, to the nearest 1 nT.::A ‘2’ indicates that the ICME includes a magnetic cloud reported on the WIND magnetic cloud list. In a few cases, an indicated magnetic cloud is not reported on these lists, but the magnetic field characteristics of the ICME are assessed to be consistent with those for a magnetic cloud (e.g., enhanced intensity >10 nT, smooth rotation through a large angle, low proton temperatures, Klein and Burlaga, 1982). A ‘1’ indicates that there is evidence of a rotation in the magnetic fielddirection, but overall, the magnetic field characteristics do not meet those of a magnetic cloud. Events with no magnetic cloud-like magnetic field features are indicated by ‘0’.::'H' indicates a magnetic cloud reported by Huttunen et al. (2005).::The minimum geomagnetic Dst.::‘P’ indicates that the value is provisional, and ‘Q’ that the value is obtained from the “Real-time (Quicklook)” Dst index provided by the World Data Center for Geomagnetism, Kyoto University (http://swdcwww.kugi.kyoto-u.ac.jp/). Otherwise, final values are given. The period considered for each event extends from the disturbance to the trailing edge of the ICME signatures or slightly beyond if a storm driven by the trailing regions of an ICME reaches peak intensity just after ICME passage. A null value indicates that strong geomagnetic activity is already in progress and there is no further intensification associated with the ICME.::The shock transit speed to 1 AU if the probably associated solar event can be identified. If so details are given in the following fields.::The event time generally corresponding to the first observation of the related CME by the LASCO coronagraphs on the SOHO spacecraft.::'"H' denotes that this is reported as a halo CME in the online CME catalogue (http://cdaw.gsfc.nasa.gov/CME_list/). 'dg' indicates a gap in LASCO observations that encompasses the likely time of the associated solar event. SOHO EIT movies and other data (e.g.
+sql.columnucd.icme_earth_cycle23=::::::::::::::::::::::::::::::::::::::::::::::::::::::::  
+sql.columnutypes.icme_earth_cycle23=::::::::::::::::::::::::::::::::::::::::::::::::::::::::  
+votable.query.info.icme_earth_cycle23=TABLE_NAME,icme_earth_cycle23
+
+sql.query.time.constraint.cme_inner_heliosphere='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_start
+sql.query.instr.constraint.cme_inner_heliosphere=
+sql.query.coordinates.constraint.cme_inner_heliosphere= 
+sql.query.orderby.constraint.cme_inner_heliosphere=
+sql.query.maxrecord.constraint.cme_inner_heliosphere=20000
+sql.columnnames.cme_inner_heliosphere=HEC_id::cme_number::time_start::v_cme::cme_type::xray_class::optical_class::lat_hg::long_hg::long_carr::time_ips_1au::time_cme_1au::v_icme::time_transit_1au::alpha::v_1au_predict::time_transit_1au_predict::flag_cme_interaction
+sql.columndesc.cme_inner_heliosphere=Event Identification number (HEC internal number).::CME number.::The time that the CME was detected by SOHO LASCO.::The initial speed of the CME derived from the 'height-time' plot from the LASCO images.::'"H' indicates a halo event and 'PH' indicates a partial halo event."::Importance of associated flare at X-ray wavelengths -- the peak flux measured at Earth in the 0.1 to 0.8 nm range in units of W m^-2.  (See the 'X-ray Class' in the HEC glossary for the specification of this field)::Average optical importance of associated  flare -- a measurement of flare size and brilliance.  (See the 'Optical Class' in the HEC glossary for the specification of this field). 'flm' indicates a filament eruption.::Heliographic latitude of associated flare.::Heliographic longitude of associated flare.::Carrington longitude of associated flare.::The time of arrival of the interplanetary shock at 1AU.::The time of arrival of the interplanetary CME (i.e. ejecta and/or magnetic cloud).::The ICME speed at 1AU.::The observed CME transit time from the Sun to 1AU.::The speed-distance slope from interplanetary scintillation measurements.::The predicted velocity of the ICME at 1 AU from the LASCO and interplanetary scintillation measurements.::The predicted CME transit time from the Sun to 1AU from the LASCO and interplanetary scintillation measurements.::'"Y' indicates that the CME interacts with other CMEs."
+sql.columnucd.cme_inner_heliosphere=::::::::::::::::::::::::::::::::::  
+sql.columnutypes.cme_inner_heliosphere=::::::::::::::::::::::::::::::::::  
+votable.query.info.cme_inner_heliosphere=TABLE_NAME,cme_inner_heliosphere
+
+sql.query.time.constraint.seeds_cme=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.seeds_cme=
+sql.query.coordinates.constraint.seeds_cme=
+sql.query.orderby.constraint.seeds_cme=
+sql.query.maxrecord.constraint.seeds_cme=20000
+sql.columnnames.seeds_cme=HEC_id::cme_number::time_start::n_frame::pa::pa_width::v::accel::event_detail
+sql.columndesc.seeds_cme=Event Identification number (HEC internal number).::SEEDS monthly count prefixed with 'yyymm-'::start time of the CME::number of frames in the movie::Position angle (degrees, counterclockwise from North)::Angular width of the CME (degrees)::velocity (linear fit)::2nd order polynomial fit to the Height-time::url of the movie
+sql.columnucd.seeds_cme=meta.record::meta.number::time.start::meta.number::pos.posAng::pos.posAng;phys.angSize::phys.veloc::phys.acceleration::meta.ref.url
+sql.columnutypes.seeds_cme=::::helio:time.time_start::::helio:location.pa::helio:location.pa_width::helio:cme.velocity.v::helio:cme.acceleration::
+votable.query.info.seeds_cme=TABLE_NAME,seeds_cme
+
+sql.query.time.constraint.nmdb_gle_list='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_end
+sql.query.instr.constraint.nmdb_gle_list=
+sql.query.coordinates.constraint.nmdb_gle_list=
+sql.query.orderby.constraint.nmdb_gle_list=
+sql.query.maxrecord.constraint.nmdb_gle_list=20000
+sql.columnnames.nmdb_gle_list=HEC_id::num::time_start::time_end::time_onset::comments::url
+sql.columndesc.nmdb_gle_list=Event Identification number (HEC internal number).::num::time_start::time_end::time_onset::comments::url
+sql.columnucd.nmdb_gle_list= 
+sql.columnutypes.nmdb_gle_list= 
+votable.query.info.nmdb_gle_list=TABLE_NAME,nmdb_gle_list
+
+sql.query.time.constraint.seeds_soho=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.seeds_soho=
+sql.query.coordinates.constraint.seeds_soho=
+sql.query.orderby.constraint.seeds_soho=
+sql.query.maxrecord.constraint.seeds_soho=20000
+sql.columnnames.seeds_soho=HEC_id::sat_id::r_hci::long_hci::lat_hci::time_start::pa::pa_width::v::accel::cme_number::n_frame::seeds_id::event_detail
+sql.columndesc.seeds_soho=Event Identification number (HEC internal number).::Identifier of the spacecraft to which the entry applies::Heliocentric distance of the observatory (sat_id)::Heliocentric longitude of the observatory (sat_id)::Heliocentric latitude of the observatory (sat_id)::Start time of the CME::Position angle (degrees)::Angular width of CME (degrees)::Velocity (km/s; linear fit)::Acceleration  (m/s2; 2nd order fit)::SEEDS monthly count prefixed with yyyymm-::No. of frames in the movie::ID within SEEDS used to identify various components::
+sql.columnucd.seeds_soho= 
+sql.columnutypes.seeds_soho= 
+votable.query.info.seeds_soho=TABLE_NAME,seeds_soho
+
+sql.query.time.constraint.seeds_sta=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.seeds_sta=
+sql.query.coordinates.constraint.seeds_sta=
+sql.query.orderby.constraint.seeds_sta=
+sql.query.maxrecord.constraint.seeds_sta=20000
+sql.columnnames.seeds_sta=HEC_id::sat_id::r_hci::long_hci::lat_hci::time_start::pa::pa_width::v::accel::cme_number::n_frame::seeds_id::event_detail
+sql.columndesc.seeds_sta=Event Identification number (HEC internal number).::Identifier of the spacecraft to which the entry applies::Heliocentric distance of the observatory (sat_id)::Heliocentric longitude of the observatory (sat_id)::Heliocentric latitude of the observatory (sat_id)::Start time of the CME::Position angle (degrees)::Angular width of CME (degrees)::Velocity (km/s; linear fit)::Acceleration  (m/s2; 2nd order fit)::SEEDS monthly count prefixed with "yyyymm-"::No. of frames in the movie::ID within SEEDS used to identify various components::
+sql.columnucd.seeds_sta= 
+sql.columnutypes.seeds_sta= 
+votable.query.info.seeds_sta=TABLE_NAME,seeds_sta
+
+sql.query.time.constraint.seeds_stb=time_start>='[:kwstartdate:]' AND time_start<='[:kwenddate:]'
+sql.query.instr.constraint.seeds_stb=
+sql.query.coordinates.constraint.seeds_stb=
+sql.query.orderby.constraint.seeds_stb=
+sql.query.maxrecord.constraint.seeds_stb=20000
+sql.columnnames.seeds_stb=HEC_id::sat_id::r_hci::long_hci::lat_hci::time_start::pa::pa_width::v::accel::cme_number::n_frame::seeds_id::event_detail
+sql.columndesc.seeds_stb=Event Identification number (HEC internal number).::Identifier of the spacecraft to which the entry applies::Heliocentric distance of the observatory (sat_id)::Heliocentric longitude of the observatory (sat_id)::Heliocentric latitude of the observatory (sat_id)::Start time of the CME::Position angle (degrees)::Angular width of CME (degrees)::Velocity (km/s; linear fit)::Acceleration  (m/s2; 2nd order fit)::SEEDS monthly count prefixed with "yyyymm-"::No. of frames in the movie::ID within SEEDS used to identify various components::
+sql.columnucd.seeds_stb= 
+sql.columnutypes.seeds_stb= 
+votable.query.info.seeds_stb=TABLE_NAME,seeds_stb
+
+sql.query.time.constraint.solar_sep_event='[:kwenddate:]'>=time_start AND '[:kwstartdate:]'<=time_start
+sql.query.instr.constraint.solar_sep_event=
+sql.query.coordinates.constraint.solar_sep_event= 
+sql.query.orderby.constraint.solar_sep_event=
+sql.query.maxrecord.constraint.solar_sep_event=20000
+sql.columnnames.solar_sep_event=hec_id::time_start::flag_slow_rise::energy_max::proton_intensity_max::time_start_typeIII::time_end_typeIII::metric_typeII::time_start_flare::dt_rise::lat_hg::long_hg::long_carr::lat_ns::xray_class::time_start_cme::pa_width::v_cme::v_shock::flag_pass_shock::group_sep
+sql.columndesc.solar_sep_event=Event identification number (HEC internal number)::time_start::flag_slow_rise::energy_max::proton_intensity_max::time_start_typeIII::time_end_typeIII::metric_typeII::time_start_flare::dt_rise::lat_hg::long_hg::long_carr::lat_ns::xray_class::time_start_cme::pa_width::v_cme::v_shock::flag_pass_shock::group_sep
+sql.columnucd.solar_sep_event= 
+sql.columnutypes.solar_sep_event= 
+votable.query.info.solar_sep_event=TABLE_NAME,solar_sep_event
+
+
+
+
+sql.query.time.constraint.pippo=
+sql.columnnames.pippo=hec_id::time_start 
+sql.columndesc.pippo=hec_id::time_start
+
+isql.votable.head.desc=Helio HEC time based query V1.17.61
+
